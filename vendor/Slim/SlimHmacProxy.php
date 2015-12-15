@@ -98,7 +98,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         } else if (substr($endPointFunction, -15) == '_leftnavigation') {
             $this->setRestApiEndPoint('leftnavigation.php/');
-            print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+        //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
     }
