@@ -11,6 +11,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
      */
     protected $redirectMap = array('getReports_test' => 'restApiDefaultCall',
                                     'getDynamicForm_test' => 'restApiDefaultCall',
+
+        //** leftnavigation ----------------------
                                     'delete_leftnavigation' => 'restApiDefaultCall',
                                     'getAll_leftnavigation' => 'restApiDefaultCall',
                                     'insert_leftnavigation' => 'restApiDefaultCall',
@@ -18,6 +20,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillGrid_leftnavigation' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_leftnavigation' => 'restApiDefaultCall',
                                     'getLeftMenu_leftnavigation' => 'restApiDefaultCall',
+       
+        //**---- leftnavigation -------------------
+        //** syssectors ----------------------
+                                    'delete_syssectors' => 'restApiDefaultCall',
+                                    'getAll_syssectors' => 'restApiDefaultCall',
+                                    'insert_syssectors' => 'restApiDefaultCall',
+                                    'update_syssectors' => 'restApiDefaultCall',
+                                    'fillGrid_syssectors' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_syssectors' => 'restApiDefaultCall',
+                                    
+         //**---- syssectors -------------------
+        
+        
+                                        
         
     );
 
@@ -45,7 +61,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
      * @version 0.2
      */
     public function restApiDefaultCall() {
-                
+
         /* $encrypt = new \vendor\Encrypt\EncryptManual('test');
           $encryptValue = $encrypt->encrypt_times(4, 'kullanici:sifre');
           //print_r('--'.$encryptValue.'--');
@@ -98,7 +114,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         } else if (substr($endPointFunction, -15) == '_leftnavigation') {
             $this->setRestApiEndPoint('leftnavigation.php/');
-        //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        } else if (substr($endPointFunction, -11) == '_syssectors') {
+            $this->setRestApiEndPoint('syssectors.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
     }
