@@ -32,7 +32,15 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     
          //**---- syssectors -------------------
         
-        
+         //** infoUsers ----------------------
+                                    'delete_infoUsers' => 'restApiDefaultCall',
+                                    'getAll_infoUsers' => 'restApiDefaultCall',
+                                    'insert_infoUsers' => 'restApiDefaultCall',
+                                    'update_infoUsers' => 'restApiDefaultCall',
+                                    'fillGrid_infoUsers' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_infoUsers' => 'restApiDefaultCall',
+                                    
+         //**---- infoUsers -------------------
                                         
         
     );
@@ -121,8 +129,15 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
+         else if (substr($endPointFunction, -10) == '_infoUsers') {
+            $this->setRestApiEndPoint('infousers.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }
     }
 
+    
+    
     /**
      * set Hmac object for HMAC security
      * @param \vendor\hmac\Hmac $hmacObj
