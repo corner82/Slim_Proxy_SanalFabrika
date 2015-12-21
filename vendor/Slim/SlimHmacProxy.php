@@ -20,6 +20,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillGrid_leftnavigation' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_leftnavigation' => 'restApiDefaultCall',
                                     'getLeftMenu_leftnavigation' => 'restApiDefaultCall',
+                                    'getLeftMenuFull_leftnavigation' => 'restApiDefaultCall',
+        
+        
+        
        
         //**---- leftnavigation -------------------
         //** syssectors ----------------------
