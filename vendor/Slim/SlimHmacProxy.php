@@ -50,10 +50,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillGrid_syscountrys' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_syscountrys' => 'restApiDefaultCall',
                                     'fillComboBox_syscountrys' => 'restApiDefaultCall',
+      //  'fillComboBox_syscountryssilinecek' => 'restApiDefaultCall',
                                     
          //**---- syscountrys -------------------
         
-        
+        //** syscity ----------------------
+                                    'delete_syscity' => 'restApiDefaultCall',
+                                    'getAll_syscity' => 'restApiDefaultCall',
+                                    'insert_syscity' => 'restApiDefaultCall',
+                                    'update_syscity' => 'restApiDefaultCall',
+                                    'fillGrid_syscity' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_syscity' => 'restApiDefaultCall',
+                                    'fillComboBox_syscity' => 'restApiDefaultCall',    
+                                    
+         //**---- syscity -------------------
         
         
     );
@@ -150,8 +160,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
+      /*  else if (substr($endPointFunction, -21) == '_syscountryssilinecek') {
+            $this->setRestApiEndPoint('syscountryssilinecek.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }        
+       */
+        else if (substr($endPointFunction, -8) == '_syscity') {
+            $this->setRestApiEndPoint('syscity.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }
     }
 
+    
     
     
     /**
