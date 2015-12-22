@@ -78,6 +78,18 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillComboBox_syslanguage' => 'restApiDefaultCall',    
                                     
          //**---- syslanguage -------------------
+          //** sysborough ----------------------
+                                    'delete_sysborough' => 'restApiDefaultCall',
+                                    'getAll_sysborough' => 'restApiDefaultCall',
+                                    'insert_sysborough' => 'restApiDefaultCall',
+                                    'update_sysborough' => 'restApiDefaultCall',
+                                    'fillGrid_sysborough' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysborough' => 'restApiDefaultCall',
+                                    'fillComboBox_sysborough' => 'restApiDefaultCall',    
+                                    
+         //**---- sysborough -------------------       
+        
+        
         
         
         
@@ -188,6 +200,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         } else if (substr($endPointFunction, -12) == '_syslanguage') {
             $this->setRestApiEndPoint('syslanguage.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }else if (substr($endPointFunction, -11) == '_sysborough') {
+            $this->setRestApiEndPoint('sysborough.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
