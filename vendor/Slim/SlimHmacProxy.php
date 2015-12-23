@@ -118,6 +118,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
      * function overriden
      * @author Mustafa Zeynel Dağlı
      * @version 0.2
+     * @todo conside check if request is ssl encypted (https)
      */
     public function restApiDefaultCall() {
 
@@ -154,6 +155,13 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
                             ->encrypt('' . time() . ''))  /// replay attack lar için oki
         ));
+        /**
+         * if request is ssl encrypted consider header options below
+         * @author Mustafa Zeynel Dağlı
+         * @since 23/12/2015
+         */
+        /*curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);*/
         curl_setopt($ch, CURLOPT_HEADER, 0); // we don’t want also to get the header information that we receive.
         //sleep(10);
         $response = curl_exec($ch);
