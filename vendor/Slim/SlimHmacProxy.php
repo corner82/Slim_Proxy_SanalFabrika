@@ -33,6 +33,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'update_syssectors' => 'restApiDefaultCall',
                                     'fillGrid_syssectors' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_syssectors' => 'restApiDefaultCall',
+                                    'fillComboBox_syssectors' => 'restApiDefaultCall',
+        
                                     
          //**---- syssectors -------------------
         
@@ -89,7 +91,16 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     
          //**---- sysborough -------------------       
         
-        
+           //** sysvillage ----------------------
+                                    'delete_sysvillage' => 'restApiDefaultCall',
+                                    'getAll_sysvillage' => 'restApiDefaultCall',
+                                    'insert_sysvillage' => 'restApiDefaultCall',
+                                    'update_sysvillage' => 'restApiDefaultCall',
+                                    'fillGrid_sysvillage' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysvillage' => 'restApiDefaultCall',
+                                    'fillComboBox_sysvillage' => 'restApiDefaultCall',    
+                                    
+         //**---- sysvillage -------------------   
         
         
         
@@ -214,10 +225,14 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysborough.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }else if (substr($endPointFunction, -11) == '_sysvillage') {
+            $this->setRestApiEndPoint('sysvillage.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
     }
 
-    
+     
     
     
     /**
