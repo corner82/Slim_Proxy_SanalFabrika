@@ -34,6 +34,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillGrid_syssectors' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_syssectors' => 'restApiDefaultCall',
                                     'fillComboBox_syssectors' => 'restApiDefaultCall',
+                                    'insertLanguageTemplate' => 'restApiDefaultCall',
+        
+         
         
                                     
          //**---- syssectors -------------------
@@ -45,6 +48,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'update_infoUsers' => 'restApiDefaultCall',
                                     'fillGrid_infoUsers' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_infoUsers' => 'restApiDefaultCall',
+                                    'deletedAct_infoUsers' => 'restApiDefaultCall',
+                            
                                     
          //**---- infoUsers -------------------
                                         
@@ -56,6 +61,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillGrid_syscountrys' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_syscountrys' => 'restApiDefaultCall',
                                     'fillComboBox_syscountrys' => 'restApiDefaultCall',
+                                    'insertLanguageTemplate_syscountrys' => 'restApiDefaultCall',
+        
       //  'fillComboBox_syscountryssilinecek' => 'restApiDefaultCall',
                                     
          //**---- syscountrys -------------------
@@ -67,7 +74,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'update_syscity' => 'restApiDefaultCall',
                                     'fillGrid_syscity' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_syscity' => 'restApiDefaultCall',
-                                    'fillComboBox_syscity' => 'restApiDefaultCall',    
+                                    'fillComboBox_syscity' => 'restApiDefaultCall',   
+                                    'insertLanguageTemplate_syscity' => 'restApiDefaultCall',  
+        
+        
                                     
          //**---- syscity -------------------
          //** syslanguage ----------------------
@@ -87,8 +97,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'update_sysborough' => 'restApiDefaultCall',
                                     'fillGrid_sysborough' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_sysborough' => 'restApiDefaultCall',
-                                    'fillComboBox_sysborough' => 'restApiDefaultCall',    
-                                    
+                                    'fillComboBox_sysborough' => 'restApiDefaultCall',  
+                                    'insertLanguageTemplate_sysborough' => 'restApiDefaultCall',  
          //**---- sysborough -------------------       
         
            //** sysvillage ----------------------
@@ -98,8 +108,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'update_sysvillage' => 'restApiDefaultCall',
                                     'fillGrid_sysvillage' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_sysvillage' => 'restApiDefaultCall',
-                                    'fillComboBox_sysvillage' => 'restApiDefaultCall',    
-                                    
+                                    'fillComboBox_sysvillage' => 'restApiDefaultCall',  
+                                    'insertLanguageTemplate_sysvillage' => 'restApiDefaultCall',   
+                        
          //**---- sysvillage -------------------   
         
         
