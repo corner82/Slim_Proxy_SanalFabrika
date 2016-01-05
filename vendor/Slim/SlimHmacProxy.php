@@ -19,7 +19,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'update_leftnavigation' => 'restApiDefaultCall',
                                     'fillGrid_leftnavigation' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_leftnavigation' => 'restApiDefaultCall',
-                                    'getLeftMenu_leftnavigation' => 'restApiDefaultCall',
+                                    'pkGetLeftMenu_leftnavigation' => 'restApiDefaultCall',
                                     'getLeftMenuFull_leftnavigation' => 'restApiDefaultCall',
         
         
@@ -63,7 +63,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillComboBox_syscountrys' => 'restApiDefaultCall',
                                     'insertLanguageTemplate_syscountrys' => 'restApiDefaultCall',
         
-      //  'fillComboBox_syscountryssilinecek' => 'restApiDefaultCall',
+     
                                     
          //**---- syscountrys -------------------
         
@@ -113,7 +113,17 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                         
          //**---- sysvillage -------------------   
         
-        
+         //** blLoginLogout ----------------------
+                                    'delete_blLoginLogout' => 'restApiDefaultCall',
+                                    'getAll_blLoginLogout' => 'restApiDefaultCall',
+                                    'insert_blLoginLogout' => 'restApiDefaultCall',
+                                    'update_blLoginLogout' => 'restApiDefaultCall',
+                                    'pkControl_blLoginLogout' => 'restApiDefaultCall',
+                                    'pkLoginControl_blLoginLogout' => 'restApiDefaultCall',
+                                    'getPK_blLoginLogout' => 'restApiDefaultCall',  
+                                    'pkSessionControl_blLoginLogout' => 'restApiDefaultCall',   
+                        
+         //**---- blLoginLogout -------------------   
         
         
     );
