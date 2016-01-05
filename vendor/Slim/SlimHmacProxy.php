@@ -185,11 +185,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          * @since 05/01/2016
          */
         $resultSet = $this->dalObject->getPrivateKey($params['pk']);
-        print_r('test-->');
+       /* print_r('test-->');
         print_r($resultSet);
-        print_r($resultSet['resultSet'][0]['sf_private_key_value']);
-        $publicNotFoundForwarder = \vendor\utill\forwarder\publicNotFoundForwarder();
-        if(empty($resultset[0])) $publicNotFoundForwarder->redirect();
+        print_r($resultSet['resultSet'][0]['sf_private_key_value']);*/
+        $publicNotFoundForwarder =new \vendor\utill\forwarder\publicNotFoundForwarder();
+        if($resultSet['resultSet'][0]['sf_private_key_value']== null) $publicNotFoundForwarder->redirect();
         
         
         if(isset($params['pk'])) $this->hmacObj->setPublicKey($params['pk']);
