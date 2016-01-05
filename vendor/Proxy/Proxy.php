@@ -12,6 +12,14 @@ namespace vendor\Proxy;
 class Proxy extends \vendor\Proxy\AbstractProxy {
     
     /**
+     * determines what will be done if private key not found
+     * @author Mustafa Zeynel Dağlı
+     * @var boolean
+     */
+     protected $privateKeyNotFoundRedirection = true;
+
+
+/**
      * invalid url format redirect url
      * @var string
      * @author Mustafa Zeynel Dağlı
@@ -43,7 +51,26 @@ class Proxy extends \vendor\Proxy\AbstractProxy {
      */
     protected $encryptKey = 'testKey';
 
+    /**
+     * set variable for private key not found strategy
+     * @param type $boolean
+     * @author Mustafa Zeynel Dağlı
+     * @since 05/01/2016
+     */
+    protected function setPrivateKeyNotFoundRedirection($boolean) {
+        $this->privateKeyNotFoundRedirection = $boolean;
+    }
     
+    /**
+     * get variable for private key not found strategy
+     * @return boolean
+     * @author Mustafa Zeynel Dağlı
+     * @since 05/01/2016
+     */
+    protected function getPrivateKeyNotFoundRedirection() {
+        return $this->privateKeyNotFoundRedirection;
+    }
+
     /**
      * set invalid call format redirect function
      * @param type $invalidCallFunc

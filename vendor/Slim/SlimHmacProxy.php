@@ -123,10 +123,17 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
      * @var \vendor\hmac\Hmac
      */
     protected $hmacObj;
+    
+    /**
+     * Dal object
+     * @var \vendor\dal\Dal
+     */
+    protected $dalObject;
 
     public function __construct() {
         parent::__construct();
         $this->hmacObj = new \vendor\hmac\Hmac();
+        $this->dalObject = new \vendor\dal\Dal();
     }
 
     public function redirect() {
@@ -134,6 +141,12 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         $this->setEndPointByClosure();
         echo $this->$execFunction();
     }
+    
+    protected function publicNotFoundRedirection() {
+         if($this->privateKeyNotFoundRedirection) {
+             $forwarder = \vendor\utill\forwarder\publicNotFoundForwarder();
+         }
+     }
 
     /**
      * Rest api 'GET' call (Curl lib)
@@ -149,11 +162,29 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
           //print_r('--'.$encryptValue.'--');
           $decryptValue = $encrypt->decrypt_times(4, $encryptValue);
           //print_r('??'.$decryptValue.'??'); */
+        
         $this->setEncryptClass();
         $params = null;
         $params = $this->getRequestParams();
+        
+        if(!isset($params['pk'])) $this->publicNotFoundRedirection();
+        
+        /**
+         * GEtting private key due to public key
+         * @author Mustafa Zeynel Dağlı
+         * @since 05/01/2016
+         */
+        $resultSet = $this->dalObject->getPrivateKey($params['pk']);
+        print_r('test-->');
+        print_r($resultSet);
+        print_r($resultSet['resultSet'][0]['sf_private_key_value']);
+        $publicNotFoundForwarder = \vendor\utill\forwarder\publicNotFoundForwarder();
+        if(empty($resultset[0])) $publicNotFoundForwarder->redirect();
+        
+        
         if(isset($params['pk'])) $this->hmacObj->setPublicKey($params['pk']);
-        $this->hmacObj->setPrivateKey('e249c439ed7697df2a4b045d97d4b9b7e1854c3ff8dd668c779013653913572e');
+        //$this->hmacObj->setPrivateKey('e249c439ed7697df2a4b045d97d4b9b7e1854c3ff8dd668c779013653913572e');
+        $this->hmacObj->setPrivateKey($resultSet['resultSet'][0]['sf_private_key_value']);
         $this->hmacObj->setRequestParams($this->getRequestParamsWithoutPublicKey());
         $this->hmacObj->makeHmac();
         //print_r($this->hmacObj);
@@ -165,7 +196,6 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             die("Cannot initialize CURL session. Is CURL enabled for your PHP installation?");
         }
         //print_r($this->restApiFullPathUrl.'?'.$preparedParams);
-        //print_r($this->endPointUrl.$this->getEndPointFunction().'?'.$preparedParams);
         curl_setopt($ch, CURLOPT_URL, $this->restApiFullPathUrl . '?' . $preparedParams); //Url together with parameters
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Return data instead printing directly in Browser
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->getCallTimeOut()); //Timeout (Default 7 seconds)
