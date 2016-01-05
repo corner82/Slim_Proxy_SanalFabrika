@@ -281,6 +281,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
+        else if (substr($endPointFunction, -14) == '_blLoginLogout') {
+            $this->setRestApiEndPoint('blLoginLogout.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }
     }
 
      
