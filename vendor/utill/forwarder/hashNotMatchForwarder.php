@@ -12,7 +12,7 @@ namespace vendor\utill\forwarder;
  * hash control and redirection if necessary
  * @author Mustafa Zeynel Dağlı
  */
-class hashNotMatchForwarder extends \vendor\utill\forwarder\abstractForwarder {
+class HashNotMatchForwarder extends \vendor\utill\forwarder\AbstractForwarder {
     
     /**
      * constructor

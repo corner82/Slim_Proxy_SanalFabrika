@@ -12,7 +12,7 @@ namespace vendor\utill\forwarder;
  * hash control and redirection if necessary
  * @author Mustafa Zeynel Dağlı
  */
-class publicNotFoundForwarder extends \vendor\utill\forwarder\abstractForwarder {
+class PublicNotFoundForwarder extends \vendor\utill\forwarder\AbstractForwarder {
     
     /**
      * constructor

@@ -12,7 +12,7 @@ namespace vendor\utill\forwarder;
  * abstract forwarder class
  * @author Mustafa Zeynel Dağlı
  */
-abstract class abstractForwarder {
+abstract class AbstractForwarder {
     
     /**
      * redirectirection

@@ -12,7 +12,7 @@ namespace vendor\utill\forwarder;
  * time expires redirection control class
  * @author Mustafa Zeynel Dağlı
  */
-class timeExpiredForwarder extends \vendor\utill\forwarder\abstractForwarder {
+class TimeExpiredForwarder extends \vendor\utill\forwarder\AbstractForwarder {
     
     /**
      * constructor
