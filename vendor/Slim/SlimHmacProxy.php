@@ -1,4 +1,12 @@
 <?php
+/**
+ * OSTİM TEKNOLOJİ Framework 
+ *
+ * @link      https://github.com/corner82/slim_test for the canonical source repository
+ * @copyright Copyright (c) 2015 OSTİM TEKNOLOJİ (http://www.ostim.com.tr)
+ * @license   
+ */
+
 
 namespace vendor\Slim;
 
@@ -271,14 +279,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          */
         if(empty($resultSet['resultSet'])) $this->privateKeyNotFoundRedirect();
         
-        
-       
-        //print_r($resultSet);
-        if(!empty($resultSet['resultSet'])) {
-            if($resultSet['resultSet'][0]['sf_private_key_value']== null) $this->privateKeyNotFoundRedirect();
-        }
-        
-        
+        /**
+         * if service has to be secure then prepare hash
+         * @author Mustafa Zeynel Dağlı
+         * @since version 0.3 06/01/2016
+         */
         if($this->isServicePkRequired) {
             if(isset($params['pk'])) $this->hmacObj->setPublicKey($params['pk']);
             //$this->hmacObj->setPrivateKey('e249c439ed7697df2a4b045d97d4b9b7e1854c3ff8dd668c779013653913572e');
@@ -299,6 +304,12 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         curl_setopt($ch, CURLOPT_URL, $this->restApiFullPathUrl . '?' . $preparedParams); //Url together with parameters
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Return data instead printing directly in Browser
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->getCallTimeOut()); //Timeout (Default 7 seconds)
+        /**
+         * if service has to be secure then prepare header for security
+         * parameters
+         * @author Mustafa Zeynel Dağlı
+         * @since version 0.3 06/01/2016
+         */
         if($this->isServicePkRequired) {
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'X-Public: ' . $this->hmacObj->getPublicKey() . '',
