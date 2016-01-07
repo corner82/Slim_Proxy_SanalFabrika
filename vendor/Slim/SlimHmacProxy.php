@@ -21,116 +21,115 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'getDynamicForm_test' => 'restApiDefaultCall',
 
         //** leftnavigation ----------------------
-                                    'delete_leftnavigation' => 'restApiDefaultCall',
-                                    'getAll_leftnavigation' => 'restApiDefaultCall',
-                                    'insert_leftnavigation' => 'restApiDefaultCall',
-                                    'update_leftnavigation' => 'restApiDefaultCall',
-                                    'fillGrid_leftnavigation' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_leftnavigation' => 'restApiDefaultCall',
+                                    'pkDelete_leftnavigation' => 'restApiDefaultCall',
+                                    'pkGetAll_leftnavigation' => 'restApiDefaultCall',
+                                    'pkInsert_leftnavigation' => 'restApiDefaultCall',
+                                    'pkUpdate_leftnavigation' => 'restApiDefaultCall',
+                                    'pkFillGrid_leftnavigation' => 'restApiDefaultCall',
+                                    'pkFillGridRowTotalCount_leftnavigation' => 'restApiDefaultCall',
                                     'pkGetLeftMenu_leftnavigation' => 'restApiDefaultCall',
-                                    'getLeftMenuFull_leftnavigation' => 'restApiDefaultCall',
-        
-        
-        
+      
        
         //**---- leftnavigation -------------------
         //** syssectors ----------------------
-                                    'delete_syssectors' => 'restApiDefaultCall',
-                                    'getAll_syssectors' => 'restApiDefaultCall',
-                                    'insert_syssectors' => 'restApiDefaultCall',
-                                    'update_syssectors' => 'restApiDefaultCall',
-                                    'fillGrid_syssectors' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_syssectors' => 'restApiDefaultCall',
+                                    'pkDelete_syssectors' => 'restApiDefaultCall',
+                                    'pkGetAll_syssectors' => 'restApiDefaultCall',
+                                    'pkInsert_syssectors' => 'restApiDefaultCall',
+                                    'pkUpdate_syssectors' => 'restApiDefaultCall',
+                                    'pkFillGrid_syssectors' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_syssectors' => 'restApiDefaultCall',                                    
                                     'fillComboBox_syssectors' => 'restApiDefaultCall',
-                                    'insertLanguageTemplate' => 'restApiDefaultCall',
+                                    'pkInsertLanguageTemplate' => 'restApiDefaultCall',
+                                    'pkFillTextLanguageTemplate' => 'restApiDefaultCall',
         
-         
-        
-                                    
+           
          //**---- syssectors -------------------
         
          //** infoUsers ----------------------
-                                    'delete_infoUsers' => 'restApiDefaultCall',
-                                    'getAll_infoUsers' => 'restApiDefaultCall',
-                                    'insert_infoUsers' => 'restApiDefaultCall',
-                                    'update_infoUsers' => 'restApiDefaultCall',
-                                    'fillGrid_infoUsers' => 'restApiDefaultCall',
+                                    'pkDelete_infoUsers' => 'restApiDefaultCall',
+                                    'pkGetAll_infoUsers' => 'restApiDefaultCall',
+                                    'pkInsert_infoUsers' => 'restApiDefaultCall',
+                                    'pkUpdate_infoUsers' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoUsers' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_infoUsers' => 'restApiDefaultCall',
-                                    'deletedAct_infoUsers' => 'restApiDefaultCall',
+                                    'pkDeletedAct_infoUsers' => 'restApiDefaultCall',
                             
                                     
          //**---- infoUsers -------------------
                                         
          //** syscountrys ----------------------
-                                    'delete_syscountrys' => 'restApiDefaultCall',
-                                    'getAll_syscountrys' => 'restApiDefaultCall',
-                                    'insert_syscountrys' => 'restApiDefaultCall',
-                                    'update_syscountrys' => 'restApiDefaultCall',
-                                    'fillGrid_syscountrys' => 'restApiDefaultCall',
+                                    'pkDelete_syscountrys' => 'restApiDefaultCall',
+                                    'pkGetAll_syscountrys' => 'restApiDefaultCall',
+                                    'pkInsert_syscountrys' => 'restApiDefaultCall',
+                                    'pkUpdate_syscountrys' => 'restApiDefaultCall',
+                                    'pkFillGrid_syscountrys' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_syscountrys' => 'restApiDefaultCall',
                                     'fillComboBox_syscountrys' => 'restApiDefaultCall',
-                                    'insertLanguageTemplate_syscountrys' => 'restApiDefaultCall',
+                                    'pkInsertLanguageTemplate_syscountrys' => 'restApiDefaultCall',
         
      
                                     
          //**---- syscountrys -------------------
         
         //** syscity ----------------------
-                                    'delete_syscity' => 'restApiDefaultCall',
-                                    'getAll_syscity' => 'restApiDefaultCall',
-                                    'insert_syscity' => 'restApiDefaultCall',
-                                    'update_syscity' => 'restApiDefaultCall',
-                                    'fillGrid_syscity' => 'restApiDefaultCall',
+                                    'pkDelete_syscity' => 'restApiDefaultCall',
+                                    'pkGetAll_syscity' => 'restApiDefaultCall',
+                                    'pkInsert_syscity' => 'restApiDefaultCall',
+                                    'pkUpdate_syscity' => 'restApiDefaultCall',
+                                    'pkFillGrid_syscity' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_syscity' => 'restApiDefaultCall',
                                     'fillComboBox_syscity' => 'restApiDefaultCall',   
-                                    'insertLanguageTemplate_syscity' => 'restApiDefaultCall',  
+                                    'pkInsertLanguageTemplate_syscity' => 'restApiDefaultCall',  
         
         
                                     
          //**---- syscity -------------------
          //** syslanguage ----------------------
-                                    'delete_syslanguage' => 'restApiDefaultCall',
-                                    'getAll_syslanguage' => 'restApiDefaultCall',
-                                    'insert_syslanguage' => 'restApiDefaultCall',
-                                    'update_syslanguage' => 'restApiDefaultCall',
-                                    'fillGrid_syslanguage' => 'restApiDefaultCall',
+                                    'pkDelete_syslanguage' => 'restApiDefaultCall',
+                                    'pkGetAll_syslanguage' => 'restApiDefaultCall',
+                                    'pkInsert_syslanguage' => 'restApiDefaultCall',
+                                    'pkUpdate_syslanguage' => 'restApiDefaultCall',
+                                    'pkFillGrid_syslanguage' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_syslanguage' => 'restApiDefaultCall',
                                     'fillComboBox_syslanguage' => 'restApiDefaultCall',    
                                     
          //**---- syslanguage -------------------
           //** sysborough ----------------------
-                                    'delete_sysborough' => 'restApiDefaultCall',
-                                    'getAll_sysborough' => 'restApiDefaultCall',
-                                    'insert_sysborough' => 'restApiDefaultCall',
-                                    'update_sysborough' => 'restApiDefaultCall',
-                                    'fillGrid_sysborough' => 'restApiDefaultCall',
+                                    'pkDelete_sysborough' => 'restApiDefaultCall',
+                                    'pkGetAll_sysborough' => 'restApiDefaultCall',
+                                    'pkInsert_sysborough' => 'restApiDefaultCall',
+                                    'pkUpdate_sysborough' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysborough' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_sysborough' => 'restApiDefaultCall',
                                     'fillComboBox_sysborough' => 'restApiDefaultCall',  
-                                    'insertLanguageTemplate_sysborough' => 'restApiDefaultCall',  
+                                    'pkInsertLanguageTemplate_sysborough' => 'restApiDefaultCall',  
          //**---- sysborough -------------------       
         
            //** sysvillage ----------------------
-                                    'delete_sysvillage' => 'restApiDefaultCall',
-                                    'getAll_sysvillage' => 'restApiDefaultCall',
-                                    'insert_sysvillage' => 'restApiDefaultCall',
-                                    'update_sysvillage' => 'restApiDefaultCall',
-                                    'fillGrid_sysvillage' => 'restApiDefaultCall',
+                                    'pkDelete_sysvillage' => 'restApiDefaultCall',
+                                    'pkGetAll_sysvillage' => 'restApiDefaultCall',
+                                    'pkInsert_sysvillage' => 'restApiDefaultCall',
+                                    'pkUpdate_sysvillage' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysvillage' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_sysvillage' => 'restApiDefaultCall',
                                     'fillComboBox_sysvillage' => 'restApiDefaultCall',  
-                                    'insertLanguageTemplate_sysvillage' => 'restApiDefaultCall',   
+                                    'pkInsertLanguageTemplate_sysvillage' => 'restApiDefaultCall',   
                         
          //**---- sysvillage -------------------   
         
          //** blLoginLogout ----------------------
-                                    'delete_blLoginLogout' => 'restApiDefaultCall',
-                                    'getAll_blLoginLogout' => 'restApiDefaultCall',
-                                    'insert_blLoginLogout' => 'restApiDefaultCall',
-                                    'update_blLoginLogout' => 'restApiDefaultCall',
+                                    'pkDelete_blLoginLogout' => 'restApiDefaultCall',
+                                    'pkGetAll_blLoginLogout' => 'restApiDefaultCall',
+                                    'pkInsert_blLoginLogout' => 'restApiDefaultCall',
+                                    'pkUpdate_blLoginLogout' => 'restApiDefaultCall',
                                     'pkControl_blLoginLogout' => 'restApiDefaultCall',
                                     'pkLoginControl_blLoginLogout' => 'restApiDefaultCall',
-                                    'getPK_blLoginLogout' => 'restApiDefaultCall',  
+                                    'pkGetPK_blLoginLogout' => 'restApiDefaultCall',  
                                     'pkSessionControl_blLoginLogout' => 'restApiDefaultCall',   
+                                    'pkIsThere_blLoginLogout' => 'restApiDefaultCall',   
+                                    'pkAllPkGeneratedFromPrivate_blLoginLogout' => 'restApiDefaultCall',  
                         
+        
          //**---- blLoginLogout -------------------   
         
         
