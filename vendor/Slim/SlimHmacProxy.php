@@ -131,7 +131,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                         
         
          //**---- blLoginLogout -------------------   
-        
+         //** infoFirmProfile ----------------------
+                                    'pkDelete_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmProfile' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkDeletedAct_infoFirmProfile' => 'restApiDefaultCall',
+                                    'fillComboBox_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkInsertLanguageTemplate_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillTextLanguageTemplate_infoFirmProfile' => 'restApiDefaultCall',
+                            
+                                    
+         //**---- infoFirmProfile -------------------
         
     );
 
@@ -386,6 +399,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         }
         else if (substr($endPointFunction, -14) == '_blLoginLogout') {
             $this->setRestApiEndPoint('blLoginLogout.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }
+        else if (substr($endPointFunction, -16) == '_infoFirmProfile') {
+            $this->setRestApiEndPoint('infoFirmProfile.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
