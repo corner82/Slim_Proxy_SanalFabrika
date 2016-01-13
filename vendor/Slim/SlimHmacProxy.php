@@ -156,6 +156,27 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillComboBoxFullRoles_sysAclRoles' => 'restApiDefaultCall',  
         
          //**---- sysAclRoles -------------------  
+         //** sysAclResources ----------------------
+                                    'pkDelete_sysAclResources' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAclResources' => 'restApiDefaultCall',
+                                    'pkInsert_sysAclResources' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAclResources' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclResources' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysAclResources' => 'restApiDefaultCall',
+                                    'pkFillComboBoxMainResources_sysAclResources' => 'restApiDefaultCall',   
+                                    'pkFillComboBoxFullResources_sysAclResources' => 'restApiDefaultCall',  
+     
+         //**---- sysAclResources -------------------  
+       //** sysAclPrivilege ----------------------
+                                    'pkDelete_sysAclPrivilege' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAclPrivilege' => 'restApiDefaultCall',
+                                    'pkInsert_sysAclPrivilege' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAclPrivilege' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclPrivilege' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysAclPrivilege' => 'restApiDefaultCall',                                  
+                                    'pkFillComboBoxFullPrivilege_sysAclPrivilege' => 'restApiDefaultCall',  
+     
+         //**---- sysAclPrivilege -------------------  
         
     );
 
@@ -418,6 +439,14 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }else if (substr($endPointFunction, -12) == '_sysAclRoles') {
             $this->setRestApiEndPoint('sysaclroles.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }else if (substr($endPointFunction, -16) == '_sysAclResources') {
+            $this->setRestApiEndPoint('sysaclresources.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }else if (substr($endPointFunction, -16) == '_sysAclPrivilege') {
+            $this->setRestApiEndPoint('sysaclprivilege.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
