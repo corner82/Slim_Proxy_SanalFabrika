@@ -338,7 +338,9 @@ namespace vendor\Proxy;
     protected function setRestApiEndPointFunction($restApiEndpointFunction = '') {
         $requestParams = $this->getRequestParams();
         //print_r($requestParams);
-        $this->restApiEndPointFunction = $requestParams['url'];
+        if(isset($requestParams['url'])) {
+            $this->restApiEndPointFunction = $requestParams['url'];
+        }
     }
     
     /**
