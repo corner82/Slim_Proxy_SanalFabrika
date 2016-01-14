@@ -294,6 +294,7 @@ abstract class AbstractProxy{
      */
     public function setRequestParamsWithoutPublicKey () {
         if(!empty($this->requestParams)) {
+            $this->trimRequestParams(); 
             $this->requestParamsWithoutPublicKey = $this->requestParams;
             $this->removePublicKeyParam();
         }
@@ -315,9 +316,25 @@ abstract class AbstractProxy{
                     $this->requestParams = $_POST;
                     break;
             }
+            $this->trimRequestParams();
             $this->requestParamsWithoutPublicKey = $this->requestParams;
             $this->removePublicKeyParam();
         }
+    }
+    
+    /**
+     * trim all request params
+     * @return array
+     * @author Mustafa Zeynel Dağlı
+     * @since 13/01/2016
+     */
+    protected function trimRequestParams() {
+        if(!empty($this->requestParams)) {
+            foreach ($this->requestParams as $key => $value) {
+                $this->requestParams[$key] = trim($value);
+            }
+        }
+        return $this->requestParams;
     }
     
     /**
