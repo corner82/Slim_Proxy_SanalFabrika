@@ -324,9 +324,11 @@ abstract class AbstractProxy{
     
     /**
      * trim all request params
+     * bugfix : when not trimmed parameter was causing hash not match
      * @return array
      * @author Mustafa Zeynel Dağlı
      * @since 13/01/2016
+     * 
      */
     protected function trimRequestParams() {
         if(!empty($this->requestParams)) {
