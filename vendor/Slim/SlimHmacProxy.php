@@ -177,7 +177,18 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillGridRowTotalCount_sysAclPrivilege' => 'restApiDefaultCall',                                  
                                     'pkFillComboBoxFullPrivilege_sysAclPrivilege' => 'restApiDefaultCall',  
      
-         //**---- sysAclPrivilege -------------------  
+         //**---- sysAclPrivilege ------------------- 
+            //** SysAclRrpMap ----------------------
+                                    'pkDelete_sysAclRrpMap' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAclRrpMap' => 'restApiDefaultCall',
+                                    'pkInsert_sysAclRrpMap' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAclRrpMap' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclRrpMap' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysAclRrpMap' => 'restApiDefaultCall',                                  
+                                    'pkFillRrpMap_sysAclRrpMap' => 'restApiDefaultCall',  
+     
+         //**---- SysAclRrpMap -------------------    
+        
         
     );
 
@@ -450,14 +461,17 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysaclprivilege.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }else if (substr($endPointFunction, -13) == '_sysAclRrpMap') {
+            $this->setRestApiEndPoint('sysAclRrpMap.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
         
         
        
     }
 
-     
-    
+   
     
     /**
      * set Hmac object for HMAC security
