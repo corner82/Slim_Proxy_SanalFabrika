@@ -237,7 +237,17 @@ namespace vendor\Proxy;
      * @since version 0.3
      */
      public function servicePkTempRequired() {
-         
+         if($this->isServicePkTempRequired==null) {
+             $params = $this->getRequestParams();
+             if(substr(trim($params['url']),0,6) == 'pktemp') {
+                $this->isServicePkTempRequired = true;
+                return $this->isServicePkTempRequired ;
+             }
+             $this->isServicePkTempRequired = false;
+             return $this->isServicePkTempRequired;
+         } else {
+             return $this->isServicePkTempRequired;
+         }
      }
      
     /**
@@ -581,7 +591,7 @@ namespace vendor\Proxy;
      * @since version 0.3
      */
     public function publicKeyTempNotFoundRedirect() {
-        if($this->isServicePkTempRequired && $this->isPublicKeyNotFoundRedirect) {
+        if($this->isServicePkTempRequired && $this->isPublicTempKeyNotFoundRedirect) {
              $forwarder = new \vendor\utill\forwarder\PublicTempNotFoundForwarder();
              $forwarder->redirect();  
          } else {

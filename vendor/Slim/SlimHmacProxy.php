@@ -251,30 +251,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
              return $this->isServicePkRequired;
          }
      }
-     
-     /**
-      * 
-      * @return boolean
-      * @author Mustafa Zeynel Dağlı
-      * @since version 0.3 27/01/2016
-      */
-     public function servicePkTempRequired() {
-         if($this->isServicePkTempRequired==null) {
-             $params = $this->getRequestParams();
-             if(substr(trim($params['url']),0,6) == 'pktemp') {
-                $this->isServicePkTempRequired = true;
-                return $this->isServicePkTempRequired ;
-             }
-             $this->isServicePkTempRequired = false;
-             $this->isServicePkTempRequired;
-         } else {
-             return $this->isServicePkTempRequired;
-         }
-     }
-     
-    
-    
-        
+       
     /**
      * Rest api 'GET' call (Curl lib)
      * function overriden
