@@ -216,12 +216,18 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
      */
     protected $dalObject;
 
+    /**
+     * constructor 
+     */
     public function __construct() {
         parent::__construct();
         $this->hmacObj = new \vendor\hmac\Hmac();
         $this->dalObject = new \vendor\dal\Dal();
     }
 
+    /**
+     * redirect to the service endpoint
+     */
     public function redirect() {
         try {
             $execFunction = $this->resolveRedirectMap();
@@ -300,6 +306,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          * public  key processes wrapper
          * @author Mustafa Zeynel Dağlı
          * @since 0.3 27/01/2016
+         * @todo after detail tests code description will be removed
          */
         $this->publicKeyProcessControler($params);
         
@@ -307,6 +314,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          * public temp key processes wrapper
          * @author Mustafa Zeynel Dağlı
          * @since 0.3 27/01/2016
+         * @todo after detail tests code description will be removed
          */
         $this->publicKeyTempProcessControler($params);
         
@@ -326,6 +334,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          * wrapper for curl header for public key and more
          * @author Mustafa Zeynel Dağlı
          * @since 0.3 27/01/2016
+         * @todo after detail tests code description will be removed
          */
        $ch = $this->setCurlHeaderForPublicKey($ch);  
         
@@ -333,6 +342,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          * wrapper for curl header for public key and more
          * @author Mustafa Zeynel Dağlı
          * @since 0.3 27/01/2016
+         * @todo after detail tests code description will be removed
          */
         $ch = $this->setCurlHeaderForPublicKeyTemp($ch);
         
