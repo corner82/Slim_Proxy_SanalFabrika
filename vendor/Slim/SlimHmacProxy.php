@@ -241,6 +241,26 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
      }
      
      /**
+      * 
+      * @return boolean
+      * @author Mustafa Zeynel Dağlı
+      * @since version 0.3 27/01/2016
+      */
+     public function servicePkTempRequired() {
+         if($this->isServicePkTempRequired== null) {
+             $params = $this->getRequestParams();
+             if(substr(trim($params['url']),0,6) == 'pktemp') {
+                $this->isServicePkTempRequired = true;
+                return $this->isServicePkTempRequired ;
+             }
+             $this->isServicePkTempRequired = false;
+             $this->isServicePkTempRequired;
+         } else {
+             return $this->isServicePkTempRequired;
+         }
+     }
+     
+     /**
      * public key not found process is being evaluated here
      * @author Mustafa Zeynel Dağlı
      * @since version 0.3

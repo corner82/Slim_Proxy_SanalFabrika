@@ -58,11 +58,19 @@ namespace vendor\Proxy;
     
     /**
      * service pk required or not
-     * @var boolean
+     * @var mixed boolean | null
      * @author Mustafa Zeynel Dağlı
      * @since version 0.3
      */
     protected $isServicePkRequired = null;
+    
+    /**
+     * service pk temp required or not
+     * @var mixed boolean | null
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3 27/01/2016
+     */
+    protected $isServicePkTempRequired = null;
     
     /**
      * determine if public key not found
