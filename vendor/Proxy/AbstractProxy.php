@@ -34,6 +34,13 @@ abstract class AbstractProxy{
     protected $requestParamsWithoutPublicKey;
     
     /**
+     * Rest service request params
+     * @var string
+     * @since 0.3 27/01/2016
+     */
+    protected $requestParamsWithoutPublicTempKey;
+    
+    /**
      * Proxy helper class 
      * deprecated now if needed will be used again
      * @var \Proxy\Proxy\AbstractProxyHelper
@@ -288,6 +295,17 @@ abstract class AbstractProxy{
     }
     
     /**
+     * remove public key from request parameters
+     * @author Zeynel Dağlı
+     * @since 0.3 27/01/2016
+     */
+    protected function removePublicKeyTempParam() {
+        if(!empty($this->requestParamsWithoutPublicTempKey)) {
+            if(isset($this->requestParamsWithoutPublicTempKey['pktemp'])) unset($this->requestParamsWithoutPublicTempKey['pktemp']);
+        }
+    }
+    
+    /**
      * set request parameters without public key
      * @author Zeynel Dağlı
      * @since 0.2
@@ -323,6 +341,41 @@ abstract class AbstractProxy{
     }
     
     /**
+     * set request parameters without public key temp
+     * @author Zeynel Dağlı
+     * @since 0.3
+     */
+    public function setRequestParamsWithoutPublicKeyTemp () {
+        if(!empty($this->requestParams)) {
+            $this->trimRequestParams(); 
+            $this->requestParamsWithoutPublicTempKey = $this->requestParams;
+            $this->removePublicKeyTempParam();
+        }
+         else {
+            switch (strtolower(trim($this->getRequestType()))) {
+                case 'get':
+                    $this->requestParams = $_GET;
+                    break;
+                case 'post':
+                    $this->requestParams = $_POST;
+                    break;
+                case 'put':
+                    $this->requestParams = $_PUT;
+                    break;
+                case 'delete':
+                    $this->requestParams = $_DELETE;
+                    break;
+                default:
+                    $this->requestParams = $_POST;
+                    break;
+            }
+            $this->trimRequestParams();
+            $this->requestParamsWithoutPublicTempKey = $this->requestParams;
+            $this->removePublicKeyTempParam();
+        }
+    }
+    
+    /**
      * trim all request params
      * bugfix : when not trimmed parameter was causing hash not match
      * @return array
@@ -348,6 +401,17 @@ abstract class AbstractProxy{
     public function getRequestParamsWithoutPublicKey() {
         $this->requestParamsWithoutPublicKey==null ? $this->setRequestParamsWithoutPublicKey() : true ;
         return $this->requestParamsWithoutPublicKey;
+    }
+    
+    /**
+     * get request parameters without public key temp
+     * @return array | null
+     * @author Zeynel Dağlı 
+     * @version 0.3 27/01/2016
+     */
+    public function getRequestParamsWithoutPublicKeyTemp() {
+        $this->requestParamsWithoutPublicTempKey==null ? $this->setRequestParamsWithoutPublicKeyTemp() : true ;
+        return $this->requestParamsWithoutPublicTempKey;
     }
     
     /**

@@ -259,7 +259,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
       * @since version 0.3 27/01/2016
       */
      public function servicePkTempRequired() {
-         if($this->isServicePkTempRequired== null) {
+         if($this->isServicePkTempRequired==null) {
              $params = $this->getRequestParams();
              if(substr(trim($params['url']),0,6) == 'pktemp') {
                 $this->isServicePkTempRequired = true;
@@ -272,49 +272,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          }
      }
      
-     /**
-     * public key not found process is being evaluated here
-     * @author Mustafa Zeynel Dağlı
-     * @since version 0.3
-     */
-    public function publicKeyNotFoundRedirect() {
-        if($this->isServicePkRequired && $this->isPublicKeyNotFoundRedirect) {
-             $forwarder = new \vendor\utill\forwarder\PublicNotFoundForwarder();
-             $forwarder->redirect();  
-         } else {
-             return true;
-         }
-    }
     
-    /**
-     * private key not found process is being evaluated here
-     * @author Mustafa Zeynel Dağlı
-     * @since version 0.3
-     */
-    public function privateKeyNotFoundRedirect() {
-        if($this->isServicePkRequired && $this->isPrivateKeyNotFoundRedirect) {
-            $forwarder = new \vendor\utill\forwarder\PrivateNotFoundForwarder();
-            $forwarder->redirect();
-        } else {
-            return true;
-        }
-    }
     
-    /**
-     * user not registered process is being evaluated here
-     * inherit classes
-     * @author Mustafa Zeynel Dağlı
-     * @since version 0.3
-     */
-    public function userNotRegisteredRedirect() {
-        if($this->isServicePkRequired && $this->isUserNotRegisteredRedirect) {
-            $forwarder = new \vendor\utill\forwarder\UserNotRegisteredForwarder();
-            $forwarder->redirect();
-        } else {
-            return true;
-        }
-    }
-
+        
     /**
      * Rest api 'GET' call (Curl lib)
      * function overriden
@@ -330,6 +290,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
           $decryptValue = $encrypt->decrypt_times(4, $encryptValue);
           //print_r('??'.$decryptValue.'??'); */
         $this->servicePkRequired();
+        $this->servicePkTempRequired();
         $this->setEncryptClass();
         $params = null;
         $params = $this->getRequestParams();
@@ -342,6 +303,13 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         if(!isset($params['pk']) || $params['pk']==null) $this->publicKeyNotFoundRedirect();
         
         /**
+         * controlling public temp key if public key is necessary for this service and
+         * public temp key not found forwarder is in effect then making forward
+         * @since version 0.3 27/01/2016
+         */
+        if(!isset($params['pktemp']) || $params['pktemp']==null) $this->publicKeyTempNotFoundRedirect();
+        
+        /**
          * getting public key if user registered    
          * @author Mustafa Zeynel Dağlı
          * @since 06/01/2016 version 0.3
@@ -351,37 +319,21 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             if(!isset($resultSet['resultSet'][0]['?column?'])) $this->userNotRegisteredRedirect ();
         }
         
+        /**
+         * public  key processes wrapper
+         * @author Mustafa Zeynel Dağlı
+         * @since 0.3 27/01/2016
+         */
+        $this->publicKeyProcessControler($params);
         
         /**
-         * getting private key due to public key
+         * public temp key processes wrapper
          * @author Mustafa Zeynel Dağlı
-         * @since 05/01/2016 version 0.3
+         * @since 0.3 27/01/2016
          */
-        if(isset($params['pk']) && $this->isServicePkRequired) $resultSet = $this->dalObject->getPrivateKey($params['pk']);
+        $this->publicKeyTempProcessControler($params);
         
-        /**
-         * if not get private key due to public key
-         * forward to private not found
-         * @author Mustafa Zeynel Dağlı
-         * @since 06/01/2016 version 0.3
-         */
-        if(empty($resultSet['resultSet'])) $this->privateKeyNotFoundRedirect();
         
-        /**
-         * if service has to be secure then prepare hash
-         * @author Mustafa Zeynel Dağlı
-         * @since version 0.3 06/01/2016
-         */
-        if($this->isServicePkRequired) {
-            if(isset($params['pk'])) $this->hmacObj->setPublicKey($params['pk']);
-            //$this->hmacObj->setPrivateKey('e249c439ed7697df2a4b045d97d4b9b7e1854c3ff8dd668c779013653913572e');
-            $this->hmacObj->setPrivateKey($resultSet['resultSet'][0]['sf_private_key_value']);
-            $this->hmacObj->setRequestParams($this->getRequestParamsWithoutPublicKey());
-            $this->hmacObj->makeHmac();
-            //print_r($this->hmacObj);
-        }
-        
-
         $preparedParams = $this->prepareGetParams();
         //$preparedParams = $this->prepareGetParams('', array('pk'));
         if (($ch = @curl_init()) == false) {
@@ -392,22 +344,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         curl_setopt($ch, CURLOPT_URL, $this->restApiFullPathUrl . '?' . $preparedParams); //Url together with parameters
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Return data instead printing directly in Browser
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->getCallTimeOut()); //Timeout (Default 7 seconds)
+        
         /**
-         * if service has to be secure then prepare header for security
-         * parameters
+         * wrapper for curl header for public key and more
          * @author Mustafa Zeynel Dağlı
-         * @since version 0.3 06/01/2016
+         * @since 0.3 27/01/2016
          */
-        if($this->isServicePkRequired) {
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                'X-Public: ' . $this->hmacObj->getPublicKey() . '',
-                'X-Hash: ' . $this->hmacObj->getHash() . '',
-                'X-Nonce:' . $this->hmacObj->getNonce(),
-                //'X-IP:'.serialize($_SERVER),
-                'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
-                                ->encrypt('' . time() . ''))  /// replay attack lar için oki
-            ));
-        }
+       $ch = $this->setCurlHeaderForPublicKey($ch);  
+        
+        /**
+         * wrapper for curl header for public key and more
+         * @author Mustafa Zeynel Dağlı
+         * @since 0.3 27/01/2016
+         */
+        $ch = $this->setCurlHeaderForPublicKeyTemp($ch);
         
         /**
          * if request is ssl encrypted consider header options below
@@ -426,6 +376,165 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         }
 
         return $response;
+    }
+    
+    /**
+     * wrapper function for curl header for public keys and more
+     * @author Mustafa Zeynel Dağlı
+     * @version 0.3 27/01/2016
+     */
+    private function setCurlHeaderForPublicKey($ch) {
+        $chLocal = $ch;
+        /**
+         * if service has to be secure then prepare header for security
+         * parameters
+         * @author Mustafa Zeynel Dağlı
+         * @since version 0.3 06/01/2016
+         */
+        if($this->isServicePkRequired) {
+            curl_setopt($chLocal, CURLOPT_HTTPHEADER, array(
+                'X-Public: ' . $this->hmacObj->getPublicKey() . '',
+                'X-Hash: ' . $this->hmacObj->getHash() . '',
+                'X-Nonce:' . $this->hmacObj->getNonce(),
+                //'X-IP:'.serialize($_SERVER),
+                'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
+                                ->encrypt('' . time() . ''))  /// replay attack lar için oki
+            ));
+        }
+        return $chLocal;
+    }
+    
+    /**
+     * wrapper function for curl header for public temp keys and more
+     * @author Mustafa Zeynel Dağlı
+     * @version 0.3 27/01/2016
+     */
+    private function setCurlHeaderForPublicKeyTemp($ch) {
+        $chLocal = $ch;
+        /**
+         * if service has to be secure then prepare header for security
+         * parameters
+         * @author Mustafa Zeynel Dağlı
+         * @since version 0.3 27/01/2016
+         */
+        if($this->isServicePkTempRequired) {
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'X-Public-Temp: ' . $this->hmacObj->getPublicKey() . '',
+                'X-Hash: ' . $this->hmacObj->getHash() . '',
+                'X-Nonce:' . $this->hmacObj->getNonce(),
+                //'X-IP:'.serialize($_SERVER),
+                'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
+                                ->encrypt('' . time() . ''))  /// replay attack lar için oki
+            ));
+        }
+        return $chLocal;
+    }
+
+    /**
+     * public key temp control processes has been wrapped
+     * @param array $params
+     * @return mixed array | null
+     * @throws Exception
+     */
+    private function publicKeyTempProcessControler($params) {
+        if($this->isServicePkTempRequired) {
+            /**
+            * getting private key temp due to public key temp
+            * @author Mustafa Zeynel Dağlı
+            * @since 27/01/2016 version 0.3
+            */
+           if(isset($params['pktemp'])) $resultSetTemp = $this->dalObject->getPrivateKeyTemp($params['pktemp']);
+
+           /**
+            * if not get private temp key due to public temp key
+            * forward to private not found
+            * @author Mustafa Zeynel Dağlı
+            * @since 27/01/2016 version 0.3 
+            */
+           if(empty($resultSetTemp['resultSet'])) $this->privateKeyTempNotFoundRedirect();
+
+
+           /**
+            * if service has to be secure then prepare hash for public and private temp keys
+            * @author Mustafa Zeynel Dağlı
+            * @since version 0.3 27/01/2016
+            */
+            if(!isset($resultSet['resultSet'][0]['sf_private_key_value_temp'])){
+                throw new Exception ('SlimHmacProxy->restApiDefaultCall() method private temp key not found!!');
+            }
+
+            if(!isset($params['pktemp'])) {
+                throw new Exception ('SlimHmacProxy->restApiDefaultCall() method public temp key not found!!');
+            } else {
+                $this->hmacObj->setPublicKey($params['pktemp']);
+            }
+
+            //$this->hmacObj->setPrivateKey('e249c439ed7697df2a4b045d97d4b9b7e1854c3ff8dd668c779013653913572e');
+            $this->hmacObj->setPrivateKey($resultSetTemp['resultSet'][0]['sf_private_key_value_temp']);
+            $this->hmacObj->setRequestParams($this->getRequestParamsWithoutPublicKeyTemp());
+            $this->hmacObj->makeHmac();
+            //print_r($this->hmacObj);
+           
+           return $resultSet;
+        } else {
+            return null;
+        }
+        
+    }
+    
+    /**
+     * public key control processes has been wrapped
+     * @param array $params
+     * @return mixed array | null
+     * @throws Exception
+     * @author Mustafa Zeynel Dağlı
+     * @since 0.3 27/01/2016
+     */
+    private function publicKeyProcessControler($params) {
+        $resultSet;
+        if($this->isServicePkRequired) {
+            /**
+            * getting private key due to public key
+            * @author Mustafa Zeynel Dağlı
+            * @since 05/01/2016 version 0.3
+            */
+           if(isset($params['pk'])) $resultSet = $this->dalObject->getPrivateKey($params['pk']);
+
+           /**
+            * if not get private key due to public key
+            * forward to private not found
+            * @author Mustafa Zeynel Dağlı
+            * @since 06/01/2016 version 0.3
+            */
+           if(empty($resultSet['resultSet'])) $this->privateKeyNotFoundRedirect();
+
+           /**
+            * if service has to be secure then prepare hash for public and private keys
+            * @author Mustafa Zeynel Dağlı
+            * @since version 0.3 06/01/2016
+            */
+            if(!isset($resultSet['resultSet'][0]['sf_private_key_value'])){
+                throw new Exception ('SlimHmacProxy->restApiDefaultCall() method private key not found!!');
+            }
+
+            if(!isset($params['pk'])) {
+                throw new Exception ('SlimHmacProxy->restApiDefaultCall() method public key not found!!');
+            } else {
+                $this->hmacObj->setPublicKey($params['pk']);
+            }
+
+            //$this->hmacObj->setPrivateKey('e249c439ed7697df2a4b045d97d4b9b7e1854c3ff8dd668c779013653913572e');
+            $this->hmacObj->setPrivateKey($resultSet['resultSet'][0]['sf_private_key_value']);
+            $this->hmacObj->setRequestParams($this->getRequestParamsWithoutPublicKey());
+            $this->hmacObj->makeHmac();
+            //print_r($this->hmacObj);
+           
+
+           return $resultSet;
+        } else {
+            return null;
+        }
+        
     }
 
     public function setEndPointByClosure(Array $EndPointClosure = null) {

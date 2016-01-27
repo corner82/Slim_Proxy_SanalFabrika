@@ -10,18 +10,15 @@
 namespace vendor\Proxy;
 
  class Proxy extends \vendor\Proxy\AbstractProxy implements PublicKeyRequiredInterface,
+                                                                    PublicKeyTempRequiredInterface,
                                                                     PublicKeyNotFoundInterface,
+                                                                    PublicKeyTempNotFoundInterface,
                                                                     PrivateKeyNotFoundInterface,
+                                                                    PrivateTempKeyNotFoundInterface,
                                                                     UserNotRegisteredInterface
 {
     
-    /**
-     * determines what will be done if private key not found
-     * @author Mustafa Zeynel Dağlı
-     * @var boolean
-     */
-     protected $privateKeyNotFoundRedirection = true;
-
+    
 
 /**
      * invalid url format redirect url
@@ -81,12 +78,27 @@ namespace vendor\Proxy;
     protected $isPublicKeyNotFoundRedirect = true;
     
     /**
+     * determine if public key not found
+     * @var boolean | null
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3 27/01/2016
+     */
+    protected $isPublicTempKeyNotFoundRedirect = true;
+    
+    /**
      * determine if private key not found
      * @var boolean | null
      * @author Mustafa Zeynel Dağlı
      * @since version 0.3
      */
     protected $isPrivateKeyNotFoundRedirect = true;
+    
+    /**
+     * determines what will be done if private temp key not found
+     * @author Mustafa Zeynel Dağlı
+     * @var boolean
+     */
+     protected $privateKeyTempNotFoundRedirect = true;
     
     /**
      * determine if user not registered
@@ -108,7 +120,12 @@ namespace vendor\Proxy;
      * @since version 0.3
      */
     public function userNotRegisteredRedirect() {
-        
+        if($this->isServicePkRequired && $this->isUserNotRegisteredRedirect) {
+            $forwarder = new \vendor\utill\forwarder\UserNotRegisteredForwarder();
+            $forwarder->redirect();
+        } else {
+            return true;
+        }
     }
     
     /**
@@ -129,6 +146,21 @@ namespace vendor\Proxy;
      */
     public function setUserNotRegisteredRedirect($boolean = null) {
         $this->isUserNotRegisteredRedirect = $boolean;
+    }
+    
+    /**
+     * private key not found process function, will be overridden by
+     * inherit classes
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3
+     */
+    public function privateKeyNotFoundRedirect() {
+        if($this->isServicePkRequired && $this->isPrivateKeyNotFoundRedirect) {
+            $forwarder = new \vendor\utill\forwarder\PrivateNotFoundForwarder();
+            $forwarder->redirect();
+        } else {
+            return true;
+        }
     }
 
     /**
@@ -151,16 +183,7 @@ namespace vendor\Proxy;
         $this->isPrivateKeyNotFoundRedirect = $boolean;
     }
     
-    /**
-     * public key not found process function, will be overridden by
-     * inherit classes
-     * @author Mustafa Zeynel Dağlı
-     * @since version 0.3
-     */
-    public function privateKeyNotFoundRedirect() {
-        
-    }
-
+    
     /**
      * public key not found process function, will be overridden by
      * inherit classes
@@ -168,7 +191,12 @@ namespace vendor\Proxy;
      * @since version 0.3
      */
     public function publicKeyNotFoundRedirect() {
-        
+         if($this->isServicePkRequired && $this->isPublicTempKeyNotFoundRedirect) {
+             $forwarder = new \vendor\utill\forwarder\PublicNotFoundForwarder();
+             $forwarder->redirect();  
+         } else {
+             return true;
+         }
     }
     
     /**
@@ -201,27 +229,52 @@ namespace vendor\Proxy;
      public function servicePkRequired() {
          
      }
-
-    /**
-     * set variable for private key not found strategy
-     * @param type $boolean
+     
+     /**
+     * determine if service needs private key temp and public key temp
+     * interragation
      * @author Mustafa Zeynel Dağlı
-     * @since 05/01/2016 
+     * @since version 0.3
      */
-    protected function setPrivateKeyNotFoundRedirection($boolean) {
-        $this->privateKeyNotFoundRedirection = $boolean;
+     public function servicePkTempRequired() {
+         
+     }
+     
+    /**
+     * public key temp not found process function, will be overridden by
+     * inherit classes
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3 27/01/2016
+     */
+    public function privateKeyTempNotFoundRedirect() {
+        if($this->isServicePkTempRequired && $this->privateKeyTempNotFoundRedirect) {
+            $forwarder = new \vendor\utill\forwarder\PrivateTempNotFoundForwarder();
+            $forwarder->redirect();
+        } else {
+            return true;
+        }
     }
     
     /**
-     * get variable for private key not found strategy
+     * get variable for private key temp not found strategy
      * @return boolean
      * @author Mustafa Zeynel Dağlı
-     * @since 05/01/2016
+     * @since 27/01/2016
      */
-    protected function getPrivateKeyNotFoundRedirection() {
-        return $this->privateKeyNotFoundRedirection;
+    public function getPrivateKeyTempNotFoundRedirect() {
+        return $this->privateKeyTempNotFoundRedirect;
     }
-
+    
+    /**
+     * set variable for private key temp not found strategy
+     * @param type $boolean
+     * @author Mustafa Zeynel Dağlı
+     * @since 27/01/2016  
+     */
+    public function setPrivateKeyTempNotFoundRedirect($boolean = null) {
+        $this->privateKeyNotFoundRedirection = $boolean;
+    }
+    
     /**
      * set invalid call format redirect function
      * @param type $invalidCallFunc
@@ -520,6 +573,40 @@ namespace vendor\Proxy;
         }
  
         return $response;
+    }
+    
+    /**
+     * public key temp not found process is being evaluated here
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3
+     */
+    public function publicKeyTempNotFoundRedirect() {
+        if($this->isServicePkTempRequired && $this->isPublicKeyNotFoundRedirect) {
+             $forwarder = new \vendor\utill\forwarder\PublicTempNotFoundForwarder();
+             $forwarder->redirect();  
+         } else {
+             return true;
+         }
+    }
+    
+    /**
+     * set variable for public key temp not found strategy
+     * @param type $boolean
+     * @author Mustafa Zeynel Dağlı
+     * @since 27/01/2016  
+     */
+    public function getPublicKeyTempNotFoundRedirect() {
+        return $this->isPublicTempKeyNotFoundRedirect;
+    }
+
+    /**
+     * get variable for public key temp not found strategy
+     * @return boolean
+     * @author Mustafa Zeynel Dağlı
+     * @since 27/01/2016
+     */
+    public function setPublicKeyTempNotFoundRedirect($boolean = null) {
+        $this->isPublicTempKeyNotFoundRedirect = $boolean;
     }
 
 }

@@ -103,4 +103,44 @@ class Dal {
             return array("found" => false, "errorInfo" => $e->getMessage());
         }
     }
+    
+    /**
+     * get private key temp due to public key temp
+     * @param string $publicKey
+     * @return type
+     * @throws \PDOException
+     * @author Mustafa Zeynel Dağlı
+     * @since 27/01/2016
+     */
+    public function getPrivateKeyTemp($publicKeyTemp) {
+        try {
+            $pdo = $this->getPdo();
+            
+            $sql = "              
+                    SELECT id,pkey,sf_private_key_value_temp FROM (
+                            SELECT id, 	
+                                CRYPT(sf_private_key_value_temp,CONCAT('_J9..',REPLACE('".$publicKeyTemp."','*','/'))) = CONCAT('_J9..',REPLACE('".$publicKeyTemp."','*','/')) as pkey,	                                
+                                sf_private_key_value_temp
+                            FROM info_users) AS logintable
+                        WHERE pkey = TRUE
+
+                    "; 
+            
+            //print_r($sql);
+            
+            $statement = $pdo->prepare($sql);  
+            $statement->execute();
+            $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+            //print_r($result);
+
+            $errorInfo = $statement->errorInfo();
+            if ($errorInfo[0] != "00000" && $errorInfo[1] != NULL && $errorInfo[2] != NULL)
+                throw new \PDOException($errorInfo[0]);
+            return array("found" => true, "errorInfo" => $errorInfo, "resultSet" => $result);
+        } catch (\PDOException $e /* Exception $e */) {
+            $pdo->rollback();
+            return array("found" => false, "errorInfo" => $e->getMessage());
+        }
+    }
+    
 }

@@ -9,10 +9,10 @@
 namespace vendor\utill\forwarder;
 
 /**
- * public key  control and redirection if necessary
+ * hash control and redirection if necessary
  * @author Mustafa Zeynel Dağlı
  */
-class PublicNotFoundForwarder extends \vendor\utill\forwarder\AbstractForwarder {
+class PrivateTempNotFoundForwarder extends \vendor\utill\forwarder\AbstractForwarder {
     
     /**
      * constructor
@@ -32,7 +32,7 @@ class PublicNotFoundForwarder extends \vendor\utill\forwarder\AbstractForwarder 
         
         ob_end_clean();
         //$ch = curl_init('http://slimRedirect.sanalfabrika.com/index.php/hashNotMatch');
-        $ch = curl_init('http://localhost/slim_Redirect_SanalFabrika/index.php/publicNotFound');
+        $ch = curl_init('http://localhost/slim_Redirect_SanalFabrika/index.php/privateTempNotFound');
         //curl_setopt($ch,CURLOPT_HTTPHEADER,$headers);
         //curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
         //curl_setopt($ch,CURLOPT_POSTFIELDS,$content);
