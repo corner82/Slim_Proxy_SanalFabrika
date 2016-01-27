@@ -49,6 +49,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkDelete_infoUsers' => 'restApiDefaultCall',
                                     'pkGetAll_infoUsers' => 'restApiDefaultCall',
                                     'pkInsert_infoUsers' => 'restApiDefaultCall',
+                                    'tempInsert_infoUsers' => 'restApiDefaultCall',
                                     'pkUpdate_infoUsers' => 'restApiDefaultCall',
                                     'pkFillGrid_infoUsers' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_infoUsers' => 'restApiDefaultCall',
@@ -188,7 +189,18 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillRrpMap_sysAclRrpMap' => 'restApiDefaultCall',  
      
          //**---- SysAclRrpMap -------------------    
+         //** sysSpecificDefinitions ----------------------
+                                    'fillMainDefinitions_sysSpecificDefinitions' => 'restApiDefaultCall',
+                                    'fillFullDefinitions_sysSpecificDefinitions' => 'restApiDefaultCall',
+                                    'fillCommunicationsTypes_sysSpecificDefinitions' => 'restApiDefaultCall',
+                                    'fillBuildingType_sysSpecificDefinitions' => 'restApiDefaultCall',
+                                    'fillOwnershipType_sysSpecificDefinitions' => 'restApiDefaultCall',
+                                    'fillPersonnelTypes_sysSpecificDefinitions' => 'restApiDefaultCall',                                  
+                                   
+     
+         //**---- sysSpecificDefinitions -------------------    
         
+      
         
     );
 
@@ -483,6 +495,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }else if (substr($endPointFunction, -13) == '_sysAclRrpMap') {
             $this->setRestApiEndPoint('sysAclRrpMap.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }  else if (substr($endPointFunction, -23) == '_sysSpecificDefinitions') {
+            $this->setRestApiEndPoint('sysspecificdefinitions.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
