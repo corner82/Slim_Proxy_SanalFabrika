@@ -48,7 +48,7 @@ class Dal {
                             SELECT id, 	
                                 CRYPT(sf_private_key_value,CONCAT('_J9..',REPLACE('".$publicKey."','*','/'))) = CONCAT('_J9..',REPLACE('".$publicKey."','*','/')) as pkey,	                                
                                 sf_private_key_value
-                            FROM info_users) AS logintable
+                            FROM info_users WHERE active=0 AND deleted =0) AS logintable
                         WHERE pkey = TRUE
 
                     "; 
@@ -121,7 +121,7 @@ class Dal {
                             SELECT id, 	
                                 CRYPT(sf_private_key_value_temp,CONCAT('_J9..',REPLACE('".$publicKeyTemp."','*','/'))) = CONCAT('_J9..',REPLACE('".$publicKeyTemp."','*','/')) as pkey,	                                
                                 sf_private_key_value_temp
-                            FROM info_users) AS logintable
+                            FROM info_users WHERE active=0 AND deleted =0) AS logintable
                         WHERE pkey = TRUE
 
                     "; 
