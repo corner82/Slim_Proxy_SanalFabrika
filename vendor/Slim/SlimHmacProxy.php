@@ -199,7 +199,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                    
      
          //**---- sysSpecificDefinitions -------------------    
-         //** infoUsers ----------------------
+         //** infoUsersCommunications ----------------------
                                     'pkDelete_infoUsersCommunications' => 'restApiDefaultCall',
                                     'pkGetAll_infoUsersCommunications' => 'restApiDefaultCall',
                                     'pkInsert_infoUsersCommunications' => 'restApiDefaultCall',
@@ -208,9 +208,19 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillGridRowTotalCount_infoUsersCommunications' => 'restApiDefaultCall',
                                     'pkDeletedAct_infoUsersCommunications' => 'restApiDefaultCall',
                                     'fillUserCommunicationsTypes_infoUsersCommunications' => 'restApiDefaultCall',
-                             
+                                    'fillGridSingular_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'fillGridSingularRowTotalCount_infoUsersCommunications' => 'restApiDefaultCall',                                   
+                                   
+                                    'pkTempInsert_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkTempUpdate_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkTempDeletedAct_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkTempfillUserCommunicationsTypes_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkTempfillGridSingular_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkTempfillGridSingularRowTotalCount_infoUsersCommunications' => 'restApiDefaultCall',
                                     
-         //**---- infoUsers -------------------
+        
+        
+         //**---- infoUsersCommunications -------------------
       
         
     );
