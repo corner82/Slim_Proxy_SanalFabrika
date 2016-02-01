@@ -199,7 +199,18 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                    
      
          //**---- sysSpecificDefinitions -------------------    
-        
+         //** infoUsers ----------------------
+                                    'pkDelete_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkGetAll_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkInsert_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkUpdate_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkDeletedAct_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'fillUserCommunicationsTypes_infoUsersCommunications' => 'restApiDefaultCall',
+                             
+                                    
+         //**---- infoUsers -------------------
       
         
     );
@@ -595,6 +606,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }  else if (substr($endPointFunction, -23) == '_sysSpecificDefinitions') {
             $this->setRestApiEndPoint('sysspecificdefinitions.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        } else if (substr($endPointFunction, -24) == '_infoUsersCommunications') {
+            $this->setRestApiEndPoint('infoUsersCommunications.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
