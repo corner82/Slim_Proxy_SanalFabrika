@@ -211,12 +211,12 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillGridSingular_infoUsersCommunications' => 'restApiDefaultCall',
                                     'fillGridSingularRowTotalCount_infoUsersCommunications' => 'restApiDefaultCall',                                   
                                    
-                                    'pkTempInsert_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'pkTempUpdate_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'pkTempDeletedAct_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'pkTempFillUserCommunicationsTypes_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'pkTempFillGridSingular_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'pkTempFillGridSingularRowTotalCount_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pktempInsert_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pktempUpdate_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pktempDeletedAct_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pktempFillUserCommunicationsTypes_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pktempFillGridSingular_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pktempFillGridSingularRowTotalCount_infoUsersCommunications' => 'restApiDefaultCall',
                                     
         
         
