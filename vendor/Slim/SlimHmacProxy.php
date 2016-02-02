@@ -214,9 +214,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkTempInsert_infoUsersCommunications' => 'restApiDefaultCall',
                                     'pkTempUpdate_infoUsersCommunications' => 'restApiDefaultCall',
                                     'pkTempDeletedAct_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'pkTempfillUserCommunicationsTypes_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'pkTempfillGridSingular_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'pkTempfillGridSingularRowTotalCount_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkTempFillUserCommunicationsTypes_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkTempFillGridSingular_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkTempFillGridSingularRowTotalCount_infoUsersCommunications' => 'restApiDefaultCall',
                                     
         
         
