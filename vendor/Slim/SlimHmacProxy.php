@@ -196,7 +196,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillBuildingType_sysSpecificDefinitions' => 'restApiDefaultCall',
                                     'fillOwnershipType_sysSpecificDefinitions' => 'restApiDefaultCall',
                                     'fillPersonnelTypes_sysSpecificDefinitions' => 'restApiDefaultCall',                                  
-                                   
+                                    'fillAddressTypes_sysSpecificDefinitions' => 'restApiDefaultCall',                                  
+        
      
          //**---- sysSpecificDefinitions -------------------    
          //** infoUsersCommunications ----------------------
