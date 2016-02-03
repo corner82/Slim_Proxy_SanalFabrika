@@ -222,6 +222,29 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
         
          //**---- infoUsersCommunications -------------------
+        
+        //** InfoUsersAddresses ----------------------
+                                    'pkDelete_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pkGetAll_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pkInsert_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pkUpdate_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pkDeletedAct_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'fillUserAddressesTypes_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'fillGridSingular_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'fillGridSingularRowTotalCount_infoUsersAddresses' => 'restApiDefaultCall',                                   
+                                   
+                                    'pktempInsert_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pktempUpdate_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pktempDeletedAct_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pktempFillUserAddressesTypes_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pktempFillGridSingular_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pktempFillGridSingularRowTotalCount_infoUsersAddresses' => 'restApiDefaultCall',                                    
+        
+        
+         //**---- InfoUsersAddresses -------------------
+        
       
         
     );
@@ -621,6 +644,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         } else if (substr($endPointFunction, -24) == '_infoUsersCommunications') {
             $this->setRestApiEndPoint('infoUsersCommunications.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }else if (substr($endPointFunction, -19) == '_infoUsersAddresses') {
+            $this->setRestApiEndPoint('infousersaddresses.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
