@@ -231,7 +231,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillGrid_infoUsersAddresses' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_infoUsersAddresses' => 'restApiDefaultCall',
                                     'pkDeletedAct_infoUsersAddresses' => 'restApiDefaultCall',
-                                    'fillUserAddressesTypes_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pkFillUserAddressesTypes_infoUsersAddresses' => 'restApiDefaultCall',
                                     'fillGridSingular_infoUsersAddresses' => 'restApiDefaultCall',
                                     'fillGridSingularRowTotalCount_infoUsersAddresses' => 'restApiDefaultCall',                                   
                                    
@@ -244,7 +244,23 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
         
          //**---- InfoUsersAddresses -------------------
+         //** BlActivationReport ----------------------
+                                    'pkDelete_blActivationReport' => 'restApiDefaultCall',
+                                    'pkGetAll_blActivationReport' => 'restApiDefaultCall',
+                                    'pkInsert_blActivationReport' => 'restApiDefaultCall',
+                                    'pkUpdate_blActivationReport' => 'restApiDefaultCall',
         
+                                    'pkGetConsultantOperation_blActivationReport' => 'restApiDefaultCall',
+                                    'getAllFirmCount_blActivationReport' => 'restApiDefaultCall',
+                                    'pkGetConsultantFirmCount_blActivationReport' => 'restApiDefaultCall',
+                                    'pkGetConsultantUpDashBoardCount_blActivationReport' => 'restApiDefaultCall',
+                                    'pkGetConsWaitingForConfirm_blActivationReport' => 'restApiDefaultCall',
+                                     
+        
+        
+                        
+        
+         //**---- BlActivationReport -------------------   
       
         
     );
@@ -648,6 +664,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }else if (substr($endPointFunction, -19) == '_infoUsersAddresses') {
             $this->setRestApiEndPoint('infousersaddresses.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }else if (substr($endPointFunction, -19) == '_blActivationReport') {
+            $this->setRestApiEndPoint('blActivationReport.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
