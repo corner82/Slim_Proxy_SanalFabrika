@@ -360,7 +360,8 @@ namespace vendor\Proxy;
     protected function prepareGetParams(array $paramsArray = null,
             array $ignoreParamList = null) {
         $params = null;
-        $paramsArray = $this->getRequestParamsWithoutPublicKey();
+        if($this->isServicePkRequired) $paramsArray = $this->getRequestParamsWithoutPublicKey();
+        if($this->isServicePkTempRequired) $paramsArray = $this->getRequestParamsWithoutPublicKeyTemp();
         if(!empty($ignoreParamList)) {
             foreach($paramsArray as $key=>$value) {
                if(!in_array ($key, $ignoreParamList)) {

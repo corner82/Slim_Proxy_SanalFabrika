@@ -470,7 +470,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         if($this->isServicePkTempRequired) {
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'X-Public-Temp: ' . $this->hmacObj->getPublicKey() . '',
-                'X-Hash: ' . $this->hmacObj->getHash() . '',
+                'X-Hash-Temp: ' . $this->hmacObj->getHash() . '',
                 'X-Nonce:' . $this->hmacObj->getNonce(),
                 //'X-IP:'.serialize($_SERVER),
                 'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
