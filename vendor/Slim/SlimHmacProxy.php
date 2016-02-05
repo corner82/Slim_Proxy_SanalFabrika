@@ -308,7 +308,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
      public function servicePkRequired() {
          if($this->isServicePkRequired == null) {
              $params = $this->getRequestParams();
-             if(substr(trim($params['url']),0,2) == 'pk') {
+             if(substr(trim($params['url']),0,2) == 'pk' && 
+                     substr(trim($params['url']),0,6) != 'pktemp') {
                 $this->isServicePkRequired = true;
                 return $this->isServicePkRequired ;
              }
@@ -492,7 +493,6 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             * @since 27/01/2016 version 0.3
             */
            if(isset($params['pktemp'])) $resultSetTemp = $this->dalObject->getPrivateKeyTemp($params['pktemp']);
-
            /**
             * if not get private temp key due to public temp key
             * forward to private not found
@@ -500,19 +500,16 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             * @since 27/01/2016 version 0.3 
             */
            if(empty($resultSetTemp['resultSet'])) $this->privateKeyTempNotFoundRedirect();
-
-
            /**
             * if service has to be secure then prepare hash for public and private temp keys
             * @author Mustafa Zeynel Dağlı
             * @since version 0.3 27/01/2016
             */
-            if(!isset($resultSet['resultSet'][0]['sf_private_key_value_temp'])){
-                throw new Exception ('SlimHmacProxy->restApiDefaultCall() method private temp key not found!!');
+            if(!isset($resultSetTemp['resultSet'][0]['sf_private_key_value_temp'])){
+                throw new \Exception ('SlimHmacProxy->restApiDefaultCall() method private temp key not found!!');
             }
-
             if(!isset($params['pktemp'])) {
-                throw new Exception ('SlimHmacProxy->restApiDefaultCall() method public temp key not found!!');
+                throw new \Exception ('SlimHmacProxy->restApiDefaultCall() method public temp key not found!!');
             } else {
                 $this->hmacObj->setPublicKey($params['pktemp']);
             }
@@ -523,7 +520,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->hmacObj->makeHmac();
             //print_r($this->hmacObj);
            
-           return $resultSet;
+           return $resultSetTemp;
         } else {
             return null;
         }
