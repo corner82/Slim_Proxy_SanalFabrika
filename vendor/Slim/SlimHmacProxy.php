@@ -441,7 +441,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          * @since version 0.3 06/01/2016
          */
         if($this->isServicePkRequired) {
-            print_r('--isServicePkRequired--');
+            //print_r('--isServicePkRequired--');
             curl_setopt($chLocal, CURLOPT_HTTPHEADER, array(
                 'X-Public: ' . $this->hmacObj->getPublicKey() . '',
                 'X-Hash: ' . $this->hmacObj->getHash() . '',
