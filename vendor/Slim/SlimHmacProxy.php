@@ -256,12 +256,25 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetConsultantUpDashBoardCount_blActivationReport' => 'restApiDefaultCall',
                                     'pkGetConsWaitingForConfirm_blActivationReport' => 'restApiDefaultCall',
                                      
+         
+        
+         //**---- BlActivationReport -------------------   
+      
+        //** sysOsbConsultants ----------------------
+                                    'pkDelete_sysOsbConsultants' => 'restApiDefaultCall',
+                                    'pkGetAll_sysOsbConsultants' => 'restApiDefaultCall',
+                                    'pkInsert_sysOsbConsultants' => 'restApiDefaultCall',
+                                    'pkUpdate_sysOsbConsultants' => 'restApiDefaultCall',
+        
+                                    'pkGetConsPendingFirmProfile_sysOsbConsultants' => 'restApiDefaultCall',
+                                    'pkGetConsPendingFirmProfilertc_sysOsbConsultants' => 'restApiDefaultCall',
+                                    
+                                     
         
         
                         
         
-         //**---- BlActivationReport -------------------   
-      
+         //**---- sysOsbConsultants -------------------   
         
     );
 
@@ -668,7 +681,13 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('blActivationReport.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }else if (substr($endPointFunction, -18) == '_sysOsbConsultants') {
+            $this->setRestApiEndPoint('sysosbconsultants.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
+        
+        
         
         
        
