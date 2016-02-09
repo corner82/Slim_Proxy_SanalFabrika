@@ -232,9 +232,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillGridRowTotalCount_infoUsersAddresses' => 'restApiDefaultCall',
                                     'pkDeletedAct_infoUsersAddresses' => 'restApiDefaultCall',
                                     'pkFillUserAddressesTypes_infoUsersAddresses' => 'restApiDefaultCall',
-                                    'fillGridSingular_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pkfillGridSingular_infoUsersAddresses' => 'restApiDefaultCall',
                                     'fillGridSingularRowTotalCount_infoUsersAddresses' => 'restApiDefaultCall',                                   
-                                   
+                                           
                                     'pktempInsert_infoUsersAddresses' => 'restApiDefaultCall',
                                     'pktempUpdate_infoUsersAddresses' => 'restApiDefaultCall',
                                     'pktempDeletedAct_infoUsersAddresses' => 'restApiDefaultCall',
