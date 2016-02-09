@@ -268,6 +268,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
                                     'pkGetConsPendingFirmProfile_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkGetConsPendingFirmProfilertc_sysOsbConsultants' => 'restApiDefaultCall',
+                                    'pkGetConsConfirmationProcessDetails_sysOsbConsultants' => 'restApiDefaultCall',
                                     
                                      
         
