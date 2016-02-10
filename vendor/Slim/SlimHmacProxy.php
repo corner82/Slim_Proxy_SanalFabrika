@@ -270,12 +270,26 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetConsPendingFirmProfilertc_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkGetConsConfirmationProcessDetails_sysOsbConsultants' => 'restApiDefaultCall',
                                     
-                                     
-        
-        
-                        
+                         
         
          //**---- sysOsbConsultants -------------------   
+        
+         //** sysOperationTypes ----------------------
+                                    'pkDelete_sysOperationTypes' => 'restApiDefaultCall',
+                                    'pkGetAll_sysOperationTypes' => 'restApiDefaultCall',
+                                    'pkInsert_sysOperationTypes' => 'restApiDefaultCall',
+                                    'pkUpdate_sysOperationTypes' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysOperationTypes' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysOperationTypes' => 'restApiDefaultCall',
+                                    
+                                    'fillConsultantOperations_sysOperationTypes' => 'restApiDefaultCall',
+                                   
+        
+         //**---- sysOperationTypes -------------------   
+        
+        
+        
+        
         
     );
 
@@ -684,6 +698,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }else if (substr($endPointFunction, -18) == '_sysOsbConsultants') {
             $this->setRestApiEndPoint('sysosbconsultants.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }else if (substr($endPointFunction, -18) == '_sysOperationTypes') {
+            $this->setRestApiEndPoint('sysOperationTypes.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
