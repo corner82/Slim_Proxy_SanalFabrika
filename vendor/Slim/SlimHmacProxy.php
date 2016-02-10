@@ -282,7 +282,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillGrid_sysOperationTypes' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_sysOperationTypes' => 'restApiDefaultCall',
                                     
-                                    'fillConsultantOperations_sysOperationTypes' => 'restApiDefaultCall',
+                                    'pkFillConsultantOperationsDropDown_sysOperationTypes' => 'restApiDefaultCall',
                                    
         
          //**---- sysOperationTypes -------------------   
