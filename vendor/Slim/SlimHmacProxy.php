@@ -287,6 +287,18 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
          //**---- sysOperationTypes -------------------   
         
+        //** sysOperationTypesTools ----------------------
+                                    'pkDelete_sysOperationTypesTools' => 'restApiDefaultCall',
+                                    'pkGetAll_sysOperationTypesTools' => 'restApiDefaultCall',
+                                    'pkInsert_sysOperationTypesTools' => 'restApiDefaultCall',
+                                    'pkUpdate_sysOperationTypesTools' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysOperationTypesTools' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysOperationTypesTools' => 'restApiDefaultCall',
+                                    
+                                    'pkFillConsultantOperationsToolsDropDown_sysOperationTypesTools' => 'restApiDefaultCall',
+                                   
+        
+         //**---- sysOperationTypesTools -------------------   
         
         
         
@@ -702,6 +714,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }else if (substr($endPointFunction, -18) == '_sysOperationTypes') {
             $this->setRestApiEndPoint('sysOperationTypes.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }else if (substr($endPointFunction, -23) == '_sysOperationTypesTools') {
+            $this->setRestApiEndPoint('sysoperationtypestools.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
