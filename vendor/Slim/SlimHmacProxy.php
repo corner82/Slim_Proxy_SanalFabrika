@@ -300,6 +300,17 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
          //**---- sysOperationTypesTools -------------------   
         
+         
+        //** InfoError ----------------------
+                                    'pkDelete_infoError' => 'restApiDefaultCall',
+                                    'pkGetAll_infoError' => 'restApiDefaultCall',
+                                    'pkInsert_infoError' => 'restApiDefaultCall',
+                                    'pkUpdate_infoError' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoError' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_infoError' => 'restApiDefaultCall',
+
+
+         //**---- InfoError -------------------   
         
         
         
@@ -721,6 +732,12 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
+        else if (substr($endPointFunction, -10) == '_infoError') {
+            $this->setRestApiEndPoint('infoerror.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }
+        
         
         
         
