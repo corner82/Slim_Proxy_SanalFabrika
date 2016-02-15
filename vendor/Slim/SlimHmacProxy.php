@@ -313,7 +313,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
 
          //**---- InfoError -------------------   
         
+         //** SysMachineToolGroups ----------------------
+                                    'pkDelete_sysMachineToolGroups' => 'restApiDefaultCall',
+                                    'pkGetAll_sysMachineToolGroups' => 'restApiDefaultCall',
+                                    'pkInsert_sysMachineToolGroups' => 'restApiDefaultCall',
+                                    'pkUpdate_sysMachineToolGroups' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysMachineToolGroups' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysMachineToolGroups' => 'restApiDefaultCall',
         
+                                    'pkFillMachineToolGroups_sysMachineToolGroups' => 'restApiDefaultCall',
+
+
+         //**---- SysMachineToolGroups -------------------   
+        
+       
         
     );
 
@@ -732,16 +745,16 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysoperationtypestools.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }
-        else if (substr($endPointFunction, -10) == '_infoError') {
+        }else if (substr($endPointFunction, -10) == '_infoError') {
             $this->setRestApiEndPoint('infoerror.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        } else if (substr($endPointFunction, -21) == '_sysMachineToolGroups') {
+            $this->setRestApiEndPoint('sysmachinetoolgroups.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
-        
-        
-        
-        
+         
         
        
     }
