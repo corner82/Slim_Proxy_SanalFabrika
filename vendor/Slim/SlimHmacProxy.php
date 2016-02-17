@@ -328,7 +328,18 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
 
          //**---- SysMachineToolGroups -------------------   
         
-       
+       //** SysMachineTools ----------------------
+                                    'pkDelete_sysMachineTools' => 'restApiDefaultCall',
+                                    'pkGetAll_sysMachineTools' => 'restApiDefaultCall',
+                                    'pkInsert_sysMachineTools' => 'restApiDefaultCall',
+                                    'pkUpdate_sysMachineTools' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysMachineTools' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysMachineTools' => 'restApiDefaultCall',
+        
+                                    
+
+         //**---- SysMachineTools -------------------   
+        
         
     );
 
@@ -753,6 +764,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         } else if (substr($endPointFunction, -21) == '_sysMachineToolGroups') {
             $this->setRestApiEndPoint('sysmachinetoolgroups.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        } else if (substr($endPointFunction, -16) == '_sysMachineTools') {
+            $this->setRestApiEndPoint('sysmachinetools.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }
