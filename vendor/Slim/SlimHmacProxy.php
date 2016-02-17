@@ -339,7 +339,28 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     
 
          //**---- SysMachineTools -------------------   
+         //** sysMachineToolPropertyDefinition ----------------------
+                                    'pkDelete_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
+                                    'pkGetAll_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
+                                    'pkInsert_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
+                                    'pkUpdate_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
         
+                                    'pkFillMachineToolGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
+
+
+         //**---- sysMachineToolPropertyDefinition -------------------   
+         //** SysMachineToolProperties ----------------------
+                                    'pkDelete_sysMachineToolProperties' => 'restApiDefaultCall',
+                                    'pkGetAll_sysMachineToolProperties' => 'restApiDefaultCall',
+                                    'pkInsert_sysMachineToolProperties' => 'restApiDefaultCall',
+                                    'pkUpdate_sysMachineToolProperties' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysMachineToolProperties' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysMachineToolProperties' => 'restApiDefaultCall',
+        
+                                 
+         //**---- SysMachineToolProperties -------------------   
         
     );
 
@@ -770,8 +791,16 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysmachinetools.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }
-         
+        }else if (substr($endPointFunction, -33) == '_sysMachineToolPropertyDefinition') {
+            $this->setRestApiEndPoint('sysmachinetoolpropertydefinition.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }else if (substr($endPointFunction, -25) == '_sysMachineToolProperties') {
+            $this->setRestApiEndPoint('sysmachinetoolproperties.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        } 
+        
         
        
     }
