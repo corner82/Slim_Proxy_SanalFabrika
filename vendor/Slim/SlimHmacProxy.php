@@ -361,7 +361,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
                                  
          //**---- SysMachineToolProperties -------------------   
-           //** SysUnits ----------------------
+        //** SysUnits ----------------------
                                     'pkDelete_sysUnits' => 'restApiDefaultCall',
                                     'pkGetAll_sysUnits' => 'restApiDefaultCall',
                                     'pkInsert_sysUnits' => 'restApiDefaultCall',
@@ -373,7 +373,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
                                  
          //**---- SysUnits -------------------   
+        //** InfoFirmMachineTool ----------------------
+                                    'pkDelete_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    
+                                    'pkFillSingularFirmMachineTools_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkFillSingularFirmMachineToolsRtc_infoFirmMachineTool' => 'restApiDefaultCall',
         
+        
+                                 
+         //**---- InfoFirmMachineTool -------------------   
          
         
     );
@@ -817,7 +830,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysunits.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }  
+        }else if (substr($endPointFunction, -20) == '_infoFirmMachineTool') {
+            $this->setRestApiEndPoint('infofirmmachinetool.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   
         
         
        
