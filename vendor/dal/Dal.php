@@ -45,7 +45,7 @@ class Dal {
             
             $sql = "              
                     SELECT id,pkey,sf_private_key_value FROM (
-                            SELECT COALESCE(NULLIF(root_id, 0),id) as id, 	
+                            SELECT id, 	
                                 CRYPT(sf_private_key_value,CONCAT('_J9..',REPLACE('".$publicKey."','*','/'))) = CONCAT('_J9..',REPLACE('".$publicKey."','*','/')) as pkey,	                                
                                 sf_private_key_value
                             FROM info_users WHERE active=0 AND deleted =0) AS logintable
@@ -118,7 +118,7 @@ class Dal {
             
             $sql = "              
                     SELECT id,pkey,sf_private_key_value_temp FROM (
-                            SELECT COALESCE(NULLIF(root_id, 0),id) as id, 	
+                            SELECT id, 	
                                 CRYPT(sf_private_key_value_temp,CONCAT('_J9..',REPLACE('".$publicKeyTemp."','*','/'))) = CONCAT('_J9..',REPLACE('".$publicKeyTemp."','*','/')) as pkey,	                                
                                 sf_private_key_value_temp
                             FROM info_users WHERE active=0 AND deleted =0) AS logintable
