@@ -361,6 +361,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
                                  
          //**---- SysMachineToolProperties -------------------   
+           //** SysUnits ----------------------
+                                    'pkDelete_sysUnits' => 'restApiDefaultCall',
+                                    'pkGetAll_sysUnits' => 'restApiDefaultCall',
+                                    'pkInsert_sysUnits' => 'restApiDefaultCall',
+                                    'pkUpdate_sysUnits' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysUnits' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysUnits' => 'restApiDefaultCall',
+                                    'pkGetUnits_sysUnits' => 'restApiDefaultCall',
+        
+        
+                                 
+         //**---- SysUnits -------------------   
+        
+         
         
     );
 
@@ -799,13 +813,16 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysmachinetoolproperties.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        } 
+        }else if (substr($endPointFunction, -9) == '_sysUnits') {
+            $this->setRestApiEndPoint('sysunits.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }  
         
         
        
     }
 
-   
     
     /**
      * set Hmac object for HMAC security
