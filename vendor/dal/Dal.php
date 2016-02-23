@@ -22,7 +22,7 @@ class Dal {
      */
     private function getPdo() {
         try {
-            $pdo = new \PDO('pgsql:dbname=ostim_development;host=10.18.2.179;',
+            $pdo = new \PDO('pgsql:dbname=ostim_development;host=localhost;',
                             'postgres',
                             '1Qaaal123');
             return $pdo;
