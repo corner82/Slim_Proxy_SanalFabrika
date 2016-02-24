@@ -383,9 +383,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     
                                     'pkFillSingularFirmMachineTools_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkFillSingularFirmMachineToolsRtc_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkFillUsersFirmMachines_infoFirmMachineTool' => 'restApiDefaultCall',        
+                                    'pkFillUsersFirmMachineProperties_infoFirmMachineTool' => 'restApiDefaultCall',                
         
-        
-                                 
+                                         
          //**---- InfoFirmMachineTool -------------------   
          
         
