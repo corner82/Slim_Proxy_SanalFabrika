@@ -357,9 +357,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkInsert_sysMachineToolProperties' => 'restApiDefaultCall',
                                     'pkUpdate_sysMachineToolProperties' => 'restApiDefaultCall',
                                     'pkFillGrid_sysMachineToolProperties' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysMachineToolProperties' => 'restApiDefaultCall',
+                                    'pkFillMachineToolFullProperties_sysMachineToolProperties' => 'restApiDefaultCall',
         
-                                 
+                                  
+        
          //**---- SysMachineToolProperties -------------------   
         //** SysUnits ----------------------
                                     'pkDelete_sysUnits' => 'restApiDefaultCall',
@@ -369,6 +370,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillGrid_sysUnits' => 'restApiDefaultCall',
                                     'fillGridRowTotalCount_sysUnits' => 'restApiDefaultCall',
                                     'pkGetUnits_sysUnits' => 'restApiDefaultCall',
+                                    'pkFillUnitsTree_sysUnits' => 'restApiDefaultCall',
         
         
                                  
