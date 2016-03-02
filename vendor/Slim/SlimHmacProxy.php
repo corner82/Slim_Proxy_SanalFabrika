@@ -324,6 +324,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillGridRowTotalCount_sysMachineToolGroups' => 'restApiDefaultCall',
         
                                     'pkFillMachineToolGroups_sysMachineToolGroups' => 'restApiDefaultCall',
+                                    'pkFillMachineToolGroupsMachineProperties_sysMachineToolGroups' => 'restApiDefaultCall',
+                                    
 
 
          //**---- SysMachineToolGroups -------------------   
@@ -390,7 +392,18 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
                                          
          //**---- InfoFirmMachineTool -------------------   
-         
+        //** SysNaceCodes ----------------------
+                                    'pkDelete_sysNaceCodes' => 'restApiDefaultCall',
+                                    'pkGetAll_sysNaceCodes' => 'restApiDefaultCall',
+                                    'pkInsert_sysNaceCodes' => 'restApiDefaultCall',
+                                    'pkUpdate_sysNaceCodes' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysNaceCodes' => 'restApiDefaultCall',
+                                    'fillGridRowTotalCount_sysNaceCodes' => 'restApiDefaultCall',
+                                    
+                                    'pkFillNaceCodes_sysNaceCodes' => 'restApiDefaultCall',                                     
+                                         
+        //**---- SysNaceCodes -------------------   
+        
         
     );
 
@@ -837,10 +850,13 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('infofirmmachinetool.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }   
+        } else if (substr($endPointFunction, -13) == '_sysNaceCodes') {
+            $this->setRestApiEndPoint('sysnacecodes.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }    
         
-        
-       
+         
     }
 
     
