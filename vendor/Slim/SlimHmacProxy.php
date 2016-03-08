@@ -405,6 +405,17 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillNaceCodes_sysNaceCodes' => 'restApiDefaultCall',                                     
                                          
         //**---- SysNaceCodes -------------------   
+        //** HstryLogin ----------------------                                    
+                                    'pkGetAll_hstryLogin' => 'restApiDefaultCall',
+                                    'pkInsert_hstryLogin' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_hstryLogin' => 'restApiDefaultCall',
+                                         
+        //**---- HstryLogin -------------------    
+        
+        
+        
+        
+        
         
         
     );
@@ -856,7 +867,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysnacecodes.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }    
+        } else if (substr($endPointFunction, -11) == '_hstryLogin') {
+            $this->setRestApiEndPoint('hstrylogin.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }     
         
          
     }
