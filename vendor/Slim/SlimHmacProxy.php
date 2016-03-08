@@ -412,7 +412,18 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                          
         //**---- HstryLogin -------------------    
         
+         //** BlAdminActivationReport ----------------------
+                                  
+                                    'pkGetAll_blAdminActivationReport' => 'restApiDefaultCall',
+                                    'pkInsert_blAdminActivationReport' => 'restApiDefaultCall',                                  
         
+                                    'pkGetConsultantOperation_blAdminActivationReport' => 'restApiDefaultCall',
+                                    'pkGetAllConsultantFirmCount_blAdminActivationReport' => 'restApiDefaultCall',
+                                    'pkGetUpDashBoardCount_blAdminActivationReport' => 'restApiDefaultCall',
+                                    'pkGetDashBoardHighCharts_blAdminActivationReport' => 'restApiDefaultCall',                                     
+         
+        
+         //**---- BlAdminActivationReport -------------------  
         
         
         
@@ -871,7 +882,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('hstrylogin.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }     
+        } else if (substr($endPointFunction, -24) == '_blAdminActivationReport') {
+            $this->setRestApiEndPoint('bladminactivationreport.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }       
         
          
     }
