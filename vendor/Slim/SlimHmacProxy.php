@@ -451,6 +451,15 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
        
         
         
+        //** LogAdmin ----------------------
+                                  
+                                    'pkGetAll_logAdmin' => 'restApiDefaultCall',
+                                    'pkInsert_logAdmin' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_logAdmin' => 'restApiDefaultCall',
+                                    
+         //**---- LogAdmin -------------------   
+       
+        
         
         
         
@@ -924,7 +933,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('logconsultant.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }         
+        }  else if (substr($endPointFunction, -9) == '_logAdmin') {
+            $this->setRestApiEndPoint('logadmin.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }           
         
          
     }
