@@ -441,6 +441,16 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     
          //**---- logUser -------------------   
        
+         //** LogConsultant ----------------------
+                                  
+                                    'pkGetAll_logConsultant' => 'restApiDefaultCall',
+                                    'pkInsert_logConsultant' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_logConsultant' => 'restApiDefaultCall',
+                                    
+         //**---- LogConsultant -------------------   
+       
+        
+        
         
         
         
@@ -908,6 +918,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }  else if (substr($endPointFunction, -8) == '_logUser') {
             $this->setRestApiEndPoint('loguser.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }  else if (substr($endPointFunction, -14) == '_logConsultant') {
+            $this->setRestApiEndPoint('logconsultant.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }         
