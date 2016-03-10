@@ -426,6 +426,22 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          //**---- BlAdminActivationReport -------------------  
         
         
+       //** LogConnection ----------------------
+                                  
+                                    'pkGetAll_logConnection' => 'restApiDefaultCall',
+                                    'pkInsert_logConnection' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_logConnection' => 'restApiDefaultCall',
+                                    
+         //**---- LogConnection -------------------   
+         //** logUser ----------------------
+                                  
+                                    'pkGetAll_logUser' => 'restApiDefaultCall',
+                                    'pkInsert_logUser' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_logUser' => 'restApiDefaultCall',
+                                    
+         //**---- logUser -------------------   
+       
+        
         
         
         
@@ -886,7 +902,15 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('bladminactivationreport.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }       
+        } else if (substr($endPointFunction, -14) == '_logConnection') {
+            $this->setRestApiEndPoint('logconnection.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }  else if (substr($endPointFunction, -8) == '_logUser') {
+            $this->setRestApiEndPoint('loguser.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }         
         
          
     }
