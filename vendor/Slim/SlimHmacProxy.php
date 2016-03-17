@@ -25,8 +25,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_leftnavigation' => 'restApiDefaultCall',
                                     'pkInsert_leftnavigation' => 'restApiDefaultCall',
                                     'pkUpdate_leftnavigation' => 'restApiDefaultCall',
-                                    'pkFillGrid_leftnavigation' => 'restApiDefaultCall',
-                                    'pkFillGridRowTotalCount_leftnavigation' => 'restApiDefaultCall',
+                                    'pkFillGrid_leftnavigation' => 'restApiDefaultCall',                                    
                                     'pkGetLeftMenu_leftnavigation' => 'restApiDefaultCall',
       
        
@@ -36,8 +35,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_syssectors' => 'restApiDefaultCall',
                                     'pkInsert_syssectors' => 'restApiDefaultCall',
                                     'pkUpdate_syssectors' => 'restApiDefaultCall',
-                                    'pkFillGrid_syssectors' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_syssectors' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_syssectors' => 'restApiDefaultCall',                                    
                                     'fillComboBox_syssectors' => 'restApiDefaultCall',
                                     'pkInsertLanguageTemplate' => 'restApiDefaultCall',
                                     'pkFillTextLanguageTemplate' => 'restApiDefaultCall',
@@ -51,8 +49,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkInsert_infoUsers' => 'restApiDefaultCall',
                                     'tempInsert_infoUsers' => 'restApiDefaultCall',
                                     'pkUpdate_infoUsers' => 'restApiDefaultCall',
-                                    'pkFillGrid_infoUsers' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_infoUsers' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoUsers' => 'restApiDefaultCall',                                    
                                     'pkDeletedAct_infoUsers' => 'restApiDefaultCall',
                                     'pktempUpdate_infoUsers' => 'restApiDefaultCall',
                             
@@ -64,8 +61,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_syscountrys' => 'restApiDefaultCall',
                                     'pkInsert_syscountrys' => 'restApiDefaultCall',
                                     'pkUpdate_syscountrys' => 'restApiDefaultCall',
-                                    'pkFillGrid_syscountrys' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_syscountrys' => 'restApiDefaultCall',
+                                    'pkFillGrid_syscountrys' => 'restApiDefaultCall',                                    
                                     'fillComboBox_syscountrys' => 'restApiDefaultCall',
                                     'pkInsertLanguageTemplate_syscountrys' => 'restApiDefaultCall',
         
@@ -78,8 +74,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_syscity' => 'restApiDefaultCall',
                                     'pkInsert_syscity' => 'restApiDefaultCall',
                                     'pkUpdate_syscity' => 'restApiDefaultCall',
-                                    'pkFillGrid_syscity' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_syscity' => 'restApiDefaultCall',
+                                    'pkFillGrid_syscity' => 'restApiDefaultCall',                                    
                                     'fillComboBox_syscity' => 'restApiDefaultCall',   
                                     'pkInsertLanguageTemplate_syscity' => 'restApiDefaultCall',  
         
@@ -91,8 +86,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_syslanguage' => 'restApiDefaultCall',
                                     'pkInsert_syslanguage' => 'restApiDefaultCall',
                                     'pkUpdate_syslanguage' => 'restApiDefaultCall',
-                                    'pkFillGrid_syslanguage' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_syslanguage' => 'restApiDefaultCall',
+                                    'pkFillGrid_syslanguage' => 'restApiDefaultCall',                                    
                                     'fillComboBox_syslanguage' => 'restApiDefaultCall',    
                                     
          //**---- syslanguage -------------------
@@ -101,8 +95,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_sysborough' => 'restApiDefaultCall',
                                     'pkInsert_sysborough' => 'restApiDefaultCall',
                                     'pkUpdate_sysborough' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysborough' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysborough' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysborough' => 'restApiDefaultCall',                                    
                                     'fillComboBox_sysborough' => 'restApiDefaultCall',  
                                     'pkInsertLanguageTemplate_sysborough' => 'restApiDefaultCall',  
          //**---- sysborough -------------------       
@@ -112,8 +105,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_sysvillage' => 'restApiDefaultCall',
                                     'pkInsert_sysvillage' => 'restApiDefaultCall',
                                     'pkUpdate_sysvillage' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysvillage' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysvillage' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysvillage' => 'restApiDefaultCall',                                    
                                     'fillComboBox_sysvillage' => 'restApiDefaultCall',  
                                     'pkInsertLanguageTemplate_sysvillage' => 'restApiDefaultCall',   
                         
@@ -138,8 +130,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkInsert_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkUpdate_infoFirmProfile' => 'restApiDefaultCall',
-                                    'pkFillGrid_infoFirmProfile' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmProfile' => 'restApiDefaultCall',                                    
                                     'pkDeletedAct_infoFirmProfile' => 'restApiDefaultCall',
                                     'fillComboBox_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkInsertLanguageTemplate_infoFirmProfile' => 'restApiDefaultCall',
@@ -155,8 +146,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkInsert_sysAclRoles' => 'restApiDefaultCall',
                                     'pkUpdate_sysAclRoles' => 'restApiDefaultCall',
                                     'pkUpdateChild_sysAclRoles' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysAclRoles' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysAclRoles' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclRoles' => 'restApiDefaultCall',                                    
                                     'pkFillComboBoxMainRoles_sysAclRoles' => 'restApiDefaultCall',   
                                     'pkFillComboBoxFullRoles_sysAclRoles' => 'restApiDefaultCall',  
         
@@ -167,7 +157,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkInsert_sysAclResources' => 'restApiDefaultCall',
                                     'pkUpdate_sysAclResources' => 'restApiDefaultCall',
                                     'pkFillGrid_sysAclResources' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysAclResources' => 'restApiDefaultCall',
+
                                     'pkFillComboBoxMainResources_sysAclResources' => 'restApiDefaultCall',   
                                     'pkFillComboBoxFullResources_sysAclResources' => 'restApiDefaultCall',  
      
@@ -177,8 +167,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_sysAclPrivilege' => 'restApiDefaultCall',
                                     'pkInsert_sysAclPrivilege' => 'restApiDefaultCall',
                                     'pkUpdate_sysAclPrivilege' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysAclPrivilege' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysAclPrivilege' => 'restApiDefaultCall',                                  
+                                    'pkFillGrid_sysAclPrivilege' => 'restApiDefaultCall',                                    
                                     'pkFillComboBoxFullPrivilege_sysAclPrivilege' => 'restApiDefaultCall',  
      
          //**---- sysAclPrivilege ------------------- 
@@ -187,8 +176,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_sysAclRrpMap' => 'restApiDefaultCall',
                                     'pkInsert_sysAclRrpMap' => 'restApiDefaultCall',
                                     'pkUpdate_sysAclRrpMap' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysAclRrpMap' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysAclRrpMap' => 'restApiDefaultCall',                                  
+                                    'pkFillGrid_sysAclRrpMap' => 'restApiDefaultCall',                                    
                                     'pkFillRrpMap_sysAclRrpMap' => 'restApiDefaultCall',  
      
          //**---- SysAclRrpMap -------------------    
@@ -208,12 +196,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_infoUsersCommunications' => 'restApiDefaultCall',
                                     'pkInsert_infoUsersCommunications' => 'restApiDefaultCall',
                                     'pkUpdate_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'pkFillGrid_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_infoUsersCommunications' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoUsersCommunications' => 'restApiDefaultCall',                                    
                                     'pkDeletedAct_infoUsersCommunications' => 'restApiDefaultCall',
                                     'fillUserCommunicationsTypes_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'fillGridSingular_infoUsersCommunications' => 'restApiDefaultCall',
-                                    'fillGridSingularRowTotalCount_infoUsersCommunications' => 'restApiDefaultCall',                                   
+                                    'fillGridSingular_infoUsersCommunications' => 'restApiDefaultCall',                                   
                                    
                                     'pktempInsert_infoUsersCommunications' => 'restApiDefaultCall',
                                     'pktempUpdate_infoUsersCommunications' => 'restApiDefaultCall',
@@ -231,12 +217,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_infoUsersAddresses' => 'restApiDefaultCall',
                                     'pkInsert_infoUsersAddresses' => 'restApiDefaultCall',
                                     'pkUpdate_infoUsersAddresses' => 'restApiDefaultCall',
-                                    'pkFillGrid_infoUsersAddresses' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_infoUsersAddresses' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoUsersAddresses' => 'restApiDefaultCall',                                    
                                     'pkDeletedAct_infoUsersAddresses' => 'restApiDefaultCall',
                                     'pkFillUserAddressesTypes_infoUsersAddresses' => 'restApiDefaultCall',
-                                    'pkfillGridSingular_infoUsersAddresses' => 'restApiDefaultCall',
-                                    'fillGridSingularRowTotalCount_infoUsersAddresses' => 'restApiDefaultCall',                                   
+                                    'pkfillGridSingular_infoUsersAddresses' => 'restApiDefaultCall',                                    
                                            
                                     'pktempInsert_infoUsersAddresses' => 'restApiDefaultCall',
                                     'pktempUpdate_infoUsersAddresses' => 'restApiDefaultCall',
@@ -282,8 +266,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_sysOperationTypes' => 'restApiDefaultCall',
                                     'pkInsert_sysOperationTypes' => 'restApiDefaultCall',
                                     'pkUpdate_sysOperationTypes' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysOperationTypes' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysOperationTypes' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysOperationTypes' => 'restApiDefaultCall',                                    
                                     
                                     'pkFillConsultantOperationsDropDown_sysOperationTypes' => 'restApiDefaultCall',
                                    
@@ -295,8 +278,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_sysOperationTypesTools' => 'restApiDefaultCall',
                                     'pkInsert_sysOperationTypesTools' => 'restApiDefaultCall',
                                     'pkUpdate_sysOperationTypesTools' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysOperationTypesTools' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysOperationTypesTools' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysOperationTypesTools' => 'restApiDefaultCall',                                    
                                     
                                     'pkFillConsultantOperationsToolsDropDown_sysOperationTypesTools' => 'restApiDefaultCall',
                                    
@@ -309,8 +291,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_infoError' => 'restApiDefaultCall',
                                     'pkInsert_infoError' => 'restApiDefaultCall',
                                     'pkUpdate_infoError' => 'restApiDefaultCall',
-                                    'pkFillGrid_infoError' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_infoError' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoError' => 'restApiDefaultCall',                                    
 
 
          //**---- InfoError -------------------   
@@ -320,8 +301,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_sysMachineToolGroups' => 'restApiDefaultCall',
                                     'pkInsert_sysMachineToolGroups' => 'restApiDefaultCall',
                                     'pkUpdate_sysMachineToolGroups' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysMachineToolGroups' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysMachineToolGroups' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysMachineToolGroups' => 'restApiDefaultCall',                                    
         
                                     'pkFillMachineToolGroups_sysMachineToolGroups' => 'restApiDefaultCall',
                                     'pkFillJustMachineToolGroups_sysMachineToolGroups' => 'restApiDefaultCall',
@@ -336,8 +316,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_sysMachineTools' => 'restApiDefaultCall',
                                     'pkInsert_sysMachineTools' => 'restApiDefaultCall',
                                     'pkUpdate_sysMachineTools' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysMachineTools' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysMachineTools' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysMachineTools' => 'restApiDefaultCall',                                    
         
                                     
 
@@ -347,8 +326,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkInsert_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkUpdate_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',                                    
         
                                     'pkFillMachineToolGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
 
@@ -366,15 +344,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
          //**---- SysMachineToolProperties -------------------   
         //** SysUnits ----------------------
-                                    'pkDelete_sysUnits' => 'restApiDefaultCall',
-                                    'pkGetAll_sysUnits' => 'restApiDefaultCall',
-                                    'pkInsert_sysUnits' => 'restApiDefaultCall',
-                                    'pkUpdate_sysUnits' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysUnits' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysUnits' => 'restApiDefaultCall',
+                                    
+                                    'pkGetAll_sysUnits' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_sysUnits' => 'restApiDefaultCall',                                    
                                     'pkGetUnits_sysUnits' => 'restApiDefaultCall',
-                                    'pkFillUnitsTree_sysUnits' => 'restApiDefaultCall',
-        
+                                    'pkFillUnitsTree_sysUnits' => 'restApiDefaultCall',        
         
                                  
          //**---- SysUnits -------------------   
@@ -383,8 +357,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkInsert_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkUpdate_infoFirmMachineTool' => 'restApiDefaultCall',
-                                    'pkFillGrid_infoFirmMachineTool' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmMachineTool' => 'restApiDefaultCall',                                    
                                     'pkDeletedAct_infoFirmMachineTool' => 'restApiDefaultCall',
                                     
                                     'pkFillSingularFirmMachineTools_infoFirmMachineTool' => 'restApiDefaultCall',
@@ -400,8 +373,6 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkInsert_sysNaceCodes' => 'restApiDefaultCall',
                                     'pkUpdate_sysNaceCodes' => 'restApiDefaultCall',
                                     'pkFillGrid_sysNaceCodes' => 'restApiDefaultCall',
-                                    'fillGridRowTotalCount_sysNaceCodes' => 'restApiDefaultCall',
-                                    
                                     'pkFillNaceCodes_sysNaceCodes' => 'restApiDefaultCall',                                     
                                          
         //**---- SysNaceCodes -------------------   
@@ -459,7 +430,14 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     
          //**---- LogAdmin -------------------   
        
-        
+        //** sysUnspscCodes ----------------------                                    
+                                    'pkGetAll_sysUnspscCodes' => 'restApiDefaultCall',                                   
+                                    
+                                    'pkFillGrid_sysUnspscCodes' => 'restApiDefaultCall',                                    
+                                    'pkGetUnspscCodes_sysUnspscCodes' => 'restApiDefaultCall',
+                                    'pkFillUnspscCodesTree_sysUnspscCodes' => 'restApiDefaultCall',
+         
+         //**---- sysUnspscCodes -------------------   
         
         
         
@@ -937,7 +915,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('logadmin.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }           
+        }  else if (substr($endPointFunction, -15) == '_sysUnspscCodes') {
+            $this->setRestApiEndPoint('sysunspsccodes.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }            
         
          
     }
