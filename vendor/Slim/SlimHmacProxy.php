@@ -138,6 +138,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                             
                                     'pktempInsert_infoFirmProfile' => 'restApiDefaultCall',                               
          
+                                    'fillCompanyListsGuest_infoFirmProfile' => 'restApiDefaultCall',                               
+                                    
+        
                                     
          //**---- infoFirmProfile -------------------
          //** sysAclRoles ----------------------
