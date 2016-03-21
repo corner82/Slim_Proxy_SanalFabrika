@@ -107,6 +107,30 @@ namespace vendor\Proxy;
      * @since version 0.3
      */
     protected $isUserNotRegisteredRedirect = true;
+    
+    /**
+     * determine if insert operations logged
+     * @var mixed boolean
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3 21/03/2016
+     */
+    protected $isInsertOperationLogged = true;
+    
+    /**
+     * determine if update operations logged
+     * @var mixed boolean
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3 21/03/2016
+     */
+    protected $isUpdateOperationLogged = true;
+    
+    /**
+     * determine if delete operations logged
+     * @var mixed boolean
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3 21/03/2016
+     */
+    protected $isDeleteOperationLogged = true;
 
 
     public function __construct() {

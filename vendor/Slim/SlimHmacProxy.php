@@ -577,7 +577,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          * @since 0.3 27/01/2016
          * @todo after detail tests code description will be removed
          */
-        $ch = $this->setCurlHeaderForPublicKey($ch);  
+        $headerForPublicKeyArr = $this->setCurlHeaderForPublicKey($ch);  
         
         /**
          * wrapper for curl header for public key and more
@@ -585,7 +585,16 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          * @since 0.3 27/01/2016
          * @todo after detail tests code description will be removed
          */
-        $ch = $this->setCurlHeaderForPublicKeyTemp($ch);
+        $headerForPublicKeyTempArr = $this->setCurlHeaderForPublicKeyTemp($ch);
+        $curlHeaderArr = array_merge($headerForPublicKeyArr,$headerForPublicKeyTempArr);
+        
+        
+        
+        $headerForLogArr = $this->setCurlHeaderForInsertUpdateDelete();
+        $curlHeaderArr = array_merge($curlHeaderArr,$headerForLogArr);
+        //print_r($headerForLogArr);
+        //print_r($curlHeaderArr);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $curlHeaderArr);
         
         /**
          * if request is ssl encrypted consider header options below
@@ -607,12 +616,46 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
     }
     
     /**
+     * wrapper function for curl header for insert, update , delete operations log
+     * @author Mustafa Zeynel Dağlı
+     * @version 0.3 21/03/2016
+     * @todo after detailed test curl obj will be removed
+     */
+    protected function setCurlHeaderForInsertUpdateDelete() {
+        
+        $logArray = array();
+        if($this->isInsertOperationLogged) {
+            $logArray[] = 'X-InsertOperationLogged : true';
+            //print_r('--isServicePkRequired--');
+            /*curl_setopt($chLocal, CURLOPT_HTTPHEADER, array(
+                'X-Public: ' . $this->hmacObj->getPublicKey() . '',
+                'X-Hash: ' . $this->hmacObj->getHash() . '',
+                'X-Nonce:' . $this->hmacObj->getNonce(),
+                //'X-IP:'.serialize($_SERVER),
+                'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
+                                ->encrypt('' . time() . ''))  /// replay attack lar için oki
+            ));*/
+        }
+        
+        if($this->isDeleteOperationLogged) {
+            $logArray[] = 'X-DeleteOperationLogged : true';
+        }
+        
+        if($this->isUpdateOperationLogged) {
+            $logArray[] = 'X-UpdateOperationLogged : true';
+        }
+        return $logArray;
+    }
+    
+    /**
      * wrapper function for curl header for public keys and more
      * @author Mustafa Zeynel Dağlı
      * @version 0.3 27/01/2016
+     * @todo after detailed test curl obj will be removed
      */
-    private function setCurlHeaderForPublicKey($ch) {
+    protected function setCurlHeaderForPublicKey($ch = null) {
         $chLocal = $ch;
+        $logArray = array();
         /**
          * if service has to be secure then prepare header for security
          * parameters
@@ -621,16 +664,22 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          */
         if($this->isServicePkRequired) {
             //print_r('--isServicePkRequired--');
-            curl_setopt($chLocal, CURLOPT_HTTPHEADER, array(
+            $logArray[] = 'X-Public: ' . $this->hmacObj->getPublicKey() . '';
+            $logArray[] = 'X-Hash: ' . $this->hmacObj->getHash() . '';
+            $logArray[] = 'X-Nonce:' . $this->hmacObj->getNonce();
+            $logArray[] = 'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
+                                                         ->encrypt('' . time() . ''));
+            /*curl_setopt($chLocal, CURLOPT_HTTPHEADER, array(
                 'X-Public: ' . $this->hmacObj->getPublicKey() . '',
                 'X-Hash: ' . $this->hmacObj->getHash() . '',
                 'X-Nonce:' . $this->hmacObj->getNonce(),
                 //'X-IP:'.serialize($_SERVER),
                 'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
                                 ->encrypt('' . time() . ''))  /// replay attack lar için oki
-            ));
+            ));*/
         }
-        return $chLocal;
+        return $logArray;
+        //return $chLocal;
     }
     
     /**
@@ -638,25 +687,34 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
      * @author Mustafa Zeynel Dağlı
      * @version 0.3 27/01/2016
      */
-    private function setCurlHeaderForPublicKeyTemp($ch) {
+    protected function setCurlHeaderForPublicKeyTemp($ch = null) {
         $chLocal = $ch;
+        $logArray = array();
         /**
          * if service has to be secure then prepare header for security
          * parameters
          * @author Mustafa Zeynel Dağlı
          * @since version 0.3 27/01/2016
+         * @todo after detailed test curl obj will be removed
          */
         if($this->isServicePkTempRequired) {
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            $logArray[] = 'X-Public-Temp: ' . $this->hmacObj->getPublicKey() . '';
+            $logArray[] = 'X-Hash-Temp: ' . $this->hmacObj->getHash() . '';
+            $logArray[] = 'X-Nonce:' . $this->hmacObj->getNonce();
+            $logArray[] = 'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
+                                                         ->encrypt('' . time() . ''));
+            
+            /*curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'X-Public-Temp: ' . $this->hmacObj->getPublicKey() . '',
                 'X-Hash-Temp: ' . $this->hmacObj->getHash() . '',
                 'X-Nonce:' . $this->hmacObj->getNonce(),
                 //'X-IP:'.serialize($_SERVER),
                 'X-TimeStamp:' . $this->hmacObj->setTimeStamp($this->encryptClass
                                 ->encrypt('' . time() . ''))  /// replay attack lar için oki
-            ));
+            ));*/
         }
-        return $chLocal;
+        return $logArray;
+        //return $chLocal;
     }
 
     /**
