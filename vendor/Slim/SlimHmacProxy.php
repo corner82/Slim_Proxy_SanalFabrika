@@ -404,13 +404,13 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillGrid_logConnection' => 'restApiDefaultCall',
                                     
          //**---- LogConnection -------------------   
-         //** logUser ----------------------
-                                  
-                                    'pkGetAll_logUser' => 'restApiDefaultCall',
-                                    'pkInsert_logUser' => 'restApiDefaultCall',                                    
-                                    'pkFillGrid_logUser' => 'restApiDefaultCall',
+         //** logServices ----------------------
+                                   
+                                    'pkGetAll_logServices' => 'restApiDefaultCall',
+                                    'pkInsert_logServices' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_logServices' => 'restApiDefaultCall',
                                     
-         //**---- logUser -------------------   
+         //**---- logServices -------------------   
        
          //** LogConsultant ----------------------
                                   
@@ -961,8 +961,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('logconnection.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }  else if (substr($endPointFunction, -8) == '_logUser') {
-            $this->setRestApiEndPoint('loguser.php/');
+        }  else if (substr($endPointFunction, -12) == '_logServices') {
+            $this->setRestApiEndPoint('logservices.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }  else if (substr($endPointFunction, -14) == '_logConsultant') {
