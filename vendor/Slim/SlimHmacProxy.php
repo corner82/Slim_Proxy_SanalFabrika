@@ -136,10 +136,12 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkInsertLanguageTemplate_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkFillTextLanguageTemplate_infoFirmProfile' => 'restApiDefaultCall',
                             
-                                    'pktempInsert_infoFirmProfile' => 'restApiDefaultCall',                               
-         
-                                    'fillCompanyListsGuest_infoFirmProfile' => 'restApiDefaultCall',                               
-                                    
+                                    'pktempInsert_infoFirmProfile' => 'restApiDefaultCall',
+                                    'fillCompanyListsGuest_infoFirmProfile' => 'restApiDefaultCall',
+                                    'fillCompanyInfoEmployeesGuest_infoFirmProfile' => 'restApiDefaultCall',
+                                    'fillCompanyInfoSocialediaGuest_infoFirmProfile' => 'restApiDefaultCall',
+                                    'fillCompanyInfoReferencesGuest_infoFirmProfile' => 'restApiDefaultCall',
+                                    'fillCompanyInfoCustomersGuest_infoFirmProfile' => 'restApiDefaultCall',                                                   
         
                                     
          //**---- infoFirmProfile -------------------
