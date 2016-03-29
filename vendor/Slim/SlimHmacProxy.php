@@ -29,6 +29,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetLeftMenu_leftnavigation' => 'restApiDefaultCall',
                                     'pkFillGridForAdmin_leftnavigation' => 'restApiDefaultCall',
                                     'pkFillForAdminTree_leftnavigation' => 'restApiDefaultCall',
+                                    'pkMakeActiveOrPassive_leftnavigation' => 'restApiDefaultCall',        
         
       
        
