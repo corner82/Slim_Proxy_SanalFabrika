@@ -448,7 +448,15 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillUnspscCodesTree_sysUnspscCodes' => 'restApiDefaultCall',
          
          //**---- sysUnspscCodes -------------------   
-        
+        //** SysCertifications ----------------------
+                                    'pkDelete_sysCertifications' => 'restApiDefaultCall',
+                                    'pkGetAll_sysCertifications' => 'restApiDefaultCall',
+                                    'pkInsert_sysCertifications' => 'restApiDefaultCall',
+                                    'pkUpdate_sysCertifications' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysCertifications' => 'restApiDefaultCall',
+                                    'pkFillNaceCodes_sysCertifications' => 'restApiDefaultCall',                                     
+                                         
+        //**---- SysCertifications -------------------    
         
         
         
@@ -985,6 +993,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }  else if (substr($endPointFunction, -15) == '_sysUnspscCodes') {
             $this->setRestApiEndPoint('sysunspsccodes.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }  else if (substr($endPointFunction, -18) == '_sysCertifications') {
+            $this->setRestApiEndPoint('syscertifications.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }            
