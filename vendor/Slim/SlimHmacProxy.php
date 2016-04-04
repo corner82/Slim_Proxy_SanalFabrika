@@ -316,7 +316,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillMachineToolGroups_sysMachineToolGroups' => 'restApiDefaultCall',
                                     'pkFillJustMachineToolGroups_sysMachineToolGroups' => 'restApiDefaultCall',
                                     'pkFillMachineToolGroupsMachineProperties_sysMachineToolGroups' => 'restApiDefaultCall',
+                                    'pkFillJustMachineToolGroupsBootstrap_sysMachineToolGroups' => 'restApiDefaultCall',
                                     
+        
 
 
          //**---- SysMachineToolGroups -------------------   
