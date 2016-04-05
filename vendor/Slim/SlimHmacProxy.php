@@ -364,6 +364,21 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
                                  
          //**---- SysUnits -------------------   
+         
+        //** sysUnitSystems ----------------------
+                                    'pkDelete_sysUnitSystems' => 'restApiDefaultCall',                                    
+                                    'pkInsert_sysUnitSystems' => 'restApiDefaultCall',
+                                    'pkUpdate_sysUnitSystems' => 'restApiDefaultCall',
+                                    'pkGetAll_sysUnitSystems' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_sysUnitSystems' => 'restApiDefaultCall',                                    
+                                    'pkGetUnitSystems_sysUnitSystems' => 'restApiDefaultCall',
+                                    'pkFillUnitSystemsTree_sysUnitSystems' => 'restApiDefaultCall',        
+        
+                                 
+         //**---- sysUnitSystems -------------------   
+        
+
+        
         //** InfoFirmMachineTool ----------------------
                                     'pkDelete_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkGetAll_infoFirmMachineTool' => 'restApiDefaultCall',
@@ -1001,7 +1016,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('syscertifications.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }            
+        } else if (substr($endPointFunction, -15) == '_sysUnitSystems') {
+            $this->setRestApiEndPoint('sysunitsystems.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }              
         
          
     }
