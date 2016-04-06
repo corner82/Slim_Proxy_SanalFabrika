@@ -356,7 +356,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
          //**---- SysMachineToolProperties -------------------   
         //** SysUnits ----------------------
-                                    
+                                    'pkDelete_sysUnits' => 'restApiDefaultCall',                                    
+                                    'pkInsert_sysUnits' => 'restApiDefaultCall',
+                                    'pkUpdate_sysUnits' => 'restApiDefaultCall',
                                     'pkGetAll_sysUnits' => 'restApiDefaultCall',                                    
                                     'pkFillGrid_sysUnits' => 'restApiDefaultCall',                                    
                                     'pkGetUnits_sysUnits' => 'restApiDefaultCall',
@@ -855,7 +857,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
     }
 
-    public function setEndPointByClosure(Array $EndPointClosure = null) {
+    public function setEndPointByClosure(Array $EndPointClosure = null) {       
         $endPointFunction = $this->getRestApiEndPointFunction();
         if (substr($endPointFunction, -5) == '_test') {
             //$this->setEndPointUrl("http://localhost/slim2_test/index.php/");
@@ -972,7 +974,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysmachinetoolproperties.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }else if (substr($endPointFunction, -9) == '_sysUnits') {
+        }else if (substr($endPointFunction, -9) == '_sysUnits') {           
             $this->setRestApiEndPoint('sysunits.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
