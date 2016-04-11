@@ -362,7 +362,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_sysUnits' => 'restApiDefaultCall',                                    
                                     'pkFillGrid_sysUnits' => 'restApiDefaultCall',                                    
                                     'pkGetUnits_sysUnits' => 'restApiDefaultCall',
-                                    'pkFillUnitsTree_sysUnits' => 'restApiDefaultCall',        
+                                    'pkFillUnitsTree_sysUnits' => 'restApiDefaultCall',   
+                                    'pkUpdateMakeActiveOrPassive_sysUnits' => 'restApiDefaultCall',        
         
                                  
          //**---- SysUnits -------------------   
@@ -476,6 +477,19 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillNaceCodes_sysCertifications' => 'restApiDefaultCall',                                     
                                          
         //**---- SysCertifications -------------------    
+        
+        //** InfoFirmReferences ----------------------
+                                    'pkDelete_infoFirmReferences' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmReferences' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmReferences' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmReferences' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmReferences' => 'restApiDefaultCall',
+                                    'pkDeletedAct_infoFirmReferences' => 'restApiDefaultCall',
+                                    'pkFillGridSingular_infoFirmReferences' => 'restApiDefaultCall',
+                                    'pkFillWithReference_infoFirmReferences' => 'restApiDefaultCall',
+                                    'pkFillBeReferenced_infoFirmReferences' => 'restApiDefaultCall',
+        
+         //**---- InfoFirmReferences -------------------
         
         
         
@@ -1022,7 +1036,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysunitsystems.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }              
+        } else if (substr($endPointFunction, -19) == '_infoFirmReferences') {
+            $this->setRestApiEndPoint('infofirmreferences.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }                
         
          
     }
