@@ -147,6 +147,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillCompanyInfoReferencesGuest_infoFirmProfile' => 'restApiDefaultCall',
                                     'fillCompanyInfoCustomersGuest_infoFirmProfile' => 'restApiDefaultCall', 
                                     'fillCompanyInfoProductsGuest_infoFirmProfile' => 'restApiDefaultCall',
+                                    'fillCompanyInfoSectorsGuest_infoFirmProfile' => 'restApiDefaultCall',
         
         
                                     
@@ -390,13 +391,14 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkInsert_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkUpdate_infoFirmMachineTool' => 'restApiDefaultCall',
-                                    'pkFillGrid_infoFirmMachineTool' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkDeletedAct_infoFirmMachineTool' => 'restApiDefaultCall',
                                     
                                     'pkFillSingularFirmMachineTools_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkFillSingularFirmMachineToolsRtc_infoFirmMachineTool' => 'restApiDefaultCall',
-                                    'pkFillUsersFirmMachines_infoFirmMachineTool' => 'restApiDefaultCall',        
-                                    'pkFillUsersFirmMachineProperties_infoFirmMachineTool' => 'restApiDefaultCall',                
+                                    'pkFillUsersFirmMachines_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkFillUsersFirmMachineProperties_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkFillFirmMachineGroupsCounts_infoFirmMachineTool' => 'restApiDefaultCall',                
         
                                          
          //**---- InfoFirmMachineTool -------------------   
