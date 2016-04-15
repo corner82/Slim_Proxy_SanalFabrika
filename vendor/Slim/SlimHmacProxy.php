@@ -134,7 +134,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkInsert_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkUpdate_infoFirmProfile' => 'restApiDefaultCall',
-                                    'pkFillGrid_infoFirmProfile' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkDeletedAct_infoFirmProfile' => 'restApiDefaultCall',
                                     'fillComboBox_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkInsertLanguageTemplate_infoFirmProfile' => 'restApiDefaultCall',
@@ -145,7 +145,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillCompanyInfoEmployeesGuest_infoFirmProfile' => 'restApiDefaultCall',
                                     'fillCompanyInfoSocialediaGuest_infoFirmProfile' => 'restApiDefaultCall',
                                     'fillCompanyInfoReferencesGuest_infoFirmProfile' => 'restApiDefaultCall',
-                                    'fillCompanyInfoCustomersGuest_infoFirmProfile' => 'restApiDefaultCall',                                                   
+                                    'fillCompanyInfoCustomersGuest_infoFirmProfile' => 'restApiDefaultCall', 
+                                    'fillCompanyInfoProductsGuest_infoFirmProfile' => 'restApiDefaultCall',
+        
         
                                     
          //**---- infoFirmProfile -------------------
