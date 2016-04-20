@@ -496,6 +496,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
          //**---- InfoFirmReferences -------------------
         
+         //** SysProductionTypes ----------------------
+                                    'pkDelete_sysProductionTypes' => 'restApiDefaultCall',
+                                    'pkGetAll_sysProductionTypes' => 'restApiDefaultCall',
+                                    'pkInsert_sysProductionTypes' => 'restApiDefaultCall',
+                                    'pkUpdate_sysProductionTypes' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysProductionTypes' => 'restApiDefaultCall',
+                                    'pkFillProductionTypesTree_sysProductionTypes' => 'restApiDefaultCall',   
+                                    'pkUpdateMakeActiveOrPassive_sysProductionTypes' => 'restApiDefaultCall',        
+        
+                                         
+        //**---- SysProductionTypes -------------------    
+        
+        
+        
         
         
     );
@@ -1045,11 +1059,17 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('infofirmreferences.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        } else if (substr($endPointFunction, -19) == '_sysProductionTypes') {
+            $this->setRestApiEndPoint('sysproductiontypes.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }                
         
          
     }
 
+    
+    
     
     /**
      * set Hmac object for HMAC security
