@@ -398,7 +398,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillSingularFirmMachineToolsRtc_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkFillUsersFirmMachines_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkFillUsersFirmMachineProperties_infoFirmMachineTool' => 'restApiDefaultCall',
-                                    'pkFillFirmMachineGroupsCounts_infoFirmMachineTool' => 'restApiDefaultCall',                
+                                    'pkFillFirmMachineGroupsCounts_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkFillUsersFirmMachinesNpk_infoFirmMachineTool' => 'restApiDefaultCall',
+        
         
                                          
          //**---- InfoFirmMachineTool -------------------   
@@ -507,9 +509,31 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
                                          
         //**---- SysProductionTypes -------------------    
+         //** infoFirmUsers ----------------------
+                                    'pkDelete_infoFirmUsers' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmUsers' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmUsers' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmUsers' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmUsers' => 'restApiDefaultCall',
+                                    'pkDeletedAct_infoFirmUsers' => 'restApiDefaultCall',
+                                    
+                                    'pkFillGridSingular_infoFirmUsers' => 'restApiDefaultCall',                                                                        
+                                    'pkFillGridSingularNpk_infoFirmUsers' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_infoFirmUsers' => 'restApiDefaultCall',
+                                        
+         //**---- infoFirmUsers -------------------   
         
-        
-        
+         //** SysMachineToolDefinitionAttribute ----------------------
+                                    'pkDelete_sysMachineToolDefinitionAttribute' => 'restApiDefaultCall',
+                                    'pkGetAll_sysMachineToolDefinitionAttribute' => 'restApiDefaultCall',
+                                    'pkInsert_sysMachineToolDefinitionAttribute' => 'restApiDefaultCall',
+                                    'pkUpdate_sysMachineToolDefinitionAttribute' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysMachineToolDefinitionAttribute' => 'restApiDefaultCall',
+                                    
+                                    'pkFillMachineToolDefinitionsAttributes_sysMachineToolDefinitionAttribute' => 'restApiDefaultCall',   
+                                    'pkUpdateMakeActiveOrPassive_sysMachineToolDefinitionAttribute' => 'restApiDefaultCall',        
+                                                 
+        //**---- SysMachineToolDefinitionAttribute -------------------    
         
         
     );
@@ -1063,7 +1087,15 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysproductiontypes.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }                
+        } else if (substr($endPointFunction, -14) == '_infoFirmUsers') {
+            $this->setRestApiEndPoint('infofirmusers.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }  else if (substr($endPointFunction, -34) == '_sysMachineToolDefinitionAttribute') {
+            $this->setRestApiEndPoint('sysmachinetooldefinitionattribute.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }    
         
          
     }
