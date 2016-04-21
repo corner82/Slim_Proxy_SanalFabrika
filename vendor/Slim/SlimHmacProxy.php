@@ -521,6 +521,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillGridSingular_infoFirmUsers' => 'restApiDefaultCall',                                                                        
                                     'pkFillGridSingularNpk_infoFirmUsers' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_infoFirmUsers' => 'restApiDefaultCall',
+                                    'pkFillUsersSocialMediaNpk_infoFirmUsers' => 'restApiDefaultCall',        
                                         
          //**---- infoFirmUsers -------------------   
         
