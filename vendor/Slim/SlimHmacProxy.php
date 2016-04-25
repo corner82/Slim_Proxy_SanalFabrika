@@ -346,6 +346,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
                                     'pkFillMachineToolGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',        
+                                    'pkFillMachineGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',        
 
 
          //**---- sysMachineToolPropertyDefinition -------------------   
@@ -536,6 +537,23 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkUpdateMakeActiveOrPassive_sysMachineToolDefinitionAttribute' => 'restApiDefaultCall',        
                                                  
         //**---- SysMachineToolDefinitionAttribute -------------------    
+        //** InfoUsersSocialmedia ----------------------
+                                    'pkDelete_infoUsersSocialmedia' => 'restApiDefaultCall',
+                                    'pkGetAll_infoUsersSocialmedia' => 'restApiDefaultCall',
+                                    'pkInsert_infoUsersSocialmedia' => 'restApiDefaultCall',
+                                    'pkUpdate_infoUsersSocialmedia' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoUsersSocialmedia' => 'restApiDefaultCall',
+                                    
+                                    'pkFillSingularUsersSocialMedia_infoUsersSocialmedia' => 'restApiDefaultCall',   
+                                    'pkUpdateMakeActiveOrPassive_infoUsersSocialmedia' => 'restApiDefaultCall',        
+                                    'pkDeletedAct_infoUsersSocialmedia' => 'restApiDefaultCall',
+                                    'pkFillCompanyUsersSocialMediaNpk_infoUsersSocialmedia' => 'restApiDefaultCall',
+        
+        
+        //**---- infoUsersSocialmedia -------------------    
+        
+        
+        
         
         
     );
@@ -1097,7 +1115,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysmachinetooldefinitionattribute.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }    
+        }  else if (substr($endPointFunction, -21) == '_infoUsersSocialmedia') {
+            $this->setRestApiEndPoint('infouserssocialmedia.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }     
         
          
     }
