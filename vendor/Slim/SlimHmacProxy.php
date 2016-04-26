@@ -551,7 +551,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         
         
         //**---- infoUsersSocialmedia -------------------    
+        //** InfoFirmVerbal ----------------------
+                                    'pkDelete_infoFirmVerbal' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmVerbal' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmVerbal' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmVerbal' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmVerbal' => 'restApiDefaultCall',                                    
+                                    
+                                    'pkDeletedAct_infoFirmVerbal' => 'restApiDefaultCall',
+                                    'pkFillUsersFirmVerbalNpk_infoFirmVerbal' => 'restApiDefaultCall',
+                                    'fillUsersFirmVerbalNpkGuest_infoFirmVerbal' => 'restApiDefaultCall',
         
+        
+        
+        //**---- InfoFirmVerbal ------------------- 
         
         
         
@@ -1119,7 +1132,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('infouserssocialmedia.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }     
+        }  else if (substr($endPointFunction, -15) == '_infoFirmVerbal') {
+            $this->setRestApiEndPoint('infofirmverbal.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }      
         
          
     }
