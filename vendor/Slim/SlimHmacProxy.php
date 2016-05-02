@@ -141,6 +141,17 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillTextLanguageTemplate_infoFirmProfile' => 'restApiDefaultCall',
                             
                                     'pktempInsert_infoFirmProfile' => 'restApiDefaultCall',
+        
+                                    'pkFillCompanyLists_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillCompanyInfoEmployees_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillCompanyInfoReferences_infoFirmProfile' => 'restApiDefaultCall',        
+                                    'pkFillCompanyInfoSocialedia_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillCompanyInfoCustomers_infoFirmProfile' => 'restApiDefaultCall', 
+                                    'pkFillCompanyInfoProducts_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillCompanyInfoSectors_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillCompanyInfoBuildingNpk_infoFirmProfile' => 'restApiDefaultCall',
+        
+        
                                     'fillCompanyListsGuest_infoFirmProfile' => 'restApiDefaultCall',
                                     'fillCompanyInfoEmployeesGuest_infoFirmProfile' => 'restApiDefaultCall',
                                     'fillCompanyInfoSocialediaGuest_infoFirmProfile' => 'restApiDefaultCall',
@@ -148,7 +159,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillCompanyInfoCustomersGuest_infoFirmProfile' => 'restApiDefaultCall', 
                                     'fillCompanyInfoProductsGuest_infoFirmProfile' => 'restApiDefaultCall',
                                     'fillCompanyInfoSectorsGuest_infoFirmProfile' => 'restApiDefaultCall',
-                                    'pkFillCompanyInfoBuildingNpk_infoFirmProfile' => 'restApiDefaultCall',
+                                    
         
         
                                     
@@ -347,7 +358,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillMachineToolGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',        
                                     'pkFillMachineGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',        
-
+                                    'pkDeletePropertyMachineGroup_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
 
          //**---- sysMachineToolPropertyDefinition -------------------   
          //** SysMachineToolProperties ----------------------
