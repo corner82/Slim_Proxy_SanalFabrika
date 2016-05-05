@@ -332,6 +332,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillJustMachineToolGroups_sysMachineToolGroups' => 'restApiDefaultCall',
                                     'pkFillMachineToolGroupsMachineProperties_sysMachineToolGroups' => 'restApiDefaultCall',
                                     'pkFillJustMachineToolGroupsBootstrap_sysMachineToolGroups' => 'restApiDefaultCall',
+                                    'pkFillJustMachineToolGroupsNotInProperty_sysMachineToolGroups' => 'restApiDefaultCall',
                                     
         
 
@@ -353,13 +354,15 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetAll_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkInsert_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkUpdate_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
-                                    'pkFillGrid_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',                                    
+                                    'pkFillGrid_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
         
                                     'pkFillMachineToolGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',        
-                                    'pkFillMachineGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',        
-                                    'pkDeletePropertyMachineGroup_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
-
+                                    'pkFillMachineGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall', 
+                                    'pkDeletePropertyMachineGroup_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',                                    
+        
+        
+        
          //**---- sysMachineToolPropertyDefinition -------------------   
          //** SysMachineToolProperties ----------------------
                                     'pkDelete_sysMachineToolProperties' => 'restApiDefaultCall',
@@ -586,6 +589,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillUsersDescForFirmVerbalNpkGuest_infoFirmUserDescForCompany' => 'restApiDefaultCall',
         
         //**---- InfoFirmUserDescForCompany ------------------- 
+        
+        //** SysSocialMedia ----------------------
+                                    'pkDelete_sysSocialMedia' => 'restApiDefaultCall',
+                                    'pkGetAll_sysSocialMedia' => 'restApiDefaultCall',
+                                    'pkInsert_sysSocialMedia' => 'restApiDefaultCall',
+                                    'pkUpdate_sysSocialMedia' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysSocialMedia' => 'restApiDefaultCall',                                    
+                                    
+                                    'pkUpdateMakeActiveOrPassive_sysSocialMedia' => 'restApiDefaultCall',        
+                                    'pkFillSocicalMediaDdList_sysSocialMedia' => 'restApiDefaultCall', 
+                                    
+        
+        //**---- SysSocialMedia ------------------- 
+        
         
         
         
@@ -1162,14 +1179,18 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('infofirmuserdescforcompany.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }       
+        }  else if (substr($endPointFunction, -15) == '_sysSocialMedia') {
+            $this->setRestApiEndPoint('syssocialmedia.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }         
         
          
     }
 
     
     
-    
+   
     /**
      * set Hmac object for HMAC security
      * @param \vendor\hmac\Hmac $hmacObj
