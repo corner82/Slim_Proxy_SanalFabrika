@@ -602,9 +602,20 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     
         
         //**---- SysSocialMedia ------------------- 
+          
+        //** InfoFirmSocialmedia ----------------------
+                                    'pkDelete_infoFirmSocialmedia' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmSocialmedia' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmSocialmedia' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmSocialmedia' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmSocialmedia' => 'restApiDefaultCall',
+                                    
+                                    'pkDeletedAct_infoFirmSocialmedia' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_infoFirmSocialmedia' => 'restApiDefaultCall',
+                                    'pkFillSingularFirmSocialMedia_infoFirmSocialmedia' => 'restApiDefaultCall', 
+                                    
         
-        
-        
+        //**---- InfoFirmSocialmedia -------------------  
         
         
         
@@ -1183,7 +1194,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('syssocialmedia.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }         
+        }  else if (substr($endPointFunction, -20) == '_infoFirmSocialmedia') {
+            $this->setRestApiEndPoint('infofirmsocialmedia.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }           
         
          
     }
