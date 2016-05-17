@@ -616,6 +616,29 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     
         
         //**---- InfoFirmSocialmedia -------------------  
+           
+        //** InfoFirmAddress ----------------------
+                                    'pkDelete_infoFirmAddress' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmAddress' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmAddress' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmAddress' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmAddress' => 'restApiDefaultCall',
+                                    
+                                    'pkDeletedAct_infoFirmAddress' => 'restApiDefaultCall',                                    
+                                    'pkFillSingularFirmAddress_infoFirmAddress' => 'restApiDefaultCall', 
+                                    'pkFillUsersFirmAddressNpk_infoFirmAddress' => 'restApiDefaultCall', 
+                                            
+        //**---- InfoFirmAddress -------------------  
+        //** SysManufacturer ----------------------
+                                    'pkDelete_sysManufacturer' => 'restApiDefaultCall',
+                                    'pkGetAll_sysManufacturer' => 'restApiDefaultCall',
+                                    'pkInsert_sysManufacturer' => 'restApiDefaultCall',
+                                    'pkUpdate_sysManufacturer' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysManufacturer' => 'restApiDefaultCall',                                    
+                                    
+                                    'pkUpdateMakeActiveOrPassive_sysManufacturer' => 'restApiDefaultCall',        
+                                    'pkFillManufacturerList_sysManufacturer' => 'restApiDefaultCall', 
+        //**---- SysManufacturer ------------------- 
         
         
         
@@ -1198,7 +1221,15 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('infofirmsocialmedia.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }           
+        }   else if (substr($endPointFunction, -16) == '_infoFirmAddress') {
+            $this->setRestApiEndPoint('infofirmaddress.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -16) == '_sysManufacturer') {
+            $this->setRestApiEndPoint('sysmanufacturer.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }               
         
          
     }
