@@ -640,7 +640,17 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillManufacturerList_sysManufacturer' => 'restApiDefaultCall', 
         //**---- SysManufacturer ------------------- 
         
-        
+                                    'pkDelete_infoFirmProducts' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmProducts' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmProducts' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmProducts' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmProducts' => 'restApiDefaultCall',
+                                    
+                                    'pkDeletedAct_infoFirmProducts' => 'restApiDefaultCall',                                    
+                                    'pkFillFirmProductsNpk_infoFirmProducts' => 'restApiDefaultCall', 
+                                    'pkFillFirmProductsNpkQuest_infoFirmProducts' => 'restApiDefaultCall', 
+                                    'pkFillFirmProductsGtip_infoFirmProducts' => 'restApiDefaultCall', 
+                                            
         
     );
 
@@ -1229,7 +1239,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('sysmanufacturer.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }               
+        }   else if (substr($endPointFunction, -17) == '_infoFirmProducts') {
+            $this->setRestApiEndPoint('infofirmproducts.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }                
         
          
     }
