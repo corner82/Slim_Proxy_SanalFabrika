@@ -160,8 +160,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillCompanyInfoProductsGuest_infoFirmProfile' => 'restApiDefaultCall',
                                     'fillCompanyInfoSectorsGuest_infoFirmProfile' => 'restApiDefaultCall',
                                     
-        
-        
+                                    'pkFillFirmFullVerbal_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkGetFirmProfileConsultant_infoFirmProfile' => 'restApiDefaultCall',
+         
                                     
          //**---- infoFirmProfile -------------------
          //** sysAclRoles ----------------------
@@ -575,6 +576,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkDeletedAct_infoFirmVerbal' => 'restApiDefaultCall',
                                     'pkFillUsersFirmVerbalNpk_infoFirmVerbal' => 'restApiDefaultCall',
                                     'fillUsersFirmVerbalNpkGuest_infoFirmVerbal' => 'restApiDefaultCall',
+                                    'pkGetFirmVerbalConsultant_infoFirmVerbal' => 'restApiDefaultCall',        
+        
         
         //**---- InfoFirmVerbal ------------------- 
         //** InfoFirmUserDescForCompany ----------------------
@@ -640,6 +643,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillManufacturerList_sysManufacturer' => 'restApiDefaultCall', 
         //**---- SysManufacturer ------------------- 
         
+        //** infoFirmProducts ----------------------
                                     'pkDelete_infoFirmProducts' => 'restApiDefaultCall',
                                     'pkGetAll_infoFirmProducts' => 'restApiDefaultCall',
                                     'pkInsert_infoFirmProducts' => 'restApiDefaultCall',
@@ -651,6 +655,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillFirmProductsNpkQuest_infoFirmProducts' => 'restApiDefaultCall', 
                                     'pkFillFirmProductsGtip_infoFirmProducts' => 'restApiDefaultCall', 
                                             
+        //**---- infoFirmProducts -------------------  
         
     );
 
