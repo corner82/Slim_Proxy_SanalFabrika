@@ -577,6 +577,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillUsersFirmVerbalNpk_infoFirmVerbal' => 'restApiDefaultCall',
                                     'fillUsersFirmVerbalNpkGuest_infoFirmVerbal' => 'restApiDefaultCall',
                                     'pkGetFirmVerbalConsultant_infoFirmVerbal' => 'restApiDefaultCall',        
+                                    'sendMailConsultant_infoFirmVerbal' => 'restApiDefaultCall', 
         
         
         //**---- InfoFirmVerbal ------------------- 
@@ -642,6 +643,16 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkUpdateMakeActiveOrPassive_sysManufacturer' => 'restApiDefaultCall',        
                                     'pkFillManufacturerList_sysManufacturer' => 'restApiDefaultCall', 
         //**---- SysManufacturer ------------------- 
+         //** SysMailServer ----------------------
+                                    'pkDelete_sysMailServer' => 'restApiDefaultCall',
+                                    'pkGetAll_sysMailServer' => 'restApiDefaultCall',
+                                    'pkInsert_sysMailServer' => 'restApiDefaultCall',
+                                    'pkUpdate_sysMailServer' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysMailServer' => 'restApiDefaultCall',                                    
+                                    
+                                    'pkUpdateMakeActiveOrPassive_sysMailServer' => 'restApiDefaultCall',        
+                                    'pkFillMailServerList_sysMailServer' => 'restApiDefaultCall', 
+        //**---- SysMailServer ------------------- 
         
         //** infoFirmProducts ----------------------
                                     'pkDelete_infoFirmProducts' => 'restApiDefaultCall',
@@ -1248,7 +1259,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('infofirmproducts.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }                
+        }   else if (substr($endPointFunction, -14) == '_sysMailServer') {
+            $this->setRestApiEndPoint('sysmailserver.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }                   
         
          
     }
