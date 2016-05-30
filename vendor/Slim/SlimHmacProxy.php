@@ -668,7 +668,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillFirmProductsGtip_infoFirmProducts' => 'restApiDefaultCall', 
                                             
         //**---- infoFirmProducts -------------------  
-         //** InfoFirmProductsServices ----------------------
+        //** InfoFirmProductsServices ----------------------
                                     'pkDelete_infoFirmProductsServices' => 'restApiDefaultCall',
                                     'pkGetAll_infoFirmProductsServices' => 'restApiDefaultCall',
                                     'pkInsert_infoFirmProductsServices' => 'restApiDefaultCall',
@@ -681,6 +681,21 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkUpdateMakeActiveOrPassive_infoFirmProductsServices' => 'restApiDefaultCall',        
                                             
         //**---- InfoFirmProductsServices -------------------  
+        //** InfoFirmCertificate ----------------------
+                                    'pkDelete_infoFirmCertificate' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmCertificate' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmCertificate' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmCertificate' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmCertificate' => 'restApiDefaultCall',
+                                    
+                                    'pkDeletedAct_infoFirmCertificate' => 'restApiDefaultCall',                                    
+                                    'pkFillFirmCertificateNpk_infoFirmCertificate' => 'restApiDefaultCall', 
+                                    'FillFirmCertificateNpkQuest_infoFirmCertificate' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoFirmCertificate' => 'restApiDefaultCall',        
+                                            
+        //**---- InfoFirmCertificate -------------------  
+        
+         
         
     );
 
@@ -1281,7 +1296,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('infofirmproductsservices.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }                   
+        }   else if (substr($endPointFunction, -20) == '_infoFirmCertificate') {
+            $this->setRestApiEndPoint('infofirmcertificate.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }                     
         
          
     }
