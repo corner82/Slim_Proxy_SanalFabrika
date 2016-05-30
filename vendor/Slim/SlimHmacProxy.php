@@ -695,6 +695,19 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                             
         //**---- InfoFirmCertificate -------------------  
         
+        //** InfoFirmQuality ----------------------
+                                    'pkDelete_infoFirmQuality' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmQuality' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmQuality' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmQuality' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmQuality' => 'restApiDefaultCall',
+                                    
+                                    'pkDeletedAct_infoFirmQuality' => 'restApiDefaultCall',                                    
+                                    'pkFillFirmQualityCertificateNpk_infoFirmQuality' => 'restApiDefaultCall', 
+                                    'FillFirmQualityCertificateNpkQuest_infoFirmQuality' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoFirmQuality' => 'restApiDefaultCall',        
+                                            
+        //**---- InfoFirmQuality -------------------  
          
         
     );
@@ -1300,7 +1313,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('infofirmcertificate.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }                     
+        }   else if (substr($endPointFunction, -16) == '_infoFirmQuality') {
+            $this->setRestApiEndPoint('infofirmquality.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }                      
         
          
     }
