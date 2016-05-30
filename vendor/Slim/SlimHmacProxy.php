@@ -282,7 +282,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkGetConsPendingFirmProfile_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkGetConsPendingFirmProfilertc_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkGetConsConfirmationProcessDetails_sysOsbConsultants' => 'restApiDefaultCall',
-                                    
+                                    'pkGetAllFirmCons_sysOsbConsultants' => 'restApiDefaultCall',
                          
         
          //**---- sysOsbConsultants -------------------   
@@ -631,6 +631,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkDeletedAct_infoFirmAddress' => 'restApiDefaultCall',                                    
                                     'pkFillSingularFirmAddress_infoFirmAddress' => 'restApiDefaultCall', 
                                     'pkFillUsersFirmAddressNpk_infoFirmAddress' => 'restApiDefaultCall', 
+                                    'FillUsersFirmAddressNpkQuest_infoFirmAddress' => 'restApiDefaultCall', 
                                             
         //**---- InfoFirmAddress -------------------  
         //** SysManufacturer ----------------------
@@ -667,6 +668,19 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillFirmProductsGtip_infoFirmProducts' => 'restApiDefaultCall', 
                                             
         //**---- infoFirmProducts -------------------  
+         //** InfoFirmProductsServices ----------------------
+                                    'pkDelete_infoFirmProductsServices' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmProductsServices' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmProductsServices' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmProductsServices' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmProductsServices' => 'restApiDefaultCall',
+                                    
+                                    'pkDeletedAct_infoFirmProductsServices' => 'restApiDefaultCall',                                    
+                                    'pkFillFirmProductsServicesNpk_infoFirmProductsServices' => 'restApiDefaultCall', 
+                                    'FillFirmProductsServicesNpkQuest_infoFirmProductsServices' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoFirmProductsServices' => 'restApiDefaultCall',        
+                                            
+        //**---- InfoFirmProductsServices -------------------  
         
     );
 
@@ -1261,6 +1275,10 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -14) == '_sysMailServer') {
             $this->setRestApiEndPoint('sysmailserver.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -25) == '_infoFirmProductsServices') {
+            $this->setRestApiEndPoint('infofirmproductsservices.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }                   
