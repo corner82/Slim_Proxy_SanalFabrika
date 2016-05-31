@@ -702,7 +702,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkUpdate_infoFirmQuality' => 'restApiDefaultCall',
                                     'pkFillGrid_infoFirmQuality' => 'restApiDefaultCall',
                                     
-                                    'pkDeletedAct_infoFirmQuality' => 'restApiDefaultCall',                                    
+                                    'pkDeletedAct_infoFirmQuality' => 'restApiDefaultCall',
                                     'pkFillFirmQualityCertificateNpk_infoFirmQuality' => 'restApiDefaultCall', 
                                     'FillFirmQualityCertificateNpkQuest_infoFirmQuality' => 'restApiDefaultCall', 
                                     'pkUpdateMakeActiveOrPassive_infoFirmQuality' => 'restApiDefaultCall',        
@@ -715,13 +715,25 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkUpdate_infoFirmSectoral' => 'restApiDefaultCall',
                                     'pkFillGrid_infoFirmSectoral' => 'restApiDefaultCall',
                                     
-                                    'pkDeletedAct_infoFirmSectoral' => 'restApiDefaultCall',                                    
+                                    'pkDeletedAct_infoFirmSectoral' => 'restApiDefaultCall',
                                     'pkFillFirmSectorNpk_infoFirmSectoral' => 'restApiDefaultCall', 
                                     'FillFirmSectorNpkQuest_infoFirmSectoral' => 'restApiDefaultCall', 
-                                    'pkUpdateMakeActiveOrPassive_infoFirmSectoral' => 'restApiDefaultCall',        
+                                    'pkUpdateMakeActiveOrPassive_infoFirmSectoral' => 'restApiDefaultCall',
                                             
         //**---- infoFirmSectoral -------------------   
-        
+         //** InfoFirmLanguageInfo ----------------------
+                                    'pkDelete_infoFirmLanguageInfo' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmLanguageInfo' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmLanguageInfo' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmLanguageInfo' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmLanguageInfo' => 'restApiDefaultCall',
+                                    
+                                    'pkDeletedAct_infoFirmLanguageInfo' => 'restApiDefaultCall',
+                                    'pkFillFirmLanguageNpk_infoFirmLanguageInfo' => 'restApiDefaultCall', 
+                                    'FillFirmLanguageNpkQuest_infoFirmLanguageInfo' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoFirmLanguageInfo' => 'restApiDefaultCall',
+                                    'pkFillFindFirmLanguageId_infoFirmLanguageInfo' => 'restApiDefaultCall', 
+        //**---- InfoFirmLanguageInfo -------------------   
         
         
     );
@@ -1335,7 +1347,11 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
             $this->setRestApiEndPoint('infofirmsectoral.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }                       
+        }   else if (substr($endPointFunction, -21) == '_infoFirmLanguageInfo') {
+            $this->setRestApiEndPoint('infofirmlanguageinfo.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }                      
         
          
     }
