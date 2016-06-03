@@ -569,8 +569,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
         //** InfoFirmVerbal ----------------------
                                     'pkDelete_infoFirmVerbal' => 'restApiDefaultCall',
                                     'pkGetAll_infoFirmVerbal' => 'restApiDefaultCall',
-                                    'pkInsert_infoFirmVerbal' => 'restApiDefaultCall',
-                                    'pkUpdate_infoFirmVerbal' => 'restApiDefaultCall',
+                                    'pkcpkInsert_infoFirmVerbal' => 'restApiDefaultCall',
+                                    'pkcpkUpdate_infoFirmVerbal' => 'restApiDefaultCall',
                                     'pkFillGrid_infoFirmVerbal' => 'restApiDefaultCall',                                    
                                     
                                     'pkDeletedAct_infoFirmVerbal' => 'restApiDefaultCall',
