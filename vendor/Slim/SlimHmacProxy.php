@@ -347,6 +347,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkUpdate_sysMachineTools' => 'restApiDefaultCall',
                                     'pkFillGrid_sysMachineTools' => 'restApiDefaultCall', 
                                     'pkGetMachineTools_sysMachineTools' => 'restApiDefaultCall',  
+                                    'pkGetMachineProperities_sysMachineTools' => 'restApiDefaultCall',          
                                     'pkUpdateMakeActiveOrPassive_sysMachineTools' => 'restApiDefaultCall',        
 
          //**---- SysMachineTools -------------------   
@@ -417,6 +418,9 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'pkFillUsersFirmMachineProperties_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkFillFirmMachineGroupsCounts_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkFillUsersFirmMachinesNpk_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkFillAllCompanyMachineLists_infoFirmMachineTool' => 'restApiDefaultCall',
+        
+        
         
         
                                          
