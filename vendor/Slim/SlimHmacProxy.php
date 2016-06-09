@@ -851,6 +851,14 @@ class SlimHmacProxy extends \Proxy\Proxy {
         }
         
         /**
+         * company public  key processes wrapper
+         * @author Mustafa Zeynel Dağlı
+         * @since 0.3 09/06/2016
+         * @todo after detail tests code description will be removed
+         */
+        $this->publicCompanyKeyProcessControler($params);
+        
+        /**
          * public  key processes wrapper
          * @author Mustafa Zeynel Dağlı
          * @since 0.3 27/01/2016
@@ -1126,6 +1134,40 @@ class SlimHmacProxy extends \Proxy\Proxy {
         }
         
     }
+    
+    /**
+     * company public key control processes has been wrapped
+     * @param type $params
+     * @return type
+     * @author Mustafa Zeynel Dağlı
+     * @since 0.4 09/06/2016
+     */
+    private function publicCompanyKeyProcessControler($params) {
+        $resultSet;
+        if($this->isServiceCpkRequired) {
+            /**
+            * getting private key due to public key
+            * @author Mustafa Zeynel Dağlı
+            * @since 05/01/2016 version 0.3
+            */
+           if(isset($params['cpk']) && isset($params['pk'])) $resultSet = $this->dalObject->isUserBelongToCompany($params['pk'], 
+                                                                                                                  $params['cpk']);
+
+           /**
+            * if user id and company key does not match
+            * forward to user not belong to company
+            * @author Mustafa Zeynel Dağlı
+            * @since 06/01/2016 version 0.3
+            */
+           if(empty($resultSet['resultSet'])) $this->userNotBelongCompany();
+
+           return $resultSet;
+        } else {
+            return null;
+        }
+        
+    }
+    
 
     public function setEndPointByClosure(Array $EndPointClosure = null) {       
         $endPointFunction = $this->getRestApiEndPointFunction();

@@ -35,6 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit(0);
 }
 
+/**
+ * composer auto load class
+ * @author Mustafa Zeynel Dağlı
+ * @since version 0.4 09/06/2016
+ */
 require 'vendor/autoload.php';
 
 //require_once 'vendor\SPR0\AutoLoad\spr0Loader.php';

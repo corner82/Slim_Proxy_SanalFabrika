@@ -161,7 +161,7 @@ namespace Proxy;
      */
     public function userNotRegisteredRedirect() {
         if($this->isServicePkRequired && $this->isUserNotRegisteredRedirect) {
-            $forwarder = new \vendor\utill\forwarder\UserNotRegisteredForwarder();
+            $forwarder = new \Utill\Forwarder\UserNotRegisteredForwarder();
             $forwarder->redirect();
         } else {
             return true;
@@ -201,6 +201,17 @@ namespace Proxy;
         } else {
             return true;
         }
+    }
+    
+    /**
+     * if user id and company id does not match , rest api forwarded here
+     * inherit classes
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.4 09/06/2016
+     */
+    public function userNotBelongCompany() {
+        $forwarder = new \Utill\Forwarder\UserNotBelongCompanyForwarder;
+        $forwarder->redirect();
     }
 
     /**

@@ -9,10 +9,10 @@
 namespace Utill\Forwarder;
 
 /**
- * hash control and redirection if necessary
+ * user id and company id match control and forward if not match
  * @author Mustafa Zeynel Dağlı
  */
-class PrivateTempNotFoundForwarder extends \Utill\Forwarder\AbstractForwarder {
+class UserNotBelongCompanyForwarder extends \Utill\Forwarder\AbstractForwarder {
     
     /**
      * constructor
@@ -32,7 +32,7 @@ class PrivateTempNotFoundForwarder extends \Utill\Forwarder\AbstractForwarder {
         
         ob_end_clean();
         //$ch = curl_init('http://slimRedirect.sanalfabrika.com/index.php/hashNotMatch');
-        $ch = curl_init('http://localhost/slim_Redirect_SanalFabrika/index.php/privateTempNotFound');
+        $ch = curl_init('http://localhost/slim_Redirect_SanalFabrika/index.php/userNotBelongToCompany');
         //curl_setopt($ch,CURLOPT_HTTPHEADER,$headers);
         //curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
         //curl_setopt($ch,CURLOPT_POSTFIELDS,$content);
