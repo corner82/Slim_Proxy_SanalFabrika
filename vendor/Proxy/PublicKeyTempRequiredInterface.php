@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace vendor\Proxy;
+namespace Proxy;
 
 /**
  * interface to determine if service needs public and private temp keys interragation

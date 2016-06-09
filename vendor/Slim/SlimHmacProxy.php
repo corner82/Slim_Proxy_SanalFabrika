@@ -8,9 +8,9 @@
  */
 
 
-namespace vendor\Slim;
+namespace Slim;
 
-class SlimHmacProxy extends \vendor\Proxy\Proxy {
+class SlimHmacProxy extends \Proxy\Proxy {
 
     /**
      * a mapping array for related functions and proxy calls
@@ -760,8 +760,8 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
      */
     public function __construct() {
         parent::__construct();
-        $this->hmacObj = new \vendor\hmac\Hmac();
-        $this->dalObject = new \vendor\dal\Dal();
+        $this->hmacObj = new \Hmac\Hmac();
+        $this->dalObject = new \Dal\Dal();
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor\Encrypt;
+namespace Encrypt;
 
 abstract class AbstractEncrypt {
     

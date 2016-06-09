@@ -7,7 +7,7 @@
  * @version 0.2
  * @todo Nonce parameter will be encrypted and decrypted in http request 'X-NONCE' parameter
  */
-namespace vendor\hmac;
+namespace Hmac;
 
 class Hmac {
     

@@ -7,7 +7,7 @@
  * @version 0.2
  * @todo Nonce parameter will be encrypted and decrypted in http request 'X-NONCE' parameter
  */
-namespace vendor\dal;
+namespace Dal;
 
 class Dal {
     public function __construct() {

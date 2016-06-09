@@ -6,13 +6,13 @@
  * @copyright Copyright (c) 2015 OSTİM TEKNOLOJİ (http://www.ostim.com.tr)
  * @license   
  */
-namespace vendor\utill\forwarder;
+namespace Utill\Forwarder;
 
 /**
  * time expires redirection control class
  * @author Mustafa Zeynel Dağlı
  */
-class TimeExpiredForwarder extends \vendor\utill\forwarder\AbstractForwarder {
+class TimeExpiredForwarder extends \Utill\Forwarder\AbstractForwarder {
     
     /**
      * constructor

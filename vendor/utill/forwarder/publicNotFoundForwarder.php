@@ -6,13 +6,13 @@
  * @copyright Copyright (c) 2015 OSTİM TEKNOLOJİ (http://www.ostim.com.tr)
  * @license   
  */
-namespace vendor\utill\forwarder;
+namespace Utill\Forwarder;
 
 /**
  * public key  control and redirection if necessary
  * @author Mustafa Zeynel Dağlı
  */
-class PublicNotFoundForwarder extends \vendor\utill\forwarder\AbstractForwarder {
+class PublicNotFoundForwarder extends \Utill\Forwarder\AbstractForwarder {
     
     /**
      * constructor

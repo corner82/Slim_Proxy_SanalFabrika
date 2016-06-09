@@ -7,9 +7,9 @@
  * @version 0.1
  */
 
-namespace vendor\Proxy;
+namespace Proxy;
 
- class Proxy extends \vendor\Proxy\AbstractProxy implements PublicKeyRequiredInterface,
+ class Proxy extends \Proxy\AbstractProxy implements PublicKeyRequiredInterface,
                                                                     PublicKeyTempRequiredInterface,
                                                                     PublicKeyNotFoundInterface,
                                                                     PublicKeyTempNotFoundInterface,
@@ -196,7 +196,7 @@ namespace vendor\Proxy;
      */
     public function privateKeyNotFoundRedirect() {
         if($this->isServicePkRequired && $this->isPrivateKeyNotFoundRedirect) {
-            $forwarder = new \vendor\utill\forwarder\PrivateNotFoundForwarder();
+            $forwarder = new \Utill\Forwarder\PrivateNotFoundForwarder();
             $forwarder->redirect();
         } else {
             return true;
@@ -232,7 +232,7 @@ namespace vendor\Proxy;
      */
     public function publicKeyNotFoundRedirect() {
          if($this->isServicePkRequired && $this->isPublicKeyNotFoundRedirect) {
-             $forwarder = new \vendor\utill\forwarder\PublicNotFoundForwarder();
+             $forwarder = new \Utill\Forwarder\PublicNotFoundForwarder();
              $forwarder->redirect();  
          } else {
              return true;
@@ -317,7 +317,7 @@ namespace vendor\Proxy;
      */
     public function privateKeyTempNotFoundRedirect() {
         if($this->isServicePkTempRequired && $this->privateKeyTempNotFoundRedirect) {
-            $forwarder = new \vendor\utill\forwarder\PrivateTempNotFoundForwarder();
+            $forwarder = new \Utill\Forwarder\PrivateTempNotFoundForwarder();
             $forwarder->redirect();
         } else {
             return true;
@@ -383,7 +383,7 @@ namespace vendor\Proxy;
     public function setEncryptClass(\vendor\Encrypt\AbstractEncrypt $encryptClass = null) {
         try {
             if($encryptClass == null) {
-                $this->encryptClass = new \vendor\Encrypt\EncryptManual($this->encryptKey);
+                $this->encryptClass = new \Encrypt\EncryptManual($this->encryptKey);
                 //print_r($this->encryptClass);
             } else {
                 $this->encryptClass = $encryptClass;
@@ -657,7 +657,7 @@ namespace vendor\Proxy;
      */
     public function publicKeyTempNotFoundRedirect() {
         if($this->isServicePkTempRequired && $this->isPublicTempKeyNotFoundRedirect) {
-             $forwarder = new \vendor\utill\forwarder\PublicTempNotFoundForwarder();
+             $forwarder = new \Utill\Forwarder\PublicTempNotFoundForwarder();
              $forwarder->redirect();  
          } else {
              return true;
@@ -671,7 +671,7 @@ namespace vendor\Proxy;
      */
     public function publicKeyCompanyNotFoundRedirect() {
         if($this->isServiceCpkRequired && $this->isPublicCompanyKeyNotFoundRedirect) {
-             $forwarder = new \vendor\utill\forwarder\PublicCompanyNotFoundForwarder();
+             $forwarder = new \Utill\Forwarder\PublicCompanyNotFoundForwarder();
              $forwarder->redirect();  
          } else {
              return true;

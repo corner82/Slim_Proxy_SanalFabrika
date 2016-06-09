@@ -35,10 +35,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit(0);
 }
 
-require_once 'vendor\SPR0\AutoLoad\spr0Loader.php';
+require 'vendor/autoload.php';
 
-$classLoader = new \SPR0\AutoLoad\spr0Loader("vendor", '');
-$classLoader->register();
+//require_once 'vendor\SPR0\AutoLoad\spr0Loader.php';
+
+/*$classLoader = new \SPR0\AutoLoad\spr0Loader("vendor", '');
+$classLoader->register();*/
 
 /*
 require_once 'vendor\Proxy\AbstractProxy.php';
@@ -47,7 +49,7 @@ require_once 'vendor\Slim\SlimTestProxy.php';*/
 
 
 //$proxyClass = new \vendor\Slim\SlimTestProxy();
-$proxyClass = new \vendor\Slim\SlimHmacProxy();
+$proxyClass = new \Slim\SlimHmacProxy();
 // $proxyClass->setRestApiBaseUrl("http://localhost/Slim_SanalFabrika/");
 /**
  * bazı browser larda crossdomain hataları oluştuğu için yapısal değişiklik yapıldı.  

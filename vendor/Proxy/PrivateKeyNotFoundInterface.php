@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace vendor\Proxy;
+namespace Proxy;
 
 interface PrivateKeyNotFoundInterface {
     public function setPrivateKeyNotFoundRedirect($boolean = null);
