@@ -43,6 +43,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
                                     'fillComboBox_syssectors' => 'restApiDefaultCall',
                                     'pkInsertLanguageTemplate' => 'restApiDefaultCall',
                                     'pkFillTextLanguageTemplate' => 'restApiDefaultCall',
+                                    'pkGetSectors_syssectors' => 'restApiDefaultCall',
         
            
          //**---- syssectors -------------------
