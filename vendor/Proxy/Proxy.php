@@ -70,7 +70,15 @@ namespace vendor\Proxy;
     protected $isServicePkTempRequired = null;
     
     /**
-     * determine if public key not found
+     * service cpk (company private key) required or not
+     * @var mixed boolean | null
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3 09/06/2016
+     */
+    protected $isServiceCpkRequired = null;
+    
+    /**
+     * determine if public key not found redirect closure
      * @var boolean | null
      * @author Mustafa Zeynel Dağlı
      * @since version 0.3
@@ -78,12 +86,20 @@ namespace vendor\Proxy;
     protected $isPublicKeyNotFoundRedirect = true;
     
     /**
-     * determine if public key not found
+     * determine if public key not found redirect closure
      * @var boolean | null
      * @author Mustafa Zeynel Dağlı
      * @since version 0.3 27/01/2016
      */
     protected $isPublicTempKeyNotFoundRedirect = true;
+    
+    /**
+     * determine if company public key not found redirect closure
+     * @var boolean | null
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3 09/06/2016
+     */
+    protected $isPublicCompanyKeyNotFoundRedirect = true;
     
     /**
      * determine if private key not found
@@ -215,7 +231,7 @@ namespace vendor\Proxy;
      * @since version 0.3
      */
     public function publicKeyNotFoundRedirect() {
-         if($this->isServicePkRequired && $this->isPublicTempKeyNotFoundRedirect) {
+         if($this->isServicePkRequired && $this->isPublicKeyNotFoundRedirect) {
              $forwarder = new \vendor\utill\forwarder\PublicNotFoundForwarder();
              $forwarder->redirect();  
          } else {
@@ -271,6 +287,25 @@ namespace vendor\Proxy;
              return $this->isServicePkTempRequired;
          } else {
              return $this->isServicePkTempRequired;
+         }
+     }
+     
+     /**
+     * determine if service needs company private key interragation
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3 09/06/2016
+     */
+     public function serviceCpkRequired() {
+         if($this->isServiceCpkRequired==null) {
+             $params = $this->getRequestParams();
+             if(substr(trim($params['url']),0,5) == 'pkcpk') {
+                $this->isServiceCpkRequired= true;
+                return $this->isServiceCpkRequired ;
+             }
+             $this->isServiceCpkRequired= false;
+             return $this->isServiceCpkRequired;
+         } else {
+             return $this->isServiceCpkRequired;
          }
      }
      
@@ -623,6 +658,20 @@ namespace vendor\Proxy;
     public function publicKeyTempNotFoundRedirect() {
         if($this->isServicePkTempRequired && $this->isPublicTempKeyNotFoundRedirect) {
              $forwarder = new \vendor\utill\forwarder\PublicTempNotFoundForwarder();
+             $forwarder->redirect();  
+         } else {
+             return true;
+         }
+    }
+    
+    /**
+     * public key temp not found process is being evaluated here
+     * @author Mustafa Zeynel Dağlı
+     * @since version 0.3 09/06/2016
+     */
+    public function publicKeyCompanyNotFoundRedirect() {
+        if($this->isServiceCpkRequired && $this->isPublicCompanyKeyNotFoundRedirect) {
+             $forwarder = new \vendor\utill\forwarder\PublicCompanyNotFoundForwarder();
              $forwarder->redirect();  
          } else {
              return true;

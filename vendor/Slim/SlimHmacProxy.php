@@ -813,6 +813,7 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
           //print_r('??'.$decryptValue.'??'); */
         $this->servicePkRequired();
         $this->servicePkTempRequired();
+        $this->serviceCpkRequired();
         $this->setEncryptClass();
         $params = null;
         $params = $this->getRequestParams();
@@ -830,6 +831,13 @@ class SlimHmacProxy extends \vendor\Proxy\Proxy {
          * @since version 0.3 27/01/2016
          */
         if(!isset($params['pktemp']) || $params['pktemp']==null) $this->publicKeyTempNotFoundRedirect();
+        
+        /**
+         * controlling company public key if company public key is necessary for this service and
+         * public temp key not found forwarder is in effect then making forward
+         * @since version 0.3 27/01/2016
+         */
+        if(!isset($params['cpk']) || $params['cpk']==null) $this->publicKeyCompanyNotFoundRedirect();
         
         /**
          * getting public key if user registered    
