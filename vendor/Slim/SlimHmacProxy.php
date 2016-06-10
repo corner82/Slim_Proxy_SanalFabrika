@@ -283,7 +283,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkGetConsPendingFirmProfile_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkGetConsPendingFirmProfilertc_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkGetConsConfirmationProcessDetails_sysOsbConsultants' => 'restApiDefaultCall',
-                                    'pkGetAllFirmCons_sysOsbConsultants' => 'restApiDefaultCall',
+                                    'pkcpkGetAllFirmCons_sysOsbConsultants' => 'restApiDefaultCall',
                          
         
          //**---- sysOsbConsultants -------------------   
@@ -578,10 +578,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkcpkUpdate_infoFirmVerbal' => 'restApiDefaultCall',
                                     'pkFillGrid_infoFirmVerbal' => 'restApiDefaultCall',                                    
                                     
-                                    'pkDeletedAct_infoFirmVerbal' => 'restApiDefaultCall',
+                                    'pkcpkDeletedAct_infoFirmVerbal' => 'restApiDefaultCall',
                                     'pkFillUsersFirmVerbalNpk_infoFirmVerbal' => 'restApiDefaultCall',
                                     'fillUsersFirmVerbalNpkGuest_infoFirmVerbal' => 'restApiDefaultCall',
-                                    'pkGetFirmVerbalConsultant_infoFirmVerbal' => 'restApiDefaultCall',        
+                                    'pkcpkGetFirmVerbalConsultant_infoFirmVerbal' => 'restApiDefaultCall',        
                                     'sendMailConsultant_infoFirmVerbal' => 'restApiDefaultCall', 
         
         
@@ -630,7 +630,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkDelete_infoFirmAddress' => 'restApiDefaultCall',
                                     'pkGetAll_infoFirmAddress' => 'restApiDefaultCall',
                                     'pkInsert_infoFirmAddress' => 'restApiDefaultCall',
-                                    'pkUpdate_infoFirmAddress' => 'restApiDefaultCall',
+                                    'pkcpkUpdate_infoFirmAddress' => 'restApiDefaultCall',
                                     'pkFillGrid_infoFirmAddress' => 'restApiDefaultCall',
                                     
                                     'pkDeletedAct_infoFirmAddress' => 'restApiDefaultCall',                                    
