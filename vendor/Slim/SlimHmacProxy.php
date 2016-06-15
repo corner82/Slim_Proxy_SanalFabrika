@@ -740,6 +740,19 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillFindFirmLanguageId_infoFirmLanguageInfo' => 'restApiDefaultCall', 
         //**---- InfoFirmLanguageInfo -------------------   
         
+        //** SysCustomerCriterion ----------------------
+                                    'pkDelete_sysCustomerCriterion' => 'restApiDefaultCall',
+                                    'pkGetAll_sysCustomerCriterion' => 'restApiDefaultCall',
+                                    'pkInsert_sysCustomerCriterion' => 'restApiDefaultCall',
+                                    'pkUpdate_sysCustomerCriterion' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysCustomerCriterion' => 'restApiDefaultCall',                                    
+                                    
+                                    'pkUpdateMakeActiveOrPassive_sysCustomerCriterion' => 'restApiDefaultCall',        
+                                    'pkFillCustomerCriterionDdList_sysCustomerCriterion' => 'restApiDefaultCall', 
+                                    
+        
+        //**---- SysCustomerCriterion ------------------- 
+        
         
     );
 
@@ -1406,7 +1419,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('infofirmlanguageinfo.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }                      
+        }    else if (substr($endPointFunction, -21) == '_sysCustomerCriterion') {
+            $this->setRestApiEndPoint('syscustomercriterion.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }                        
         
          
     }
