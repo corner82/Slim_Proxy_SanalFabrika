@@ -57,7 +57,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillGrid_infoUsers' => 'restApiDefaultCall',                                    
                                     'pkDeletedAct_infoUsers' => 'restApiDefaultCall',
                                     'pktempUpdate_infoUsers' => 'restApiDefaultCall',
-                            
+                                    'pkFillUsersListNpk_infoUsers' => 'restApiDefaultCall',
                                     
          //**---- infoUsers -------------------
                                         
