@@ -247,7 +247,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillGrid_infoUsersAddresses' => 'restApiDefaultCall',                                    
                                     'pkDeletedAct_infoUsersAddresses' => 'restApiDefaultCall',
                                     'pkFillUserAddressesTypes_infoUsersAddresses' => 'restApiDefaultCall',
-                                    'pkfillGridSingular_infoUsersAddresses' => 'restApiDefaultCall',                                    
+                                    'pkFillGridSingular_infoUsersAddresses' => 'restApiDefaultCall',                                    
                                            
                                     'pktempInsert_infoUsersAddresses' => 'restApiDefaultCall',
                                     'pktempUpdate_infoUsersAddresses' => 'restApiDefaultCall',
@@ -360,10 +360,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillGrid_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
         
                                     'pkFillMachineToolGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
-                                    'pkUpdateMakeActiveOrPassive_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',        
+                                    'pkUpdateMakeActiveOrPassive_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkFillMachineGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall', 
-                                    'pkDeletePropertyMachineGroup_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',                                    
-        
+                                    'pkDeletePropertyMachineGroup_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
+                                    'pkFillMachineGroupProperties_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
         
         
          //**---- sysMachineToolPropertyDefinition -------------------   
@@ -753,6 +753,17 @@ class SlimHmacProxy extends \Proxy\Proxy {
         
         //**---- SysCustomerCriterion ------------------- 
         
+         //** SysClusters ----------------------
+                                    'pkDelete_sysClusters' => 'restApiDefaultCall',
+                                    'pkGetAll_sysClusters' => 'restApiDefaultCall',
+                                    'pkInsert_sysClusters' => 'restApiDefaultCall',
+                                    'pkUpdate_sysClusters' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysClusters' => 'restApiDefaultCall',                                    
+                                    'fillComboBox_sysClusters' => 'restApiDefaultCall',
+                                    
+                                    'pkFillClustersTree_sysClusters' => 'restApiDefaultCall',
+           
+         //**---- SysClusters -------------------
         
     );
 
@@ -1419,8 +1430,12 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('infofirmlanguageinfo.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }    else if (substr($endPointFunction, -21) == '_sysCustomerCriterion') {
+        }   else if (substr($endPointFunction, -21) == '_sysCustomerCriterion') {
             $this->setRestApiEndPoint('syscustomercriterion.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -12) == '_sysClusters') {
+            $this->setRestApiEndPoint('sysclusters.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }                        
