@@ -287,7 +287,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                          
         
          //**---- sysOsbConsultants -------------------   
-           //** SysOsbClusters ----------------------
+        //** SysOsbClusters ----------------------
                                     'pkDelete_sysOsbClusters' => 'restApiDefaultCall',
                                     'pkGetAll_sysOsbClusters' => 'restApiDefaultCall',
                                     'pkInsert_sysOsbClusters' => 'restApiDefaultCall',
@@ -297,6 +297,16 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdateMakeActiveOrPassive_sysOsbClusters' => 'restApiDefaultCall',        
         
          //**---- SysOsbClusters -------------------   
+        //** SysOsbClustersFirms ----------------------
+                                    'pkDelete_sysOsbClustersFirms' => 'restApiDefaultCall',
+                                    'pkGetAll_sysOsbClustersFirms' => 'restApiDefaultCall',
+                                    'pkInsert_sysOsbClustersFirms' => 'restApiDefaultCall',
+                                    'pkUpdate_sysOsbClustersFirms' => 'restApiDefaultCall',
+        
+                                    'pkFillClustersFirmLists_sysOsbClustersFirms' => 'restApiDefaultCall',                         
+                                    'pkUpdateMakeActiveOrPassive_sysOsbClustersFirms' => 'restApiDefaultCall',        
+        
+         //**---- SysOsbClustersFirms ------------------- 
         
         
         
@@ -1456,7 +1466,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('sysosbclusters.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }                         
+        }   else if (substr($endPointFunction, -20) == '_sysOsbClustersFirms') {
+            $this->setRestApiEndPoint('sysosbclustersfirms.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }                          
         
          
     }
