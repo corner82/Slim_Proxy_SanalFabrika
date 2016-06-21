@@ -287,6 +287,19 @@ class SlimHmacProxy extends \Proxy\Proxy {
                          
         
          //**---- sysOsbConsultants -------------------   
+           //** SysOsbClusters ----------------------
+                                    'pkDelete_sysOsbClusters' => 'restApiDefaultCall',
+                                    'pkGetAll_sysOsbClusters' => 'restApiDefaultCall',
+                                    'pkInsert_sysOsbClusters' => 'restApiDefaultCall',
+                                    'pkUpdate_sysOsbClusters' => 'restApiDefaultCall',
+        
+                                    'pkFillOsbClusterLists_sysOsbClusters' => 'restApiDefaultCall',                         
+                                    'pkUpdateMakeActiveOrPassive_sysOsbClusters' => 'restApiDefaultCall',        
+        
+         //**---- SysOsbClusters -------------------   
+        
+        
+        
         
          //** sysOperationTypes ----------------------
                                     'pkDelete_sysOperationTypes' => 'restApiDefaultCall',
@@ -1439,7 +1452,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('sysclusters.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }                        
+        }   else if (substr($endPointFunction, -15) == '_sysOsbClusters') {
+            $this->setRestApiEndPoint('sysosbclusters.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }                         
         
          
     }
