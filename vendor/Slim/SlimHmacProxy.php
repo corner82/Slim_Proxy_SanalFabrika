@@ -385,8 +385,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillMachineToolGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkFillMachineGroupPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall', 
+                                    'pkFillMachineGroupNotInPropertyDefinitions_sysMachineToolPropertyDefinition' => 'restApiDefaultCall', 
                                     'pkDeletePropertyMachineGroup_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkFillMachineGroupProperties_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
+                                    'pkTransferPropertyMachineGroup_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',        
+        
         
         
          //**---- sysMachineToolPropertyDefinition -------------------   
