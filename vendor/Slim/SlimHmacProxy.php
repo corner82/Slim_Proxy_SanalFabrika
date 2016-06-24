@@ -58,6 +58,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkDeletedAct_infoUsers' => 'restApiDefaultCall',
                                     'pktempUpdate_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersListNpk_infoUsers' => 'restApiDefaultCall',
+                                    'pkFillUsersInformationNpk_infoUsers' => 'restApiDefaultCall',        
+        
                                     
          //**---- infoUsers -------------------
                                         
@@ -379,6 +381,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkDelete_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkGetAll_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkInsert_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
+                                    'pkInsertPropertyUnit_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',        
+        
                                     'pkUpdate_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkFillGrid_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
         
@@ -389,6 +393,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkDeletePropertyMachineGroup_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkFillMachineGroupProperties_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',
                                     'pkTransferPropertyMachineGroup_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',        
+                                    'pkFillPropertieslist_sysMachineToolPropertyDefinition' => 'restApiDefaultCall',        
+        
         
         
         
