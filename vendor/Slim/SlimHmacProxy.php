@@ -308,10 +308,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillClustersFirmLists_sysOsbClustersFirms' => 'restApiDefaultCall',                         
                                     'pkUpdateMakeActiveOrPassive_sysOsbClustersFirms' => 'restApiDefaultCall',        
         
-         //**---- SysOsbClustersFirms ------------------- 
-        
-        
-        
+         //**---- SysOsbClustersFirms -------------------          
         
          //** sysOperationTypes ----------------------
                                     'pkDelete_sysOperationTypes' => 'restApiDefaultCall',
@@ -407,7 +404,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillGrid_sysMachineToolProperties' => 'restApiDefaultCall',
                                     'pkFillMachineToolFullProperties_sysMachineToolProperties' => 'restApiDefaultCall',
                                     'pkFillPropertyUnits_sysMachineToolProperties' => 'restApiDefaultCall',
-        
+                                    'pkDeletePropertyMachine_sysMachineToolProperties' => 'restApiDefaultCall',
                                   
         
          //**---- SysMachineToolProperties -------------------   
@@ -809,6 +806,34 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'fillUsersVerbalNpkGuest_infoUsersVerbal' => 'restApiDefaultCall',
                                     'pkGetUserVerbalConsultant_infoUsersVerbal' => 'restApiDefaultCall',        
         //**---- InfoUsersVerbal ------------------- 
+        //** InfoUsersProductsServices ----------------------
+                                    'pkDelete_infoUsersProductsServices' => 'restApiDefaultCall',
+                                    'pkGetAll_infoUsersProductsServices' => 'restApiDefaultCall',
+                                    'pkInsert_infoUsersProductsServices' => 'restApiDefaultCall',
+                                    'pkUpdate_infoUsersProductsServices' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoUsersProductsServices' => 'restApiDefaultCall',
+                                    
+                                    'pkDeletedAct_infoUsersProductsServices' => 'restApiDefaultCall',
+                                    'pkFillUserProductsServicesNpk_infoUsersProductsServices' => 'restApiDefaultCall', 
+                                    'FillUserProductsServicesNpkQuest_infoUsersProductsServices' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoUsersProductsServices' => 'restApiDefaultCall',        
+                                            
+        //**---- InfoUsersProductsServices -------------------  
+         //** SysOsbClustersAlliance ----------------------
+                                    'pkDelete_sysOsbClustersAlliance' => 'restApiDefaultCall',
+                                    'pkGetAll_sysOsbClustersAlliance' => 'restApiDefaultCall',
+                                    'pkInsert_sysOsbClustersAlliance' => 'restApiDefaultCall',
+                                    'pkUpdate_sysOsbClustersAlliance' => 'restApiDefaultCall',
+        
+                                    'pkFillClustersAllianceLists_sysOsbClustersAlliance' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysOsbClustersAlliance' => 'restApiDefaultCall',
+                                    'pkFillGridAllianceList_sysOsbClustersAlliance' => 'restApiDefaultCall',                         
+         //**---- SysOsbClustersAlliance ------------------- 
+        
+        
+        
+        
+        
         
         
     );
@@ -1494,6 +1519,14 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -16) == '_infoUsersVerbal') {
             $this->setRestApiEndPoint('infousersverbal.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -26) == '_infoUsersProductsServices') {
+            $this->setRestApiEndPoint('infousersproductsservices.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -23) == '_sysOsbClustersAlliance') {
+            $this->setRestApiEndPoint('sysosbclustersalliance.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }                           
