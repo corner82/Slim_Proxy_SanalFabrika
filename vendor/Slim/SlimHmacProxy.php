@@ -829,6 +829,17 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdateMakeActiveOrPassive_sysOsbClustersAlliance' => 'restApiDefaultCall',
                                     'pkFillGridAllianceList_sysOsbClustersAlliance' => 'restApiDefaultCall',                         
          //**---- SysOsbClustersAlliance ------------------- 
+          //** SysMembershipTypes ----------------------
+                                    'pkDelete_sysMembershipTypes' => 'restApiDefaultCall',
+                                    'pkGetAll_sysMembershipTypes' => 'restApiDefaultCall',
+                                    'pkInsert_sysMembershipTypes' => 'restApiDefaultCall',
+                                    'pkUpdate_sysMembershipTypes' => 'restApiDefaultCall',
+        
+                                    'pkFillClustersAllianceLists_sysMembershipTypes' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysMembershipTypes' => 'restApiDefaultCall',
+                                    'pkFillMemberShipList_sysMembershipTypes' => 'restApiDefaultCall',
+                                    'fillMemberShipList_sysMembershipTypes' => 'restApiDefaultCall',
+         //**---- SysMembershipTypes ------------------- 
         
         
         
@@ -1529,7 +1540,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('sysosbclustersalliance.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }                           
+        }   else if (substr($endPointFunction, -19) == '_sysMembershipTypes') {
+            $this->setRestApiEndPoint('sysmembershiptypes.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }                            
         
          
     }
