@@ -189,6 +189,9 @@ class SlimHmacProxy extends \Proxy\Proxy {
 
                                     'pkFillComboBoxMainResources_sysAclResources' => 'restApiDefaultCall',   
                                     'pkFillComboBoxFullResources_sysAclResources' => 'restApiDefaultCall',  
+                                    'pkFillResourcesTree_sysAclResources' => 'restApiDefaultCall',
+                                    'pkFillPropertieslist_sysAclResources' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysAclResources' => 'restApiDefaultCall',
      
          //**---- sysAclResources -------------------  
        //** sysAclPrivilege ----------------------
