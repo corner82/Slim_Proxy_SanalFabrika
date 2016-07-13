@@ -178,6 +178,9 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillComboBoxMainRoles_sysAclRoles' => 'restApiDefaultCall',   
                                     'pkFillComboBoxFullRoles_sysAclRoles' => 'restApiDefaultCall',  
                                     'pkFillComboBoxRoles_sysAclRoles' => 'restApiDefaultCall',  
+                                    'pkFillRolesTree_sysAclRoles' => 'restApiDefaultCall',  
+                                    'pkFillRolesPropertiesList_sysAclRoles' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_sysAclRoles' => 'restApiDefaultCall',
         
          //**---- sysAclRoles -------------------  
          //** sysAclResources ----------------------
