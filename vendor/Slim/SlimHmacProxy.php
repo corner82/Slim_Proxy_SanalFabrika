@@ -196,6 +196,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillPropertieslist_sysAclResources' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_sysAclResources' => 'restApiDefaultCall',
                                     'pkFillResourcesDdList_sysAclResources' => 'restApiDefaultCall', 
+                                    'pkFillResourceGroups_sysAclResources' => 'restApiDefaultCall', 
                                     
      
          //**---- sysAclResources -------------------  
@@ -206,8 +207,32 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdate_sysAclPrivilege' => 'restApiDefaultCall',
                                     'pkFillGrid_sysAclPrivilege' => 'restApiDefaultCall',                                    
                                     'pkFillComboBoxFullPrivilege_sysAclPrivilege' => 'restApiDefaultCall',  
+                                    'pkFillPrivilegesList_sysAclPrivilege' => 'restApiDefaultCall',  
+                                    'pkUpdateMakeActiveOrPassive_sysAclPrivilege' => 'restApiDefaultCall',
+                                    'pkFillResourceGroups_sysAclPrivilege' => 'restApiDefaultCall',
+                                    'pkFillPrivilegesOfRoles_sysAclPrivilege' => 'restApiDefaultCall',
+                                    'pkFillNotInPrivilegesOfRoles_sysAclPrivilege' => 'restApiDefaultCall',
+         
      
          //**---- sysAclPrivilege ------------------- 
+        
+        
+         //** SysAclRrp ----------------------
+                                    'pkDelete_sysAclRrp' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAclRrp' => 'restApiDefaultCall',
+                                    'pkInsert_sysAclRrp' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAclRrp' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclRrp' => 'restApiDefaultCall',                                    
+                                    'pkFillComboBoxFullPrivilege_sysAclRrp' => 'restApiDefaultCall',  
+                                    'pkFillRrpList_sysAclRrp' => 'restApiDefaultCall',  
+                                    'pkUpdateMakeActiveOrPassive_sysAclRrp' => 'restApiDefaultCall',
+                                    'pkTransferRolesPrivilege_sysAclRrp' => 'restApiDefaultCall',
+                                   
+     
+         //**---- SysAclRrp ------------------- 
+        
+        
+        
             //** SysAclRrpMap ----------------------
                                     'pkDelete_sysAclRrpMap' => 'restApiDefaultCall',
                                     'pkGetAll_sysAclRrpMap' => 'restApiDefaultCall',
@@ -1552,7 +1577,12 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('sysmembershiptypes.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
-        }                            
+        }   else if (substr($endPointFunction, -10) == '_sysAclRrp') {
+            $this->setRestApiEndPoint('sysaclrrp.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   
+        
         
          
     }
