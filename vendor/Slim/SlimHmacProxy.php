@@ -867,6 +867,25 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdateMakeActiveOrPassive_infoUsersProductsServices' => 'restApiDefaultCall',        
                                             
         //**---- InfoUsersProductsServices -------------------  
+          
+        //** InfoFirmWorkingPersonnel ----------------------
+                                    'pkDelete_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
+                                    
+                                    'pkDeletedAct_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
+                                    'pkFillFirmWorkingPersonalNpk_infoFirmWorkingPersonnel' => 'restApiDefaultCall', 
+                                    'FillFirmWorkingPersonalNpkQuest_infoFirmWorkingPersonnel' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoFirmWorkingPersonnel' => 'restApiDefaultCall',        
+                                    'pkFillFirmWorkingPersonalListGrid_infoFirmWorkingPersonnel' => 'restApiDefaultCall',        
+        
+                                            
+        //**---- InfoFirmWorkingPersonnel -------------------  
+        
+        
+        
          //** SysOsbClustersAlliance ----------------------
                                     'pkDelete_sysOsbClustersAlliance' => 'restApiDefaultCall',
                                     'pkGetAll_sysOsbClustersAlliance' => 'restApiDefaultCall',
@@ -1598,6 +1617,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -16) == '_sysUniversities') {
             $this->setRestApiEndPoint('sysuniversities.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -25) == '_infoFirmWorkingPersonnel') {
+            $this->setRestApiEndPoint('infofirmworkingpersonnel.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
