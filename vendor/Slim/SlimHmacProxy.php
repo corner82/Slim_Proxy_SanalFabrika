@@ -248,9 +248,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'fillCommunicationsTypes_sysSpecificDefinitions' => 'restApiDefaultCall',
                                     'fillBuildingType_sysSpecificDefinitions' => 'restApiDefaultCall',
                                     'fillOwnershipType_sysSpecificDefinitions' => 'restApiDefaultCall',
-                                    'fillPersonnelTypes_sysSpecificDefinitions' => 'restApiDefaultCall',                                  
-                                    'fillAddressTypes_sysSpecificDefinitions' => 'restApiDefaultCall',                                  
-        
+                                    'fillPersonnelTypes_sysSpecificDefinitions' => 'restApiDefaultCall',
+                                    'fillAddressTypes_sysSpecificDefinitions' => 'restApiDefaultCall',
+                                    'fillSexTypes_sysSpecificDefinitions' => 'restApiDefaultCall',
+                             
      
          //**---- sysSpecificDefinitions -------------------    
          //** infoUsersCommunications ----------------------
@@ -674,6 +675,20 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     
         
         //**---- SysSocialMedia ------------------- 
+          //** SysUniversities ----------------------
+                                    'pkDelete_sysUniversities' => 'restApiDefaultCall',
+                                    'pkGetAll_sysUniversities' => 'restApiDefaultCall',
+                                    'pkInsert_sysUniversities' => 'restApiDefaultCall',
+                                    'pkUpdate_sysUniversities' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysUniversities' => 'restApiDefaultCall',                                    
+                                    
+                                    'pkUpdateMakeActiveOrPassive_sysUniversities' => 'restApiDefaultCall',        
+                                    'pkFillUniversityDdList_sysUniversities' => 'restApiDefaultCall', 
+                                    
+        
+        //**---- SysUniversities ------------------- 
+        
+        
           
         //** InfoFirmSocialmedia ----------------------
                                     'pkDelete_infoFirmSocialmedia' => 'restApiDefaultCall',
@@ -1581,7 +1596,12 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('sysaclrrp.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -16) == '_sysUniversities') {
+            $this->setRestApiEndPoint('sysuniversities.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
+         
         
         
          
