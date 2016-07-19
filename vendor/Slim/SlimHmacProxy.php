@@ -871,11 +871,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
         //** InfoFirmWorkingPersonnel ----------------------
                                     'pkDelete_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
                                     'pkGetAll_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
-                                    'pkInsert_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
-                                    'pkUpdate_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
+                                    'pkcpkInsert_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
+                                    'pkcpkUpdate_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
                                     'pkFillGrid_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
                                     
-                                    'pkDeletedAct_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
+                                    'pkcpkDeletedAct_infoFirmWorkingPersonnel' => 'restApiDefaultCall',
                                     'pkFillFirmWorkingPersonalNpk_infoFirmWorkingPersonnel' => 'restApiDefaultCall', 
                                     'FillFirmWorkingPersonalNpkQuest_infoFirmWorkingPersonnel' => 'restApiDefaultCall', 
                                     'pkUpdateMakeActiveOrPassive_infoFirmWorkingPersonnel' => 'restApiDefaultCall',        
