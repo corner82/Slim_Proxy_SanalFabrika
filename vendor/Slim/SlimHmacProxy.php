@@ -884,6 +884,21 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                             
         //**---- InfoFirmWorkingPersonnel -------------------  
         
+         //** InfoFirmWorkingPersonnelEducation ----------------------
+                                    'pkDelete_infoFirmWorkingPersonnelEducation' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmWorkingPersonnelEducation' => 'restApiDefaultCall',
+                                    'pkcpkInsert_infoFirmWorkingPersonnelEducation' => 'restApiDefaultCall',
+                                    'pkcpkUpdate_infoFirmWorkingPersonnelEducation' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmWorkingPersonnelEducation' => 'restApiDefaultCall',
+                                    
+                                    'pkcpkDeletedAct_infoFirmWorkingPersonnelEducation' => 'restApiDefaultCall',
+                                    'pkFillFirmWorkingPersonalEducationNpk_infoFirmWorkingPersonnelEducation' => 'restApiDefaultCall', 
+                                    'FillFirmWorkingPersonalEducationNpkQuest_infoFirmWorkingPersonnelEducation' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_infoFirmWorkingPersonnelEducation' => 'restApiDefaultCall',        
+                                    'pkFillFirmWorkingPersonalEducationListGrid_infoFirmWorkingPersonnelEducation' => 'restApiDefaultCall',        
+        
+                                            
+        //**---- InfoFirmWorkingPersonnelEducation -------------------  
         
         
          //** SysOsbClustersAlliance ----------------------
@@ -908,7 +923,17 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'fillMemberShipList_sysMembershipTypes' => 'restApiDefaultCall',
          //**---- SysMembershipTypes ------------------- 
         
+          //** SysMenuTypes ----------------------
+                                    'pkDelete_sysMenuTypes' => 'restApiDefaultCall',
+                                    'pkGetAll_sysMenuTypes' => 'restApiDefaultCall',
+                                    'pkInsert_sysMenuTypes' => 'restApiDefaultCall',
+                                    'pkUpdate_sysMenuTypes' => 'restApiDefaultCall',
         
+                                    'pkFillClustersAllianceLists_sysMenuTypes' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysMenuTypes' => 'restApiDefaultCall',
+                                    'pkFillMemberShipList_sysMenuTypes' => 'restApiDefaultCall',
+                                    'pkFillMemuTypeList_sysMenuTypes' => 'restApiDefaultCall',
+         //**---- SysMenuTypes ------------------- 
         
         
         
@@ -1621,6 +1646,14 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -25) == '_infoFirmWorkingPersonnel') {
             $this->setRestApiEndPoint('infofirmworkingpersonnel.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -34) == '_infoFirmWorkingPersonnelEducation') {
+            $this->setRestApiEndPoint('infofirmworkingpersonneleducation.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -13) == '_sysMenuTypes') {
+            $this->setRestApiEndPoint('sysmenutypes.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
