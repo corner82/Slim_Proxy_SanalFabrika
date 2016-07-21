@@ -932,7 +932,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillClustersAllianceLists_sysMenuTypes' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_sysMenuTypes' => 'restApiDefaultCall',
                                     'pkFillMemberShipList_sysMenuTypes' => 'restApiDefaultCall',
-                                    'pkFillMemuTypeList_sysMenuTypes' => 'restApiDefaultCall',
+                                    'pkFillMenuTypeList_sysMenuTypes' => 'restApiDefaultCall',
+                                    'pkFillMenuTypeListGrid_sysMenuTypes' => 'restApiDefaultCall',
+        
+        
          //**---- SysMenuTypes ------------------- 
         
         
