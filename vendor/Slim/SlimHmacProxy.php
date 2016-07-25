@@ -94,7 +94,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkInsert_syslanguage' => 'restApiDefaultCall',
                                     'pkUpdate_syslanguage' => 'restApiDefaultCall',
                                     'pkFillGrid_syslanguage' => 'restApiDefaultCall',                                    
-                                    'fillComboBox_syslanguage' => 'restApiDefaultCall',    
+                                    'fillComboBox_syslanguage' => 'restApiDefaultCall', 
+                                    'pkFillLanguageDdList_syslanguage' => 'restApiDefaultCall',         
                                     
          //**---- syslanguage -------------------
           //** sysborough ----------------------
@@ -567,7 +568,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkInsert_sysCertifications' => 'restApiDefaultCall',
                                     'pkUpdate_sysCertifications' => 'restApiDefaultCall',
                                     'pkFillGrid_sysCertifications' => 'restApiDefaultCall',
-                                    'pkFillNaceCodes_sysCertifications' => 'restApiDefaultCall',                                     
+                                    'pkFillCertificationsDdList_sysCertifications' => 'restApiDefaultCall',
+        
                                          
         //**---- SysCertifications -------------------    
         
