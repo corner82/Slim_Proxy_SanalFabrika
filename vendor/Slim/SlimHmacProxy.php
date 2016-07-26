@@ -272,7 +272,19 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillActionDdList_sysAclActions' => 'restApiDefaultCall', 
                                      
          //**---- SysAclActions -------------------  
-        
+          //** SysAclMenuTypesActions ----------------------
+                                    'pkDelete_sysAclMenuTypesActions' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAclMenuTypesActions' => 'restApiDefaultCall',
+                                    'pkInsert_sysAclMenuTypesActions' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAclMenuTypesActions' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclMenuTypesActions' => 'restApiDefaultCall', 
+                                    
+                                    'pkFillMenuTypesActionList_sysAclMenuTypesActions' => 'restApiDefaultCall',  
+                                    'pkFillMenuTypesActionLeftList_sysAclMenuTypesActions' => 'restApiDefaultCall',                                    
+                                    'pkUpdateMakeActiveOrPassive_sysAclMenuTypesActions' => 'restApiDefaultCall',
+                                    
+                                     
+         //**---- SysAclMenuTypesActions -------------------  
         
         
          //** sysSpecificDefinitions ----------------------
@@ -1701,10 +1713,13 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('sysaclactions.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -23) == '_sysAclMenuTypesActions') {
+            $this->setRestApiEndPoint('sysaclmenutypesactions.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
         
          
-        
         
          
     }
