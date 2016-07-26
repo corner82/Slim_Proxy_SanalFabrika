@@ -243,6 +243,25 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillRrpMap_sysAclRrpMap' => 'restApiDefaultCall',  
      
          //**---- SysAclRrpMap -------------------    
+          
+         //** SysAclModules ----------------------
+                                    'pkDelete_sysAclModules' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAclModules' => 'restApiDefaultCall',
+                                    'pkInsert_sysAclModules' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAclModules' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclModules' => 'restApiDefaultCall', 
+                                    
+                                    'pkFillComboBoxFullModules_sysAclModules' => 'restApiDefaultCall',  
+                                    'pkFillModulesTree_sysAclModules' => 'restApiDefaultCall',
+                                    'pkFillModulesList_sysAclModules' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysAclModules' => 'restApiDefaultCall',
+                                    'pkFillModulesDdList_sysAclModules' => 'restApiDefaultCall', 
+                                     
+         //**---- SysAclModules -------------------  
+        
+        
+        
+        
          //** sysSpecificDefinitions ----------------------
                                     'fillMainDefinitions_sysSpecificDefinitions' => 'restApiDefaultCall',
                                     'fillFullDefinitions_sysSpecificDefinitions' => 'restApiDefaultCall',
@@ -809,11 +828,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
          //** InfoFirmLanguageInfo ----------------------
                                     'pkDelete_infoFirmLanguageInfo' => 'restApiDefaultCall',
                                     'pkGetAll_infoFirmLanguageInfo' => 'restApiDefaultCall',
-                                    'pkInsert_infoFirmLanguageInfo' => 'restApiDefaultCall',
-                                    'pkUpdate_infoFirmLanguageInfo' => 'restApiDefaultCall',
+                                    'pkcpkInsert_infoFirmLanguageInfo' => 'restApiDefaultCall',
+                                    'pkcpkUpdate_infoFirmLanguageInfo' => 'restApiDefaultCall',
                                     'pkFillGrid_infoFirmLanguageInfo' => 'restApiDefaultCall',
                                     
-                                    'pkDeletedAct_infoFirmLanguageInfo' => 'restApiDefaultCall',
+                                    'pkcpkDeletedAct_infoFirmLanguageInfo' => 'restApiDefaultCall',
                                     'pkFillFirmLanguageNpk_infoFirmLanguageInfo' => 'restApiDefaultCall', 
                                     'FillFirmLanguageNpkQuest_infoFirmLanguageInfo' => 'restApiDefaultCall', 
                                     'pkUpdateMakeActiveOrPassive_infoFirmLanguageInfo' => 'restApiDefaultCall',
@@ -1661,7 +1680,12 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('sysmenutypes.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -14) == '_sysAclModules') {
+            $this->setRestApiEndPoint('sysaclmodules.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
+        
          
         
         
