@@ -258,7 +258,20 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillModulesDdList_sysAclModules' => 'restApiDefaultCall', 
                                      
          //**---- SysAclModules -------------------  
-        
+         //** SysAclActions ----------------------
+                                    'pkDelete_sysAclActions' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAclActions' => 'restApiDefaultCall',
+                                    'pkInsert_sysAclActions' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAclActions' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclActions' => 'restApiDefaultCall', 
+                                    
+                                    'pkFillComboBoxFullAction_sysAclActions' => 'restApiDefaultCall',  
+                                    'pkFillActionTree_sysAclActions' => 'restApiDefaultCall',
+                                    'pkFillActionList_sysAclActions' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysAclActions' => 'restApiDefaultCall',
+                                    'pkFillActionDdList_sysAclActions' => 'restApiDefaultCall', 
+                                     
+         //**---- SysAclActions -------------------  
         
         
         
@@ -1682,6 +1695,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -14) == '_sysAclModules') {
             $this->setRestApiEndPoint('sysaclmodules.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -14) == '_sysAclActions') {
+            $this->setRestApiEndPoint('sysaclactions.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
