@@ -1013,6 +1013,21 @@ class SlimHmacProxy extends \Proxy\Proxy {
      
          //**---- SysServicesGroups -------------------   
         
+         //** SysAclRestservices ----------------------
+                                    'pkDelete_sysAclRestservices' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAclRestservices' => 'restApiDefaultCall',
+                                    'pkInsert_sysAclRestservices' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAclRestservices' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclRestservices' => 'restApiDefaultCall', 
+                
+                                    'pkDeleteAct_sysAclRestservices' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysAclRestservices' => 'restApiDefaultCall',
+                                    'pkFillRestServicesList_sysAclRestservices' => 'restApiDefaultCall', 
+                                    
+                                    
+     
+         //**---- SysAclRestservices -------------------  
+        
         
         
     );
@@ -1750,6 +1765,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -18) == '_sysServicesGroups') {
             $this->setRestApiEndPoint('sysservicesgroups.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -19) == '_sysAclRestservices') {
+            $this->setRestApiEndPoint('sysaclrestservices.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
