@@ -233,6 +233,18 @@ class SlimHmacProxy extends \Proxy\Proxy {
          //**---- SysAclRrp ------------------- 
         
         
+         //** SysAclRrpRestservices ----------------------
+                                    'pkDelete_sysAclRrpRestservices' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAclRrpRestservices' => 'restApiDefaultCall',
+                                    'pkInsert_sysAclRrpRestservices' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAclRrpRestservices' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclRrpRestservices' => 'restApiDefaultCall',                                    
+                                    'pkFillComboBoxFullPrivilege_sysAclRrpRestservices' => 'restApiDefaultCall',  
+                                    'pkFillRrpRestServicesList_sysAclRrpRestservices' => 'restApiDefaultCall',  
+                                  
+     
+         //**---- SysAclRrpRestservices ------------------- 
+        
         
             //** SysAclRrpMap ----------------------
                                     'pkDelete_sysAclRrpMap' => 'restApiDefaultCall',
@@ -260,6 +272,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
          //**---- SysAclModules -------------------  
          //** SysAclActions ----------------------
                                     'pkDelete_sysAclActions' => 'restApiDefaultCall',
+                                    'pkDeleteAct_sysAclActions' => 'restApiDefaultCall',
+                                    'pkDeleteAct_sysAclActions' => 'restApiDefaultCall',
                                     'pkGetAll_sysAclActions' => 'restApiDefaultCall',
                                     'pkInsert_sysAclActions' => 'restApiDefaultCall',
                                     'pkUpdate_sysAclActions' => 'restApiDefaultCall',
@@ -1715,6 +1729,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -23) == '_sysAclMenuTypesActions') {
             $this->setRestApiEndPoint('sysaclmenutypesactions.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -22) == '_sysAclRrpRestservices') {
+            $this->setRestApiEndPoint('sysaclrrprestservices.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
