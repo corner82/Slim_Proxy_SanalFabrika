@@ -998,7 +998,20 @@ class SlimHmacProxy extends \Proxy\Proxy {
         
          //**---- SysMenuTypes ------------------- 
         
-        
+         //** SysServicesGroups ----------------------
+                                    'pkDelete_sysServicesGroups' => 'restApiDefaultCall',
+                                    'pkGetAll_sysServicesGroups' => 'restApiDefaultCall',
+                                    'pkInsert_sysServicesGroups' => 'restApiDefaultCall',
+                                    'pkUpdate_sysServicesGroups' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysServicesGroups' => 'restApiDefaultCall',
+
+                                    
+                                    'pkUpdateMakeActiveOrPassive_sysAclResources' => 'restApiDefaultCall',
+                                    'pkFillServicesGroupsDdList_sysServicesGroups' => 'restApiDefaultCall', 
+                                    
+                                    
+     
+         //**---- SysServicesGroups -------------------   
         
         
         
@@ -1733,6 +1746,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -22) == '_sysAclRrpRestservices') {
             $this->setRestApiEndPoint('sysaclrrprestservices.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -18) == '_sysServicesGroups') {
+            $this->setRestApiEndPoint('sysservicesgroups.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
