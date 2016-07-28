@@ -1004,11 +1004,12 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkInsert_sysServicesGroups' => 'restApiDefaultCall',
                                     'pkUpdate_sysServicesGroups' => 'restApiDefaultCall',
                                     'pkFillGrid_sysServicesGroups' => 'restApiDefaultCall',
-
+                                    'pkDeleteAct_sysServicesGroups' => 'restApiDefaultCall',
                                     
                                     'pkUpdateMakeActiveOrPassive_sysAclResources' => 'restApiDefaultCall',
                                     'pkFillServicesGroupsDdList_sysServicesGroups' => 'restApiDefaultCall', 
-                                    
+                                    'pkFillServicesGroupsList_sysServicesGroups' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_sysServicesGroups' => 'restApiDefaultCall',
                                     
      
          //**---- SysServicesGroups -------------------   
