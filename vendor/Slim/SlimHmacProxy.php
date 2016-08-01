@@ -213,8 +213,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillResourceGroups_sysAclPrivilege' => 'restApiDefaultCall',
                                     'pkFillPrivilegesOfRoles_sysAclPrivilege' => 'restApiDefaultCall',
                                     'pkFillNotInPrivilegesOfRoles_sysAclPrivilege' => 'restApiDefaultCall',
-         
-     
+                                    'pkFillPrivilegesOfRolesDdList_sysAclPrivilege' => 'restApiDefaultCall', 
+                                    'pkFillPrivilegesOfRolesList_sysAclPrivilege' => 'restApiDefaultCall',        
+        
+                        
          //**---- sysAclPrivilege ------------------- 
         
         
@@ -241,7 +243,12 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillGrid_sysAclRrpRestservices' => 'restApiDefaultCall',                                    
                                     'pkFillComboBoxFullPrivilege_sysAclRrpRestservices' => 'restApiDefaultCall',  
                                     'pkFillRrpRestServicesList_sysAclRrpRestservices' => 'restApiDefaultCall',  
+                                    'pkFillRestServicesOfPrivileges_sysAclRrpRestservices' => 'restApiDefaultCall',
+                                    'pkFillNotInRestServicesOfPrivileges_sysAclRrpRestservices' => 'restApiDefaultCall',
+                                    'pkFillNotInRestServicesOfPrivilegesTree_sysAclRrpRestservices' => 'restApiDefaultCall',
                                   
+        
+        
      
          //**---- SysAclRrpRestservices ------------------- 
         
@@ -1028,6 +1035,21 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     
      
          //**---- SysAclRestservices -------------------  
+         //** SysAssignDefinition ----------------------
+                                    'pkDelete_sysAssignDefinition' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAssignDefinition' => 'restApiDefaultCall',
+                                    'pkInsert_sysAssignDefinition' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAssignDefinition' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAssignDefinition' => 'restApiDefaultCall', 
+                
+                                    'pkDeleteAct_sysAssignDefinition' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysAssignDefinition' => 'restApiDefaultCall',
+                                    'pkFillAssignDefinitionList_sysAssignDefinition' => 'restApiDefaultCall', 
+                                    'pkFillAssignDefinitionDdList_sysAssignDefinition' => 'restApiDefaultCall', 
+                                     
+        
+     
+         //**---- SysAssignDefinition -------------------  
         
         
         
@@ -1770,6 +1792,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -19) == '_sysAclRestservices') {
             $this->setRestApiEndPoint('sysaclrestservices.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -20) == '_sysAssignDefinition') {
+            $this->setRestApiEndPoint('sysassigndefinition.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
