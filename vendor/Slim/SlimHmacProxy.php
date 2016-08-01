@@ -1050,6 +1050,23 @@ class SlimHmacProxy extends \Proxy\Proxy {
         
      
          //**---- SysAssignDefinition -------------------  
+           //** SysAssignDefinitionRoles ----------------------
+                                    'pkDelete_sysAssignDefinitionRoles' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAssignDefinitionRoles' => 'restApiDefaultCall',
+                                    'pkInsert_sysAssignDefinitionRoles' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAssignDefinitionRoles' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAssignDefinitionRoles' => 'restApiDefaultCall', 
+                
+                                    'pkUpdateMakeActiveOrPassive_sysAssignDefinitionRoles' => 'restApiDefaultCall',
+                                    'pkFillAssignDefinitionRolesList_sysAssignDefinitionRoles' => 'restApiDefaultCall', 
+                                    'pkFillAssignDefinitionRolesDdList_sysAssignDefinitionRoles' => 'restApiDefaultCall', 
+                                    'pkFillConsultantRolesTree_sysAssignDefinitionRoles' => 'restApiDefaultCall', 
+                                    'pkFillAssignDefinitionOfRoles_sysAssignDefinitionRoles' => 'restApiDefaultCall', 
+                                    'pkFillNotInAssignDefinitionOfRoles_sysAssignDefinitionRoles' => 'restApiDefaultCall', 
+         
+        
+        
+         //**---- SysAssignDefinitionRoles -------------------  
         
         
         
@@ -1796,6 +1813,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -20) == '_sysAssignDefinition') {
             $this->setRestApiEndPoint('sysassigndefinition.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -25) == '_sysAssignDefinitionRoles') {          
+            $this->setRestApiEndPoint('sysassigndefinitionroles.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
