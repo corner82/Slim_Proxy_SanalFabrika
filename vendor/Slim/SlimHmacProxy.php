@@ -1067,7 +1067,20 @@ class SlimHmacProxy extends \Proxy\Proxy {
         
         
          //**---- SysAssignDefinitionRoles -------------------  
-        
+          
+     
+         //**---- SysAssignDefinition -------------------  
+        //** PgClass ----------------------
+                                    'pkDelete_pgClass' => 'restApiDefaultCall',
+                                    'pkGetAll_pgClass' => 'restApiDefaultCall',
+                                    'pkInsert_pgClass' => 'restApiDefaultCall',
+                                    'pkUpdate_pgClass' => 'restApiDefaultCall',
+                                    'pkFillGrid_pgClass' => 'restApiDefaultCall', 
+                
+                                    'pkFillInfoTablesDdList_pgClass' => 'restApiDefaultCall', 
+         
+         
+         //**---- PgClass -------------------  
         
         
     );
@@ -1817,6 +1830,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -25) == '_sysAssignDefinitionRoles') {          
             $this->setRestApiEndPoint('sysassigndefinitionroles.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -8) == '_pgClass') {          
+            $this->setRestApiEndPoint('pgclass.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
