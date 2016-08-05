@@ -177,7 +177,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdateChild_sysAclRoles' => 'restApiDefaultCall',
                                     'pkFillGrid_sysAclRoles' => 'restApiDefaultCall',                                    
                                     'pkFillComboBoxMainRoles_sysAclRoles' => 'restApiDefaultCall',   
-                                    'pkFillComboBoxFullRoles_sysAclRoles' => 'restApiDefaultCall',  
+                                    'pkFillFullRolesDdList_sysAclRoles' => 'restApiDefaultCall',  
                                     'pkFillComboBoxRoles_sysAclRoles' => 'restApiDefaultCall',  
                                     'pkFillRolesTree_sysAclRoles' => 'restApiDefaultCall',  
                                     'pkFillRolesPropertiesList_sysAclRoles' => 'restApiDefaultCall', 
@@ -246,6 +246,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillRestServicesOfPrivileges_sysAclRrpRestservices' => 'restApiDefaultCall',
                                     'pkFillNotInRestServicesOfPrivileges_sysAclRrpRestservices' => 'restApiDefaultCall',
                                     'pkFillNotInRestServicesOfPrivilegesTree_sysAclRrpRestservices' => 'restApiDefaultCall',
+                                    'pkFillRestServicesOfPrivilegesTree_sysAclRrpRestservices' => 'restApiDefaultCall',
                                   
         
         
