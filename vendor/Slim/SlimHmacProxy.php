@@ -1082,6 +1082,19 @@ class SlimHmacProxy extends \Proxy\Proxy {
          
          
          //**---- PgClass -------------------  
+        //** SysOperationTypesRrp ----------------------
+                                    'pkDelete_sysOperationTypesRrp' => 'restApiDefaultCall',
+                                    'pkGetAll_sysOperationTypesRrp' => 'restApiDefaultCall',
+                                    'pkInsert_sysOperationTypesRrp' => 'restApiDefaultCall',
+                                    'pkUpdate_sysOperationTypesRrp' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysOperationTypesRrp' => 'restApiDefaultCall', 
+                
+                                    'pkFillConsultantOperationsRrpList_sysOperationTypesRrp' => 'restApiDefaultCall', 
+                                    'pkFillOperationTypesRrpList_sysOperationTypesRrp' => 'restApiDefaultCall', 
+                                    'pkUpdateMakeActiveOrPassive_sysOperationTypesRrp' => 'restApiDefaultCall',
+         
+         
+         //**---- SysOperationTypesRrp -------------------  
         
         
     );
@@ -1835,6 +1848,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -8) == '_pgClass') {          
             $this->setRestApiEndPoint('pgclass.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -21) == '_sysOperationTypesRrp') {          
+            $this->setRestApiEndPoint('sysoperationtypesrrp.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
