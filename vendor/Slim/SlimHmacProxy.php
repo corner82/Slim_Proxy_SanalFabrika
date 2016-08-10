@@ -58,7 +58,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkDeletedAct_infoUsers' => 'restApiDefaultCall',
                                     'pktempUpdate_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersListNpk_infoUsers' => 'restApiDefaultCall',
-                                    'pkFillUsersInformationNpk_infoUsers' => 'restApiDefaultCall',        
+                                    'pkFillUsersInformationNpk_infoUsers' => 'restApiDefaultCall',
+                                    'pkInsertConsultant_infoUsers' => 'restApiDefaultCall',        
         
                                     
          //**---- infoUsers -------------------
@@ -182,6 +183,9 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillRolesTree_sysAclRoles' => 'restApiDefaultCall',  
                                     'pkFillRolesPropertiesList_sysAclRoles' => 'restApiDefaultCall', 
                                     'pkUpdateMakeActiveOrPassive_sysAclRoles' => 'restApiDefaultCall',
+                                    'pkFillConsultantRolesDdlist_sysAclRoles' => 'restApiDefaultCall',
+        
+        
         
          //**---- sysAclRoles -------------------  
          //** sysAclResources ----------------------
@@ -377,6 +381,18 @@ class SlimHmacProxy extends \Proxy\Proxy {
         
          //**---- BlActivationReport -------------------   
       
+        
+        
+         //** sysOsb ----------------------
+                                    'pkDelete_sysOsb' => 'restApiDefaultCall',
+                                    'pkGetAll_sysOsb' => 'restApiDefaultCall',
+                                    'pkInsert_sysOsb' => 'restApiDefaultCall',
+                                    'pkUpdate_sysOsb' => 'restApiDefaultCall',
+        
+                                    'pkFillOsbDdlist_sysOsb' => 'restApiDefaultCall',
+        
+         //**---- sysOsb-------------------   
+        
         //** sysOsbConsultants ----------------------
                                     'pkDelete_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkGetAll_sysOsbConsultants' => 'restApiDefaultCall',
@@ -387,7 +403,9 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkGetConsPendingFirmProfilertc_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkGetConsConfirmationProcessDetails_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkcpkGetAllFirmCons_sysOsbConsultants' => 'restApiDefaultCall',
-                         
+                                    'pkFillOsbConsultantListGrid_sysOsbConsultants' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysOsbConsultants' => 'restApiDefaultCall',
+        
         
          //**---- sysOsbConsultants -------------------   
         //** SysOsbClusters ----------------------
@@ -1852,6 +1870,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -21) == '_sysOperationTypesRrp') {          
             $this->setRestApiEndPoint('sysoperationtypesrrp.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -7) == '_sysOsb') {          
+            $this->setRestApiEndPoint('sysosb.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
