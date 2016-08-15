@@ -184,6 +184,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillRolesPropertiesList_sysAclRoles' => 'restApiDefaultCall', 
                                     'pkUpdateMakeActiveOrPassive_sysAclRoles' => 'restApiDefaultCall',
                                     'pkFillConsultantRolesDdlist_sysAclRoles' => 'restApiDefaultCall',
+                                    'pkFillRolesDdlist_sysAclRoles' => 'restApiDefaultCall',
+        
         
         
         
@@ -221,8 +223,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillPrivilegesOfRolesList_sysAclPrivilege' => 'restApiDefaultCall',        
         
                         
-         //**---- sysAclPrivilege ------------------- 
-        
+         //**---- sysAclPrivilege -------------------          
         
          //** SysAclRrp ----------------------
                                     'pkDelete_sysAclRrp' => 'restApiDefaultCall',
@@ -1113,6 +1114,38 @@ class SlimHmacProxy extends \Proxy\Proxy {
          
          
          //**---- SysOperationTypesRrp -------------------  
+         //** SysAclActionRrp ----------------------
+                                    'pkDelete_sysAclActionRrp' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAclActionRrp' => 'restApiDefaultCall',
+                                    'pkInsert_sysAclActionRrp' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAclActionRrp' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclActionRrp' => 'restApiDefaultCall',                                    
+                                    'pkFillComboBoxFullPrivilege_sysAclActionRrp' => 'restApiDefaultCall',  
+                                    'pkFillActionPrivilegesList_sysAclActionRrp' => 'restApiDefaultCall',  
+                                    'pkUpdateMakeActiveOrPassive_sysAclActionRrp' => 'restApiDefaultCall',
+                                    'pkFillActionResourceGroups_sysAclActionRrp' => 'restApiDefaultCall',
+                                    'pkFillActionPrivilegesOfRoles_sysAclActionRrp' => 'restApiDefaultCall',
+                                    'pkFillNotInActionPrivilegesOfRoles_sysAclActionRrp' => 'restApiDefaultCall',
+                                    'pkFillActionPrivilegesOfRolesDdList_sysAclActionRrp' => 'restApiDefaultCall', 
+                                    'pkFillActionPrivilegesOfRolesList_sysAclActionRrp' => 'restApiDefaultCall',        
+                                    'pkTransferRolesActionPrivilege_sysAclActionRrp' => 'restApiDefaultCall',        
+        
+                        
+         //**---- SysAclActionRrp ------------------- 
+         
+         //** sysManufacturer ----------------------
+                                    'pkDelete_sysManufacturer' => 'restApiDefaultCall',
+                                    'pkGetAll_sysManufacturerp' => 'restApiDefaultCall',
+                                    'pkInsert_sysManufacturer' => 'restApiDefaultCall',
+                                    'pkUpdate_sysManufacturer' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysManufacturer' => 'restApiDefaultCall', 
+                
+                                    'pkFillManufacturerList_sysManufacturer' => 'restApiDefaultCall',                                     
+                                    'pkUpdateMakeActiveOrPassive_sysManufacturer' => 'restApiDefaultCall',
+                                    'pkFillManufacturerListGrid_sysManufacturer' => 'restApiDefaultCall',
+         
+         
+         //**---- sysManufacturer -------------------  
         
         
     );
@@ -1874,6 +1907,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -7) == '_sysOsb') {          
             $this->setRestApiEndPoint('sysosb.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -16) == '_sysAclActionRrp') {          
+            $this->setRestApiEndPoint('sysaclactionrrp.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
