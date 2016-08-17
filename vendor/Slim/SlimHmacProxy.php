@@ -1147,7 +1147,20 @@ class SlimHmacProxy extends \Proxy\Proxy {
          
          //**---- sysManufacturer -------------------  
         
-        
+        //** SysAclActionRrpRestservices ----------------------
+                                    'pkDelete_sysAclActionRrpRestservices' => 'restApiDefaultCall',
+                                    'pkGetAll_sysAclActionRrpRestservices' => 'restApiDefaultCall',
+                                    'pkInsert_sysAclActionRrpRestservices' => 'restApiDefaultCall',
+                                    'pkUpdate_sysAclActionRrpRestservices' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysAclActionRrpRestservices' => 'restApiDefaultCall',                                                                        
+                                    'pkFillActionRrpRestServicesList_sysAclActionRrpRestservices' => 'restApiDefaultCall',  
+                                    'pkFillActionRestServicesOfPrivileges_sysAclActionRrpRestservices' => 'restApiDefaultCall',
+                                    'pkFillNotInActionRestServicesOfPrivileges_sysAclActionRrpRestservices' => 'restApiDefaultCall',
+                                    'pkFillNotInActionRestServicesOfPrivilegesTree_sysAclActionRrpRestservices' => 'restApiDefaultCall',
+                                    'pkFillActionRestServicesOfPrivilegesTree_sysAclActionRrpRestservices' => 'restApiDefaultCall',
+                      
+     
+         //**---- SysAclActionRrpRestservices ------------------- 
     );
 
     /**
@@ -1911,6 +1924,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -16) == '_sysAclActionRrp') {          
             $this->setRestApiEndPoint('sysaclactionrrp.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -28) == '_sysAclActionRrpRestservices') {          
+            $this->setRestApiEndPoint('sysaclactionrrprestservices.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
