@@ -290,6 +290,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkGetAll_sysAclActions' => 'restApiDefaultCall',
                                     'pkInsert_sysAclActions' => 'restApiDefaultCall',
                                     'pkUpdate_sysAclActions' => 'restApiDefaultCall',
+                                    'pkUpdateAct_sysAclActions' => 'restApiDefaultCall',        
                                     'pkFillGrid_sysAclActions' => 'restApiDefaultCall', 
                                     
                                     'pkFillComboBoxFullAction_sysAclActions' => 'restApiDefaultCall',  
