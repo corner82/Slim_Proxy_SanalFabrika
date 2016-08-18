@@ -284,9 +284,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                      
          //**---- SysAclModules -------------------  
          //** SysAclActions ----------------------
-                                    'pkDelete_sysAclActions' => 'restApiDefaultCall',
-                                    'pkDeleteAct_sysAclActions' => 'restApiDefaultCall',
-                                    'pkDeleteAct_sysAclActions' => 'restApiDefaultCall',
+                                    'pkDelete_sysAclActions' => 'restApiDefaultCall',                                    
                                     'pkGetAll_sysAclActions' => 'restApiDefaultCall',
                                     'pkInsert_sysAclActions' => 'restApiDefaultCall',
                                     'pkUpdate_sysAclActions' => 'restApiDefaultCall',
