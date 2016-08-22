@@ -167,6 +167,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     
                                     'pkFillFirmFullVerbal_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkGetFirmProfileConsultant_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillConsultantAllowFirmListDds_infoFirmProfile' => 'restApiDefaultCall',
          
                                     
          //**---- infoFirmProfile -------------------
@@ -489,6 +490,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdate_sysMachineTools' => 'restApiDefaultCall',
                                     'pkFillGrid_sysMachineTools' => 'restApiDefaultCall', 
                                     'pkGetMachineTools_sysMachineTools' => 'restApiDefaultCall',  
+                                    'pkGetMachineToolsGrid_sysMachineTools' => 'restApiDefaultCall',  
                                     'pkGetMachineProperities_sysMachineTools' => 'restApiDefaultCall',          
                                     'pkUpdateMakeActiveOrPassive_sysMachineTools' => 'restApiDefaultCall',        
 
@@ -524,7 +526,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillMachineToolFullProperties_sysMachineToolProperties' => 'restApiDefaultCall',
                                     'pkFillPropertyUnits_sysMachineToolProperties' => 'restApiDefaultCall',
                                     'pkDeletePropertyMachine_sysMachineToolProperties' => 'restApiDefaultCall',
-                                  
+                                    'pkFillMachinePropertiesSubGridList_sysMachineToolProperties' => 'restApiDefaultCall',                                  
+        
         
          //**---- SysMachineToolProperties -------------------   
         //** SysUnits ----------------------
@@ -570,8 +573,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillUsersFirmMachinesNpk_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkFillAllCompanyMachineLists_infoFirmMachineTool' => 'restApiDefaultCall',
         
-        
-        
+                                    'pkInsertCons_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkUpdateCons_infoFirmMachineTool' => 'restApiDefaultCall',        
+                                    'pkDeleteConsAct_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkFillConsCompanyMachineLists_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_infoFirmMachineTool' => 'restApiDefaultCall',
         
                                          
          //**---- InfoFirmMachineTool -------------------   
