@@ -169,7 +169,15 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkGetFirmProfileConsultant_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkFillConsultantAllowFirmListDds_infoFirmProfile' => 'restApiDefaultCall',
          
-                                    
+                                    'pkInsertConsAct_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkUpdateConsAct_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillConsCompanyLists_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_infoFirmProfile' => 'restApiDefaultCall',
+        
+        
+        
+        
+        
          //**---- infoFirmProfile -------------------
          //** sysAclRoles ----------------------
                                     'pkDelete_sysAclRoles' => 'restApiDefaultCall',
@@ -1166,6 +1174,26 @@ class SlimHmacProxy extends \Proxy\Proxy {
                       
      
          //**---- SysAclActionRrpRestservices ------------------- 
+        //** InfoFirmConsultants ----------------------
+                                    'pkDelete_infoFirmConsultants' => 'restApiDefaultCall',
+                                    'pkGetAll_infoFirmConsultants' => 'restApiDefaultCall',
+                                    'pkInsert_infoFirmConsultants' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmConsultants' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoFirmConsultants' => 'restApiDefaultCall',
+                                    'pkDeletedAct_infoFirmConsultants' => 'restApiDefaultCall',  
+                                    'pkUpdateMakeActiveOrPassive_infoFirmConsultants' => 'restApiDefaultCall',
+     
+         //**---- InfoFirmConsultants ------------------- 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     );
 
     /**
@@ -1935,10 +1963,13 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('sysaclactionrrprestservices.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -20) == '_infoFirmConsultants') {          
+            $this->setRestApiEndPoint('infofirmconsultants.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
         
          
-        
          
     }
 
