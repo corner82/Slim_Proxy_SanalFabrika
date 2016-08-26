@@ -399,6 +399,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdate_sysOsb' => 'restApiDefaultCall',
         
                                     'pkFillOsbDdlist_sysOsb' => 'restApiDefaultCall',
+                                    'pkFillOsbList_sysOsb' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysOsb' => 'restApiDefaultCall',        
         
          //**---- sysOsb-------------------   
         
@@ -425,6 +427,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
         
                                     'pkFillOsbClusterLists_sysOsbClusters' => 'restApiDefaultCall',                         
                                     'pkUpdateMakeActiveOrPassive_sysOsbClusters' => 'restApiDefaultCall',        
+                                    'pkFillOsbClustersDdlist_sysOsbClusters' => 'restApiDefaultCall',        
         
          //**---- SysOsbClusters -------------------   
         //** SysOsbClustersFirms ----------------------
