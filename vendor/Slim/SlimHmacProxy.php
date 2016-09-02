@@ -59,7 +59,11 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pktempUpdate_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersListNpk_infoUsers' => 'restApiDefaultCall',
                                     'pkFillUsersInformationNpk_infoUsers' => 'restApiDefaultCall',
-                                    'pkInsertConsultant_infoUsers' => 'restApiDefaultCall',        
+                                    'pkInsertConsultant_infoUsers' => 'restApiDefaultCall',
+                                    'pkInsertUrgePerson_infoUsers' => 'restApiDefaultCall',
+                                    'setPersonPassword_infoUsers' => 'restApiDefaultCall',
+        
+        
         
                                     
          //**---- infoUsers -------------------
@@ -193,6 +197,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillRolesPropertiesList_sysAclRoles' => 'restApiDefaultCall', 
                                     'pkUpdateMakeActiveOrPassive_sysAclRoles' => 'restApiDefaultCall',
                                     'pkFillConsultantRolesDdlist_sysAclRoles' => 'restApiDefaultCall',
+                                    'pkFillClusterRolesDdlist_sysAclRoles' => 'restApiDefaultCall',        
                                     'pkFillRolesDdlist_sysAclRoles' => 'restApiDefaultCall',
         
         
@@ -1187,7 +1192,17 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdateMakeActiveOrPassive_infoFirmConsultants' => 'restApiDefaultCall',
      
          //**---- InfoFirmConsultants ------------------- 
+         //** SysOsbPerson ----------------------
+                                    'pkDelete_sysOsbPerson' => 'restApiDefaultCall',
+                                    'pkGetAll_sysOsbPerson' => 'restApiDefaultCall',
+                                    'pkInsert_sysOsbPerson' => 'restApiDefaultCall',
+                                    'pkUpdate_sysOsbPerson' => 'restApiDefaultCall',
+                                    'pkFillGrid_sysOsbPerson' => 'restApiDefaultCall',
         
+                                    'pkFillUrgePersonListGrid_sysOsbPerson' => 'restApiDefaultCall',  
+                                    'pkUpdateMakeActiveOrPassive_sysOsbPerson' => 'restApiDefaultCall',
+     
+         //**---- SysOsbPerson ------------------- 
         
         
         
@@ -1968,6 +1983,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -20) == '_infoFirmConsultants') {          
             $this->setRestApiEndPoint('infofirmconsultants.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -13) == '_sysOsbPerson') {          
+            $this->setRestApiEndPoint('sysosbperson.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
