@@ -1203,7 +1203,14 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdateMakeActiveOrPassive_sysOsbPerson' => 'restApiDefaultCall',
      
          //**---- SysOsbPerson ------------------- 
-        
+         //** InfoUsersSendingMail ----------------------
+                                    'pkDelete_infoUsersSendingMail' => 'restApiDefaultCall',
+                                    'pkGetAll_infoUsersSendingMail' => 'restApiDefaultCall',
+                                    'pkInsert_infoUsersSendingMail' => 'restApiDefaultCall',
+                                    'pkUpdate_infoUsersSendingMail' => 'restApiDefaultCall',
+                                    'pkFillGrid_infoUsersSendingMail' => 'restApiDefaultCall',
+     
+         //**---- InfoUsersSendingMail ------------------- 
         
         
         
@@ -1987,6 +1994,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   else if (substr($endPointFunction, -13) == '_sysOsbPerson') {          
             $this->setRestApiEndPoint('sysosbperson.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -21) == '_infoUsersSendingMail') {          
+            $this->setRestApiEndPoint('infouserssendingmail.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
