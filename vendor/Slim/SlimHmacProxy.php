@@ -509,6 +509,10 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkGetMachineToolsGrid_sysMachineTools' => 'restApiDefaultCall',  
                                     'pkGetMachineProperities_sysMachineTools' => 'restApiDefaultCall',          
                                     'pkUpdateMakeActiveOrPassive_sysMachineTools' => 'restApiDefaultCall',        
+        
+                                    'pkFillMachineAdvSearchSsm_sysMachineTools' => 'restApiDefaultCall',
+        
+        
 
          //**---- SysMachineTools -------------------   
          //** sysMachineToolPropertyDefinition ----------------------
