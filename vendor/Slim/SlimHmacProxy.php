@@ -44,6 +44,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkInsertLanguageTemplate' => 'restApiDefaultCall',
                                     'pkFillTextLanguageTemplate' => 'restApiDefaultCall',
                                     'pkGetSectors_syssectors' => 'restApiDefaultCall',
+                                    'getSectors_syssectors' => 'restApiDefaultCall',
         
            
          //**---- syssectors -------------------
@@ -62,10 +63,13 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkInsertConsultant_infoUsers' => 'restApiDefaultCall',
                                     'pkInsertUrgePerson_infoUsers' => 'restApiDefaultCall',
                                     'setPersonPassword_infoUsers' => 'restApiDefaultCall',
-        
-        
-        
+                                    'pkGetUserShortInformation_infoUsers' => 'restApiDefaultCall',
+                                    'pkFillUsersProfileInformation_infoUsers' => 'restApiDefaultCall',
+                                    'fillUsersProfileInformationGuest_infoUsers' => 'restApiDefaultCall',
+                                    'pkUpdateConsUserConfirmAct_infoUsers' => 'restApiDefaultCall',
                                     
+        
+        
          //**---- infoUsers -------------------
                                         
          //** syscountrys ----------------------
@@ -172,14 +176,20 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillFirmFullVerbal_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkGetFirmProfileConsultant_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkFillConsultantAllowFirmListDds_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillUrgeAllowFirmListDds_infoFirmProfile' => 'restApiDefaultCall',
+        
          
                                     'pkInsertConsAct_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkUpdateConsAct_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkFillConsCompanyLists_infoFirmProfile' => 'restApiDefaultCall',
+                                    'pkFillUrgeCompanyLists_infoFirmProfile' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_infoFirmProfile' => 'restApiDefaultCall',
-        
-        
-        
+                                    'getFirmLogo_infoFirmProfile' => 'restApiDefaultCall',                
+                                    'pkFillCompanyProfile_infoFirmProfile' => 'restApiDefaultCall',  
+                                    'pkGetUserCompanyShortInformation_infoFirmProfile' => 'restApiDefaultCall',  
+                                    'pkFillUserFirmInformation_infoFirmProfile' => 'restApiDefaultCall',          
+                                    'fillUserFirmInformationGuest_infoFirmProfile' => 'restApiDefaultCall',  
+                                    'pkUpdateConsConfirmAct_infoFirmProfile' => 'restApiDefaultCall', 
         
         
          //**---- infoFirmProfile -------------------
@@ -390,11 +400,12 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkGetConsultantFirmCount_blActivationReport' => 'restApiDefaultCall',
                                     'pkGetConsultantUpDashBoardCount_blActivationReport' => 'restApiDefaultCall',
                                     'pkGetConsWaitingForConfirm_blActivationReport' => 'restApiDefaultCall',
-                                     
-         
+                                    'pkGetUrgeUpDashBoardCount_blActivationReport' => 'restApiDefaultCall',                                     
+                                    'pkFillUrgeOrganizations_blActivationReport' => 'restApiDefaultCall', 
+                                    'pkGetUrgeUpFirstDashBoardCount_blActivationReport' => 'restApiDefaultCall',         
         
-         //**---- BlActivationReport -------------------   
-      
+        
+         //**---- BlActivationReport -------------------         
         
         
          //** sysOsb ----------------------
@@ -415,12 +426,15 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkInsert_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkUpdate_sysOsbConsultants' => 'restApiDefaultCall',
         
-                                    'pkGetConsPendingFirmProfile_sysOsbConsultants' => 'restApiDefaultCall',
-                                    'pkGetConsPendingFirmProfilertc_sysOsbConsultants' => 'restApiDefaultCall',
+                                    'pkGetConsPendingFirmProfile_sysOsbConsultants' => 'restApiDefaultCall',                                    
                                     'pkGetConsConfirmationProcessDetails_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkcpkGetAllFirmCons_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkFillOsbConsultantListGrid_sysOsbConsultants' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_sysOsbConsultants' => 'restApiDefaultCall',
+                                    'pkGetConsPendingUser_sysOsbConsultants' => 'restApiDefaultCall',
+                                    'pkGetConsUserConfirmationProcessDetails_sysOsbConsultants' => 'restApiDefaultCall',
+                                    'pkGetConsPendingFirmMachine_sysOsbConsultants' => 'restApiDefaultCall',
+        
         
         
          //**---- sysOsbConsultants -------------------   
@@ -511,8 +525,8 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkUpdateMakeActiveOrPassive_sysMachineTools' => 'restApiDefaultCall',        
         
                                     'pkFillMachineAdvSearchSsm_sysMachineTools' => 'restApiDefaultCall',
-        
-        
+                                    'getLeftMenuMachineStatistic_sysMachineTools' => 'restApiDefaultCall',
+                                  
 
          //**---- SysMachineTools -------------------   
          //** sysMachineToolPropertyDefinition ----------------------
@@ -598,7 +612,14 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkDeleteConsAct_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkFillConsCompanyMachineLists_infoFirmMachineTool' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkFillUrgeCompanyMachineLists_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkInsertUrgeMachines_infoFirmMachineTool' => 'restApiDefaultCall',
+                                    'pkUpdateUrgeMachines_infoFirmMachineTool' => 'restApiDefaultCall',        
+                                    'pkGetFirmMachineConsultant_infoFirmMachineTool' => 'restApiDefaultCall',        
+                                    'pkFillFirmWhatWorks_infoFirmMachineTool' => 'restApiDefaultCall',        
+                                    'fillFirmWhatWorks_infoFirmMachineTool' => 'restApiDefaultCall',        
         
+                                    'pkUpdateConsConfirmMachineAct_infoFirmMachineTool' => 'restApiDefaultCall',
                                          
          //**---- InfoFirmMachineTool -------------------   
         //** SysNaceCodes ----------------------
@@ -693,6 +714,7 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillGridSingular_infoFirmReferences' => 'restApiDefaultCall',
                                     'pkFillWithReference_infoFirmReferences' => 'restApiDefaultCall',
                                     'pkFillBeReferenced_infoFirmReferences' => 'restApiDefaultCall',
+                                    'fillWithReferenceNpk_infoFirmReferences' => 'restApiDefaultCall',
         
          //**---- InfoFirmReferences -------------------
         
@@ -1224,10 +1246,39 @@ class SlimHmacProxy extends \Proxy\Proxy {
                                     'pkFillMachineToolModelListGrid_sysMachineToolModelMaterials' => 'restApiDefaultCall',
                                     'pkUpdateMakeActiveOrPassive_sysMachineToolModelMaterials' => 'restApiDefaultCall',
          //**---- SysMachineToolModelMaterials ------------------- 
+         
+         //** SysNotificationRestservices ----------------------
+                                    'pkDelete_sysNotificationRestservices' => 'restApiDefaultCall',
+                                    'pkGetAll_sysNotificationRestservices' => 'restApiDefaultCall',
+                                    'pkInsert_sysNotificationRestservices' => 'restApiDefaultCall',
+                                    'pkUpdate_sysNotificationRestservices' => 'restApiDefaultCall',
         
+                                    'pkFillNotificationRestservicesList_sysNotificationRestservices' => 'restApiDefaultCall',
+                                    'pkUpdateMakeActiveOrPassive_sysNotificationRestservices' => 'restApiDefaultCall',
+                                    
+         //**---- SysNotificationRestservices ------------------- 
         
+        //** ActUsersActionStatistics ----------------------
+                                    
+                                    'pkGetUsersCompanyNotifications_ActUsersActionStatistics' => 'restApiDefaultCall',
+                                    'getUsersCompanyNotifications_ActUsersActionStatistics' => 'restApiDefaultCall',
+                                    'getUsersRightNotifications_ActUsersActionStatistics' => 'restApiDefaultCall',
+                                    'getUsersLeftNotifications_ActUsersActionStatistics' => 'restApiDefaultCall',
+                                    'getFirmHistoryV1_ActUsersActionStatistics' => 'restApiDefaultCall',
         
+         //**---- ActUsersActionStatistics ------------------- 
         
+           
+        //** InfoFirmNace ----------------------
+                                     
+                                    'pkInsert_infoFirmNace' => 'restApiDefaultCall',
+                                    'pkUpdate_infoFirmNace' => 'restApiDefaultCall',    
+                                    'pkDeletedAct_infoFirmNace' => 'restApiDefaultCall',  
+                                    'pkFillFirmWhatWorksForNace_infoFirmNace' => 'restApiDefaultCall',
+                                    'fillFirmWhatWorksForNace_infoFirmNace' => 'restApiDefaultCall',
+                                    'pkFillFirmWhatWorksForNace_infoFirmNace' => 'restApiDefaultCall',
+        
+         //**---- InfoFirmNace ------------------- 
         
         
         
@@ -2016,14 +2067,24 @@ class SlimHmacProxy extends \Proxy\Proxy {
             $this->setRestApiEndPoint('sysmachinetoolmodelmaterials.php/');
             //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
             $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -28) == '_sysNotificationRestservices') {          
+            $this->setRestApiEndPoint('sysnotificationrestservices.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -25) == '_ActUsersActionStatistics') {          
+            $this->setRestApiEndPoint('actusersactionstatistics.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
+        }   else if (substr($endPointFunction, -13) == '_infoFirmNace') {          
+            $this->setRestApiEndPoint('infofirmnace.php/');
+            //    print_r($this->restApiBaseUrl.$this->restApiEndPoint.$this->restApiEndPointFunction);
+            $this->setRestApiFullPathUrl($this->restApiBaseUrl . $this->restApiEndPoint . $this->restApiEndPointFunction);
         }   
         
          
          
     }
 
-    
-    
    
     /**
      * set Hmac object for HMAC security
